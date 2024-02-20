@@ -21,7 +21,9 @@ Route::get('/', function () {
 //Grupo para diseñado para el usurio general
 Route::controller(IndexController::class)->group(function(){
     Route::get('/index', 'index')->name('main.index');
+    Route::get('/index/otro', 'otro')->name('main.otro');
 });
+
 
 //Grupo para el login
 Route::controller(loginController::class)->group(function(){
