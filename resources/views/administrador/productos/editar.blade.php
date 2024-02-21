@@ -11,9 +11,10 @@
 @section('content')
 
     <section>
-        <form method="POST" action="{{route('producto.almacenar')}}" >
+        <form method="POST" action="{{route('producto.actualizar', $producto)}}" >
             @csrf
 
+            @method('PUT')
             @include('administrador.productos.components.formulario')
         </form>
     </section>
