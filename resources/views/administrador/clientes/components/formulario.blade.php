@@ -15,7 +15,7 @@
 
 <div>
     <label for="celular">Celular:</label>
-    <textarea name="descripcion" cols="30" rows="10"></textarea>
+    <input name="celular" type="number" value="{{old('correo')}}">
 </div>
 
 <div>

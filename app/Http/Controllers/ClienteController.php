@@ -9,54 +9,54 @@ class ClienteController extends Controller
 {
     public function index(){
 
-        $cliente = Cliente::paginate(10);
+        $clientes = Cliente::paginate(10);
 
         $data=[
-            'cliente' => $cliente
+            'clientes' => $clientes
         ];
 
-        return view("administrador.productos.index", $data);
+        return view("administrador.clientes.index", $data);
     }
 
     public function crear(){
-        return view("administrador.productos.crear");
+        return view("administrador.clientes.crear");
     }
 
-    public function mostrar(Cliente $producto){
-        return view('administrador.productos.mostrar', compact('producto'));
+    public function mostrar(Cliente $cliente){
+        return view('administrador.clientes.mostrar', compact('cliente'));
     }
 
-    public function editar(Cliente $producto){
-        return view('administrador.productos.editar', compact('producto'));
+    public function editar(Cliente $cliente){
+        return view('administrador.clientes.editar', compact('cliente'));
     }
 
     
 
     public function almacenar(Request $request){
         Cliente::create([
+            'cirs' => $request->cirs,
             'nombre' => $request->nombre,
-            'precio' => $request->precio,
-            'stock' => $request->stock,
-            'descripcion' => $request->descripcion
+            'correo' => $request->correo,
+            'celular' => $request->celular
         ]);
-        return redirect()->route('producto.index');
+        return redirect()->route('cliente.index');
     }
 
-    public function actualizar(Cliente $producto, Request $request){
+    public function actualizar(Cliente $cliente, Request $request){
 
-        $producto->update([
+        $cliente->update([
+            'cirs' => $request->cirs,
             'nombre' => $request->nombre,
-            'precio' => $request->precio,
-            'stock' => $request->stock,
-            'descripcion' => $request->descripcion
+            'correo' => $request->correo,
+            'celular' => $request->celular
         ]);
 
-        return redirect()->route('producto.index');
+        return redirect()->route('cliente.index');
     }
 
-    public function eliminar(Cliente $producto){
-        $producto->delete();
+    public function eliminar(Cliente $cliente){
+        $cliente->delete();
 
-        return redirect()->route('producto.index');
+        return redirect()->route('cliente.index');
     }
 }

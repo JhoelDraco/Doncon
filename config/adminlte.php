@@ -336,7 +336,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Clientes',
-                    'url'  => '/clientes',
+                    'url'  => '/cliente',
                 ],
                 [
                     'text' => 'Productos',
@@ -345,6 +345,7 @@ return [
             ],
         ],
 
+        /*
         ['header' => 'labels'],
 
         [
@@ -362,6 +363,7 @@ return [
             'icon_color' => 'cyan',
             'url'        => '#',
         ],
+        */
     ],
 
     /*
