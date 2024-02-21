@@ -11,18 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('facturas', function (Blueprint $table) {
+        Schema::create('empresas', function (Blueprint $table) {
             $table->id();
+            $table->string('cirs', 50)->nullable();
 
-            $table->string('nro_factura', 20);
-            $table->date('fecha');
-            $table->float('total');
-            $table->string('estado', 15);
+            $table->unsignedBigInteger('id_clientes');
 
-            $table->unsignedBigInteger('id_ventas');
-
-            $table->foreign('id_ventas')->references('id')->on('ventas');
-
+            $table->foreign('id_clientes')->references('id')->on('clientes');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('facturas');
+        Schema::dropIfExists('empresas');
     }
 };

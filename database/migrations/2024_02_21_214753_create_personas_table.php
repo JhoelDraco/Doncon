@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detalleventa', function (Blueprint $table) {
+        Schema::create('personas', function (Blueprint $table) {
             $table->id();
-
-            $table->longText('descripcion')->nullable();
+            $table->string('nombre1', 20)->nullable();
+            $table->string('nombre2', 20)->nullable();
+            $table->string('apellido1', 20)->nullable();
+            $table->string('apellido2', 20)->nullable();
 
             $table->unsignedBigInteger('id_clientes');
-            $table->unsignedBigInteger('id_ventas');
 
             $table->foreign('id_clientes')->references('id')->on('clientes');
-            $table->foreign('id_ventas')->references('id')->on('ventas');
-
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detalleventa');
+        Schema::dropIfExists('personas');
     }
 };

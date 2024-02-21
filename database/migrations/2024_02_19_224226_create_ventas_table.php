@@ -15,10 +15,15 @@ return new class extends Migration
             $table->id();
             $table->date('fecha');
             $table->float('subtotal');
+            $table->longText('descripcion')->nullable();
 
+            $table->unsignedBigInteger('id_clientes')->nullable();
             $table->unsignedBigInteger('id_usuarios')->nullable();
-
             $table->foreign('id_usuarios')->references('id')->on('users')
+            ->onDelete('set null')
+            ->onUpdate('cascade');
+
+            $table->foreign('id_clientes')->references('id')->on('clientes')
             ->onDelete('set null')
             ->onUpdate('cascade');
 
