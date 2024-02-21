@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre1', 20)->nullable();
+            $table->string('nombre1', 20);
             $table->string('nombre2', 20)->nullable();
-            $table->string('apellido1', 20)->nullable();
+            $table->string('apellido1', 20);
             $table->string('apellido2', 20)->nullable();
 
             $table->unsignedBigInteger('id_clientes');
