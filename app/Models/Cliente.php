@@ -12,4 +12,12 @@ class Cliente extends Model
     protected $table = 'clientes';
 
     protected $guarded = [];
+
+    public function empresa(){
+        return $this->hasMany(Empresa::class, 'id_clientes');
+    }
+
+    public function persona(){
+        return $this->hasMany(Persona::class, 'id_clientes');
+    }
 }

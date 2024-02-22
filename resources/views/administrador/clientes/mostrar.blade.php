@@ -10,8 +10,8 @@
 
 @section('content')
 
-    <p>{{$cliente->cirs}}</p>
-    <p>{{$cliente->nombre}}</p>
+    <p>{{$cliente->ci}}</p>
+    <p>{{$empresa->cirs}}</p>
     <p>{{$cliente->correo}}</p>
     <p>{{$cliente->celular}}</p>
 

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('nro_factura', 20);
             $table->date('fecha');
             $table->float('total');
-            $table->string('estado', 15);
 
             $table->unsignedBigInteger('id_ventas');
 

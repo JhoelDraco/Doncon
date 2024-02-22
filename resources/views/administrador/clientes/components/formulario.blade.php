@@ -1,11 +1,11 @@
 <div>
-    <label for="cirsCliente">CIRS:</label>
-    <input name="cirs" type="text" value="{{old('cirs')}}">
+    <label for="ciCliente">CI:</label>
+    <input name="ci" type="text" value="{{old('ci')}}">
 </div>
 
 <div>
-    <label for="nombreCliente">Nombre:</label>
-    <input name="nombre" type="text" value="{{old('nombre')}}">
+    <label for="cirsCliente">CIRS:</label>
+    <input name="cirs" type="text" value="{{old('cirs')}}">
 </div>
 
 <div>
