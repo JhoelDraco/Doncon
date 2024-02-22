@@ -4,59 +4,88 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use App\Models\Empresa;
+use App\Models\Persona;
+use Dflydev\DotAccessData\Data;
 
 class ClienteController extends Controller
 {
+
+    //Funciones diseñadas para la vista del administrador
     public function index(){
 
-        $cliente = Cliente::paginate(10);
+        $cliente_empresa = Cliente::join('empresas', 'clientes.id', '=', 'empresas.id_clientes')
+        ->get();
+
+        //$cliente_empresa = Cliente::paginate(10);
 
         $data=[
-            'cliente' => $cliente
+            'clientes' => $cliente_empresa
         ];
 
-        return view("administrador.productos.index", $data);
+        return view("administrador.clientes.index", $data);
     }
 
     public function crear(){
-        return view("administrador.productos.crear");
+        return view("administrador.clientes.crear");
     }
 
-    public function mostrar(Cliente $producto){
-        return view('administrador.productos.mostrar', compact('producto'));
+    public function mostrar(Cliente $cliente){
+
+        //$cliente_empresa = $cliente::with('empresas')->get();
+
+        $empresa = $cliente->empresa()->first();
+
+        $data=[
+            'cliente' => $cliente,
+            'empresa' => $empresa
+        ];
+
+        return view('administrador.clientes.mostrar', $data);
     }
 
-    public function editar(Cliente $producto){
-        return view('administrador.productos.editar', compact('producto'));
+    public function editar(Cliente $cliente){
+        return view('administrador.clientes.editar', compact('cliente'));
     }
 
     
-
+    //Funciones que de actualización y almacenamiento
     public function almacenar(Request $request){
-        Cliente::create([
-            'nombre' => $request->nombre,
-            'precio' => $request->precio,
-            'stock' => $request->stock,
-            'descripcion' => $request->descripcion
-        ]);
-        return redirect()->route('producto.index');
+
+        $cliente = new Cliente();
+        $cliente->ci = $request->input('ci');
+        $cliente->correo = $request->input('correo');
+        $cliente->celular = $request->input('celular');
+        $cliente->save();
+
+        $empresa = new Empresa();
+        $empresa->cirs = $request->input('cirs');
+        $empresa->id_clientes = $cliente->id;
+        $empresa->save();
+
+        return redirect()->route('cliente.index');
     }
 
-    public function actualizar(Cliente $producto, Request $request){
+    public function actualizar(Cliente $cliente, Request $request){
 
-        $producto->update([
-            'nombre' => $request->nombre,
-            'precio' => $request->precio,
-            'stock' => $request->stock,
-            'descripcion' => $request->descripcion
+        $empresa = $cliente->empresa()->first();
+        
+        $cliente->update([
+            'ci' => $request->ci,
+            'correo' => $request->correo,
+            'celular' => $request->celular
         ]);
 
-        return redirect()->route('producto.index');
+        $empresa->update([
+            'cirs' => $request->cirs,
+        ]);
+
+        return redirect()->route('cliente.index');
     }
 
-    public function eliminar(Cliente $producto){
-        $producto->delete();
+    public function eliminar(Cliente $cliente){
+        $cliente->delete();
 
-        return redirect()->route('producto.index');
+        return redirect()->route('cliente.index');
     }
 }

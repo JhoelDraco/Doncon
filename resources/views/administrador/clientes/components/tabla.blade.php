@@ -3,22 +3,24 @@
     <table>
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Stock</th>
+                <th>CI</th>
+                <th>CIRS</th>
+                <th>Correo</th>
+                <th>Celular</th>
             </tr>
         </thead>
 
         <tbody>
-            @foreach ($productos as $producto)
+            @foreach ($clientes as $cliente)
                 <tr>
-                    <td>{{$producto->nombre}}</td>
-                    <td>{{$producto->precio}}</td>
-                    <td>{{$producto->stock}}</td>
-                    <td><a href="{{route('producto.mostrar', $producto->id)}}">Mostrar</a></td>
-                    <td><a href="{{route('producto.editar', $producto->id)}}">Editar</a></td>
+                    <td>{{$cliente->ci}}</td>
+                    <td>{{$cliente->cirs}}</td>
+                    <td>{{$cliente->correo}}</td>
+                    <td>{{$cliente->celular}}</td>
+                    <td><a href="{{route('cliente.mostrar', $cliente->id)}}">Mostrar</a></td>
+                    <td><a href="{{route('cliente.editar', $cliente->id)}}">Editar</a></td>
                     <td>
-                        <form method="POST" action="{{route('producto.eliminar', $producto->id)}}">
+                        <form method="POST" action="{{route('cliente.eliminar', $cliente->id)}}">
                             @csrf
 
                             @method('delete')
@@ -29,6 +31,4 @@
             @endforeach
         </tbody>
     </table>
-
-    {{ $productos->links() }}
 </section>

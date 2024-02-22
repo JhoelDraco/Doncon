@@ -7,6 +7,8 @@ use App\Models\Producto;
 
 class ProductoController extends Controller
 {
+
+    //Funciones para las vistas
     public function index(){
 
         $productos = Producto::paginate(10);
@@ -31,7 +33,8 @@ class ProductoController extends Controller
     }
 
     
-
+    //Funciones para los procesos del sistemas
+    
     public function almacenar(Request $request){
         Producto::create([
             'nombre' => $request->nombre,
