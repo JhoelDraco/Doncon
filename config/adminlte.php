@@ -342,6 +342,10 @@ return [
                     'text' => 'Productos',
                     'url'  => '/producto',
                 ],
+                [
+                    'text' => 'Servicios',
+                    'url'  => '/servicio',
+                ],
             ],
         ],
 

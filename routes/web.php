@@ -5,6 +5,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LagoutController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ServicioController;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,7 @@ Route::controller(ProductoController::class)->group(function(){
     Route::delete('/producto/{producto}', 'eliminar')->name('producto.eliminar');
 });
 
+//GRUPO DISEÑADO PARA EL CRUD DE CLIENTE
 Route::controller(ClienteController::class)->group(function(){
     Route::get('/cliente', 'index')->name('cliente.index');
     Route::get('/cliente/crear', 'crear')->name('cliente.crear');
@@ -56,4 +58,16 @@ Route::controller(ClienteController::class)->group(function(){
     Route::post('/cliente', 'almacenar')->name('cliente.almacenar');
     Route::put('/cliente/{cliente}', 'actualizar')->name('cliente.actualizar');
     Route::delete('/cliente/{cliente}', 'eliminar')->name('cliente.eliminar');
+});
+
+//GRUPO DISEÑADO PARA EL CRUD DE SERVICIO
+Route::controller(ServicioController::class)->group(function(){
+    Route::get('/servicio', 'index')->name('servicio.index');
+    Route::get('/servicio/crear', 'crear')->name('servicio.crear');
+    Route::get('/servicio/{servicio}/mostrar', 'mostrar')->name('servicio.mostrar');
+    Route::get('/servicio/{servicio}/editar', 'editar')->name('servicio.editar');
+
+    Route::post('/servicio', 'almacenar')->name('servicio.almacenar');
+    Route::put('/servicio/{servicio}', 'actualizar')->name('servicio.actualizar');
+    Route::delete('/servicio/{servicio}', 'eliminar')->name('servicio.eliminar');
 });
