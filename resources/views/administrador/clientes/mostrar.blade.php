@@ -11,7 +11,15 @@
 @section('content')
 
     <p>{{$cliente->ci}}</p>
-    <p>{{$empresa->cirs}}</p>
+    @if($cliente->tipo == "E")
+        <p>{{$empresa->cirs}}</p>
+    @else
+        <p>{{$persona->nombre1}}</p>
+        <p>{{$persona->nombre2}}</p>
+        <p>{{$persona->apellido1}}</p>
+        <p>{{$persona->apellido2}}</p>
+    @endif
+    
     <p>{{$cliente->correo}}</p>
     <p>{{$cliente->celular}}</p>
 

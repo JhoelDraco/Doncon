@@ -11,11 +11,15 @@
 @section('content')
 
     <section>
-        <form method="POST" action="{{route('cliente.actualizar', $cliente)}}" >
+        <form method="POST" action="{{route('cliente.actualizar', $cliente->id)}}" >
             @csrf
 
             @method('PUT')
-            @include('administrador.clientes.components.formulario')
+            @if($cliente->tipo == "E")
+                @include('administrador.clientes.components.formulario_empresa')
+            @else
+                @include('administrador.clientes.components.formulario_persona')
+            @endif
         </form>
     </section>
 
