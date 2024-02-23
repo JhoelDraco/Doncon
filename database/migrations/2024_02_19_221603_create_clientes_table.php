@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('ci', 30);
             $table->string('correo', 50)->nullable();
             $table->string('celular', 20);
+            $table->string('tipo', 1);
             $table->timestamps();
         });
     }

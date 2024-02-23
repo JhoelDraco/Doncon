@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\Empresa;
 use App\Models\Persona;
-use Dflydev\DotAccessData\Data;
 
 class ClienteController extends Controller
 {
@@ -14,13 +13,21 @@ class ClienteController extends Controller
     //Funciones diseñadas para la vista del administrador
     public function index(){
 
+        /*
         $cliente_empresa = Cliente::join('empresas', 'clientes.id', '=', 'empresas.id_clientes')
+        ->get();
+        */
+        
+        $clientes = Cliente::select('clientes.*', 'empresas.*', 'personas.*', 'clientes.id as cliente_id')
+        ->leftJoin('empresas', 'clientes.id', '=', 'empresas.id_clientes')
+        ->leftJoin('personas', 'clientes.id', '=', 'personas.id_clientes')
+        ->whereNotNull('empresas.id')->orWhereNotNull('personas.id')
         ->get();
 
         //$cliente_empresa = Cliente::paginate(10);
 
         $data=[
-            'clientes' => $cliente_empresa
+            'clientes' => $clientes
         ];
 
         return view("administrador.clientes.index", $data);
@@ -35,16 +42,19 @@ class ClienteController extends Controller
         //$cliente_empresa = $cliente::with('empresas')->get();
 
         $empresa = $cliente->empresa()->first();
+        $persona = $cliente->persona()->first();
 
         $data=[
             'cliente' => $cliente,
-            'empresa' => $empresa
+            'empresa' => $empresa,
+            'persona' => $persona
         ];
 
         return view('administrador.clientes.mostrar', $data);
     }
 
     public function editar(Cliente $cliente){
+
         return view('administrador.clientes.editar', compact('cliente'));
     }
 
@@ -56,12 +66,24 @@ class ClienteController extends Controller
         $cliente->ci = $request->input('ci');
         $cliente->correo = $request->input('correo');
         $cliente->celular = $request->input('celular');
+        $cliente->tipo = $request->input('tipo_cliente');
         $cliente->save();
 
-        $empresa = new Empresa();
-        $empresa->cirs = $request->input('cirs');
-        $empresa->id_clientes = $cliente->id;
-        $empresa->save();
+        if($request->tipo_cliente == 'E'){
+            $empresa = new Empresa();
+            $empresa->cirs = $request->input('cirs');
+            $empresa->id_clientes = $cliente->id;
+            $empresa->save();
+
+        } else {
+            $persona = new Persona();
+            $persona->nombre1 = $request->input('nombre1');
+            $persona->nombre2 = $request->input('nombre2');
+            $persona->apellido1 = $request->input('apellido1');
+            $persona->apellido2 = $request->input('apellido2');
+            $persona->id_clientes = $cliente->id;
+            $persona->save();
+        }
 
         return redirect()->route('cliente.index');
     }
@@ -69,6 +91,7 @@ class ClienteController extends Controller
     public function actualizar(Cliente $cliente, Request $request){
 
         $empresa = $cliente->empresa()->first();
+        $persona = $cliente->persona()->first();
         
         $cliente->update([
             'ci' => $request->ci,
@@ -76,9 +99,18 @@ class ClienteController extends Controller
             'celular' => $request->celular
         ]);
 
-        $empresa->update([
-            'cirs' => $request->cirs,
-        ]);
+        if($cliente->tipo == "E"){
+            $empresa->update([
+                'cirs' => $request->cirs
+            ]);
+        }else{
+            $persona->update([
+                'nombre1' => $request->nombre1,
+                'nombre2' => $request->nombre2,
+                'apellido1' => $request->apellido1,
+                'apellido2' => $request->apellido2
+            ]);
+        }        
 
         return redirect()->route('cliente.index');
     }
