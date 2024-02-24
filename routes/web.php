@@ -7,6 +7,9 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\NosotrosController;
+use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\ArticulosController;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +45,20 @@ Route::controller(InicioController::class)->group(function(){
      
  });
 
+Route::controller(NosotrosController::class)->group(function(){
+    Route::get('/nosotros', 'index')->name('nosotros.index');
+    
+});
+
+Route::controller(ServiciosController::class)->group(function(){
+    Route::get('/servicios', 'index')->name('servicios.index');
+    
+});
+
+Route::controller(ArticulosController::class)->group(function(){
+    Route::get('/articulos', 'index')->name('articulos.index');
+    
+});
 //Grupos diseñados para la parte administrativas
 
 //Grupo diseñado para el crud del producto
