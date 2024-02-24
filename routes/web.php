@@ -34,9 +34,6 @@ Route::controller(loginController::class)->group(function(){
     Route::get('/login/acceso', 'acceso')->name('login.acceso');
 });
 
-<<<<<<< HEAD
-
-=======
 //Grupos diseñados para la parte administrativa
 
 //Grupo diseñado para el crud del producto
@@ -83,4 +80,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
->>>>>>> 73ce83ea9501a220aba380e91cb010138b31d8c2
+
