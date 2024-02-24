@@ -27,3 +27,5 @@ Route::controller(IndexController::class)->group(function(){
 Route::controller(loginController::class)->group(function(){
     Route::get('/login/acceso', 'acceso')->name('login.acceso');
 });
+
+

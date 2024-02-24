@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to bottom, rgba(182, 141, 141, 0.282), rgb(96, 0, 221));
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px; /* Ajusta este valor según el ancho deseado para el formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    position: relative; /* Permite alinear la imagen relativa a este contenedor */
+}
+.container img {
+    display: block; /* Asegura que la imagen ocupe todo el ancho disponible */
+    width: 70%; /* Ajusta el ancho de la imagen */
+    border-radius: 10px; /* Agrega borde redondeado */
+    margin: 20px auto; /* Alinea la imagen verticalmente y agrega margen a los lados */
+}
+h2 {
+    text-align: initial;
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.card {
+    flex: 1;
+    border: 1px solid #a41313;
+    border-radius: 5px;
+    padding: 20px;
+    margin-left: 20px; /* Espacio entre la tarjeta y el formulario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+    background-position: center;
+}
+
+.card img {
+
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .card {
+        margin: 20px 0; /* Espacio entre la tarjeta y el formulario en dispositivos móviles */
+    }
+}
