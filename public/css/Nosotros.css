@@ -1,0 +1,303 @@
+header {
+    position:static;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;/*  Ajusta el valor según sea necesario para asegurarte de que esté por encima del contenido */
+}
+
+nav {
+    background: rgba(0, 0, 0, .2);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.207), transparent);
+    backdrop-filter: 50px;
+    padding:0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-nav li img {
+    height: 70px; /* Cambia el valor a 60px o cualquier otro valor que desees */
+    margin-right: 10px; /* Ajusta el margen derecho para separar la imagen de los otros elementos */
+    display: inline-block; /* Permite alinear la imagen con los otros elementos en línea */
+    vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
+    border-radius: 30%; /* Aplica un borde redondeado para que no haya esquinas */
+    padding: 0px; /* Ajusta el espacio dentro del borde */
+}
+
+
+@keyframes square-animation {
+    0% {
+     left: 0;
+     top: 0;
+    }
+   
+    10.5% {
+     left: 0;
+     top: 0;
+    }
+   
+    12.5% {
+     left: 32px;
+     top: 0;
+    }
+   
+    23% {
+     left: 32px;
+     top: 0;
+    }
+   
+    25% {
+     left: 64px;
+     top: 0;
+    }
+   
+    35.5% {
+     left: 64px;
+     top: 0;
+    }
+   
+    37.5% {
+     left: 64px;
+     top: 32px;
+    }
+   
+    48% {
+     left: 64px;
+     top: 32px;
+    }
+   
+    50% {
+     left: 32px;
+     top: 32px;
+    }
+   
+    60.5% {
+     left: 32px;
+     top: 32px;
+    }
+   
+    62.5% {
+     left: 32px;
+     top: 64px;
+    }
+   
+    73% {
+     left: 32px;
+     top: 64px;
+    }
+   
+    75% {
+     left: 0;
+     top: 64px;
+    }
+   
+    85.5% {
+     left: 0;
+     top: 64px;
+    }
+   
+    87.5% {
+     left: 0;
+     top: 32px;
+    }
+   
+    98% {
+     left: 0;
+     top: 32px;
+    }
+   
+    100% {
+     left: 0;
+     top: 0;
+    }
+   }
+   
+   section {
+    max-width: 100%;
+    background-image: url(tablet-791051_640.jpg);
+    height: 200px; /* Establece la altura deseada en píxeles */
+    padding: 0;
+    font-size: 16px;
+    margin: 10px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+footer {
+    padding: 20px; /* Reducido el padding para un footer más delgado */
+    margin-top: 15px; /* Agregado margen superior para separar del contenido anterior */
+    color: #fff;
+    background: #060606;
+    display: flex; /*Esto permite que no se quite de la pantalla*/
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Alinea verticalmente el contenido */
+    /*position: fixed;  Fijar el footer en la parte inferior de la pantalla */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Ocupar el ancho completo de la pantalla */
+}
+
+
+.icon {
+    /*display: flex;*/
+    width: 50px; /* Reducido el tamaño del icono */
+    height: 50px; /* Reducido el tamaño del icono */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em; /* Reducido el tamaño del icono */
+    border: 2px solid var(--color);
+    animation: animate 3s linear infinite;
+    background: var(--color);
+    box-shadow: 0px 0px 20px 8px var(--color); /* Reducido el tamaño de la sombra */
+}
+
+.icon:nth-child(even) {
+    animation-delay: 1.5s;
+}
+.card {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  }
+  .card-container {
+    display: flex; /* Cambiar la disposición a flexbox */
+    justify-content: center; /* Centra horizontalmente las tarjetas */
+    align-items: center; /* Alinea verticalmente las tarjetas */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+#section1 {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+.section1 h1 {
+    text-align: center;
+    color: #333;
+}
+
+.section1 ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section1 ul li {
+    margin-bottom: 10px;
+}
+
+.section1 p {
+    margin-bottom: 10px;
+}
+
+  
+  /* for all social containers*/
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    border-radius: 5px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+  }
+  /* Facebo*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 0.3s;
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: green;
+    transition-duration: 0.3s;
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section1 {
+    text-align: center;
+    max-width: 800px;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* 33.33% width for each card with a margin of 10px */
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.card p {
+    margin-bottom: 0;
+    color: #666;
+}

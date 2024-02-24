@@ -1,0 +1,338 @@
+header {
+    /*position: fixed;*/
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1000; /* Ajusta el valor según sea necesario para asegurarte de que esté por encima del contenido */
+}
+
+nav {
+    background: url('/imagenes/FondoNav.jpg');
+    backdrop-filter: 50px;
+    padding:0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.navbar-nav li img {
+    height: 100px; /* Cambia el valor a 60px o cualquier otro valor que desees */
+    margin-right: 10px; /* Ajusta el margen derecho para separar la imagen de los otros elementos */
+    display: inline-block; /* Permite alinear la imagen con los otros elementos en línea */
+    vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
+    border-radius: 30%; /* Aplica un borde redondeado para que no haya esquinas */
+    padding: 0px; /* Ajusta el espacio dentro del borde */
+}
+
+@keyframes square-animation {
+    0% {
+     left: 0;
+     top: 0;
+    }
+   
+    10.5% {
+     left: 0;
+     top: 0;
+    }
+   
+    12.5% {
+     left: 32px;
+     top: 0;
+    }
+   
+    23% {
+     left: 32px;
+     top: 0;
+    }
+   
+    25% {
+     left: 64px;
+     top: 0;
+    }
+   
+    35.5% {
+     left: 64px;
+     top: 0;
+    }
+   
+    37.5% {
+     left: 64px;
+     top: 32px;
+    }
+   
+    48% {
+     left: 64px;
+     top: 32px;
+    }
+   
+    50% {
+     left: 32px;
+     top: 32px;
+    }
+   
+    60.5% {
+     left: 32px;
+     top: 32px;
+    }
+   
+    62.5% {
+     left: 32px;
+     top: 64px;
+    }
+   
+    73% {
+     left: 32px;
+     top: 64px;
+    }
+   
+    75% {
+     left: 0;
+     top: 64px;
+    }
+   
+    85.5% {
+     left: 0;
+     top: 64px;
+    }
+   
+    87.5% {
+     left: 0;
+     top: 32px;
+    }
+   
+    98% {
+     left: 0;
+     top: 32px;
+    }
+   
+    100% {
+     left: 0;
+     top: 0;
+    }
+   }
+p { color: #2000ad;
+    font-size: 20px; /* Tamaño de letra */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif; /* Tipo de letra */
+}
+.card-img-top {
+    height: 200px; /* Establece la altura deseada de las imágenes */
+    object-fit: cover; /* Hace que la imagen mantenga su relación de aspecto y cubra completamente el contenedor */
+}
+
+
+section1 h3 {
+    color: #2000ad;
+    margin-top: auto;
+    font-family: "Times New Roman", Times, serif; /* Tipo de letra Times New Roman */
+    text-align: center; /* Alinear el texto al centro */
+    font-size: 30px;
+}
+section2 h3 {
+    color: #2000ad;
+    font-family: "Times New Roman", Times, serif; /* Tipo de letra Times New Roman */
+    text-align: center; /* Alinear el texto al centro */
+    font-size: 30px;
+}
+.card-title{
+    color: #2000ad;
+    font-family: 'Times New Roman', Times, serif; /* Cambia la fuente del título */
+    font-size: 1.5rem; /* Tamaño de letra mediano */
+}
+
+.card-text h3 {
+    font-size: 3px; /* Tamaño de letra deseado */
+    height: 3px;
+}
+
+section h2 {
+    font-size: 24px; /* Cambia el tamaño de la fuente del título h2 */
+    color: #555; /* Cambia el color del texto del título h2 */
+}
+
+section h1 {
+    font-size: 32px; /* Cambia el tamaño de la fuente del título h1 */
+    color: #222; /* Cambia el color del texto del título h1 */
+}
+
+
+.card {
+    background-color: #f8f9fa; /* Color de fondo de las tarjetas */
+    border: none; /* Quita el borde de las tarjetas si lo deseas */
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px; /* Tamaño de fuente del título */
+    font-weight: bold;
+    color: #333; /* Color del texto del título */
+}
+
+.card-text {
+    font-size: 16px; /* Tamaño de fuente del texto */
+    color: #0f0909; /* Color del texto */
+}
+   .loader {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    transform: rotate(45deg);
+   }
+   
+   .loader-square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    margin: 2px;
+    border-radius: 0px;
+    background: rgb(243, 243, 243);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: square-animation 10s ease-in-out infinite both;
+   }
+   
+   .loader-square:nth-of-type(0) {
+    animation-delay: 0s;
+   }
+   
+   .loader-square:nth-of-type(1) {
+    animation-delay: -1.4285714286s;
+   }
+   
+   .loader-square:nth-of-type(2) {
+    animation-delay: -2.8571428571s;
+   }
+   
+   .loader-square:nth-of-type(3) {
+    animation-delay: -4.2857142857s;
+   }
+   
+   .loader-square:nth-of-type(4) {
+    animation-delay: -5.7142857143s;
+   }
+   
+   .loader-square:nth-of-type(5) {
+    animation-delay: -7.1428571429s;
+   }
+   
+   .loader-square:nth-of-type(6) {
+    animation-delay: -8.5714285714s;
+   }
+   
+   .loader-square:nth-of-type(7) {
+    animation-delay: -10s;
+   }
+section {
+    background: url('/imagenes/Fondoseccion.jpg');
+    color: #000000;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    padding: 90px;
+    margin: 10px;
+    display: flex; 
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+
+@keyframes animate{
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+footer {
+    padding: 20px; /* Reducido el padding para un footer más delgado */
+    margin-top: 15px; /* Agregado margen superior para separar del contenido anterior */
+    color: #fff;
+    background: #060606;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Alinea verticalmente el contenido */
+    /*position: fixed;  Fijar el footer en la parte inferior de la pantalla */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Ocupar el ancho completo de la pantalla */
+}
+
+
+.card-container {
+    display: flex; /* Utiliza flexbox para alinear horizontalmente los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.socialContainer {
+    width: 52px;
+    height: 52px;
+    border-radius: 5px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+
+.containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 0.3s;
+}
+
+.containerFour:hover {
+    background-color: green;
+    transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+}
+
+.socialSvg {
+    width: 17px;
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

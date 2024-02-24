@@ -6,8 +6,10 @@ use App\Http\Controllers\LagoutController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\InicioController;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +33,16 @@ Route::controller(IndexController::class)->group(function(){
 
 //Grupo para el login
 Route::controller(loginController::class)->group(function(){
-    Route::get('/login/acceso', 'acceso')->name('login.acceso');
+   // Route::get('/login/acceso', 'acceso')->name('login.acceso');//cambio de carpeta login 24/02/24
+    Route::get('/login', 'acceso')->name('login.acceso');
+    
 });
+Route::controller(InicioController::class)->group(function(){
+     Route::get('/inicio', 'index')->name('inicio.index');
+     
+ });
 
-//Grupos diseñados para la parte administrativa
+//Grupos diseñados para la parte administrativas
 
 //Grupo diseñado para el crud del producto
 Route::controller(ProductoController::class)->group(function(){
