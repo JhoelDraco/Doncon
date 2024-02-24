@@ -9,6 +9,8 @@
                 <th>Apellido(s)</th>
                 <th>Correo</th>
                 <th>Celular</th>
+                <th>Ubicacion</th>
+                <th>Contacto</th>
             </tr>
         </thead>
 
@@ -29,6 +31,8 @@
 
                     <td>{{$cliente->correo}}</td>
                     <td>{{$cliente->celular}}</td>
+                    <td>{{$cliente->ubicacion}}</td>
+                    <td>{{$cliente->contacto}}</td>
                     
                     <td><a href="{{route('cliente.mostrar', $cliente->cliente_id)}}">Mostrar</a></td>
                     <td><a href="{{route('cliente.editar', $cliente->cliente_id)}}">Editar</a></td>
