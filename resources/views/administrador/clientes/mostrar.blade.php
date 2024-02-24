@@ -22,6 +22,8 @@
     
     <p>{{$cliente->correo}}</p>
     <p>{{$cliente->celular}}</p>
+    <p>{{$cliente->ubicacion}}</p>
+    <p>{{$cliente->contacto}}</p>
 
     <a href="{{route('cliente.index')}}">volver</a>
 

@@ -71,3 +71,13 @@ Route::controller(ServicioController::class)->group(function(){
     Route::put('/servicio/{servicio}', 'actualizar')->name('servicio.actualizar');
     Route::delete('/servicio/{servicio}', 'eliminar')->name('servicio.eliminar');
 });
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+

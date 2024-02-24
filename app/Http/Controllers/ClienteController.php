@@ -67,6 +67,8 @@ class ClienteController extends Controller
         $cliente->correo = $request->input('correo');
         $cliente->celular = $request->input('celular');
         $cliente->tipo = $request->input('tipo_cliente');
+        $cliente->ubicacion = $request->input('ubicacion');
+        $cliente->contacto = $request->input('contacto');
         $cliente->save();
 
         if($request->tipo_cliente == 'E'){
@@ -96,7 +98,9 @@ class ClienteController extends Controller
         $cliente->update([
             'ci' => $request->ci,
             'correo' => $request->correo,
-            'celular' => $request->celular
+            'celular' => $request->celular,
+            'ubicacion' => $request->ubicacion,
+            'contacto' => $request->contacto
         ]);
 
         if($cliente->tipo == "E"){
