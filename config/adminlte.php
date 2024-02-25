@@ -329,6 +329,11 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        [
+            'text' => 'Roles',
+            'url'  => '/rol',
+            'icon' => 'fas fa-users-cog fa-lock',
+        ],
 
         [
             'text'    => 'Registros',
@@ -337,18 +342,22 @@ return [
                 [
                     'text' => 'Usuarios',
                     'url'  => '/usuario',
+                    'can'  => 'admin.usuario.index'
                 ],
                 [
                     'text' => 'Clientes',
                     'url'  => '/cliente',
+                    'can'  => 'admin.cliente.index'
                 ],
                 [
                     'text' => 'Productos',
                     'url'  => '/producto',
+                    'can'  => 'admin.producto.index'
                 ],
                 [
                     'text' => 'Servicios',
                     'url'  => '/servicio',
+                    'can'  => 'admin.servicio.index'
                 ]
             ],
         ],

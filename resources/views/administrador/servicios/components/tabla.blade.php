@@ -13,16 +13,26 @@
                 <tr>
                     <td>{{$servicio->tipo}}</td>
                     <td>{{$servicio->descripcion}}</td>
-                    <td><a href="{{route('servicio.mostrar', $servicio->id)}}">Mostrar</a></td>
-                    <td><a href="{{route('servicio.editar', $servicio->id)}}">Editar</a></td>
-                    <td>
-                        <form method="POST" action="{{route('servicio.eliminar', $servicio->id)}}">
-                            @csrf
+                    
+                    @can('admin.servicio.mostrar')
+                        <td><a href="{{route('servicio.mostrar', $servicio->id)}}">Mostrar</a></td>
+                    @endcan
+                    
+                    @can('admin.servicio.editar')
+                        <td><a href="{{route('servicio.editar', $servicio->id)}}">Editar</a></td>
+                    @endcan
+                    
+                    @can('admin.servicio.eliminar')
+                        <td>
+                            <form method="POST" action="{{route('servicio.eliminar', $servicio->id)}}">
+                                @csrf
 
-                            @method('delete')
-                            <button type="submit">Eliminar</button>
-                        </form>
-                    </td>
+                                @method('DELETE')
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    @endcan
+                    
                 </tr>
             @endforeach
         </tbody>

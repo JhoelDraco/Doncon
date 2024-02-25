@@ -12,10 +12,10 @@
 
 @section('content')
 
-    @can('admin.cliente.crear')
-        <a href="{{route('cliente.crear')}}">añadir cliente</a>
+    @can('admin.rol.crear')
+        <a href="{{route('rol.crear')}}">Agregar Rol</a>
     @endcan
     
-    @include('administrador.clientes.components.tabla')
+    @include('administrador.roles.components.tabla')
 
 @stop

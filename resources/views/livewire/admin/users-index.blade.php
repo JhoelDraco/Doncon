@@ -33,7 +33,7 @@
                             <form method="POST" action="{{route('usuario.eliminar', $usuario->id)}}">
                                 @csrf
 
-                                @method('delete')
+                                @method('DELETE')
                                 <button type="submit">Eliminar</button>
                             </form>
                         </td>

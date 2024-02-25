@@ -11,11 +11,13 @@
 @section('content')
 
     <section>
-        <form method="POST" action="{{route('servicio.actualizar', $servicio)}}" >
+        <form method="POST" action="{{route('rol.actualizar', $rol)}}" >
             @csrf
 
             @method('PUT')
-            @include('administrador.servicios.components.formulario')
+           
+            @include('administrador.roles.components.formulario')
+
         </form>
     </section>
 
