@@ -38,14 +38,18 @@ Route::controller(loginController::class)->group(function(){
     
 });
 Route::controller(InicioController::class)->group(function(){
-     Route::get('/inicio', 'index')->name('inicio.index');
+     Route::get('/inicio', 'inicio')->name('inicio.inicio');
+     Route::get('/nosotros', 'nosotros')->name('nosotros.nosotros');
+     Route::get('/servicios', 'servicios')->name('servicios.servicios');
+     Route::get('/articulos', 'articulos')->name('articulos.articulos');
      
  });
-
+/*
 Route::controller(NosotrosController::class)->group(function(){
     Route::get('/nosotros', 'index')->name('nosotros.index');
     
 });
+
 
 Route::controller(ServiciosController::class)->group(function(){
     Route::get('/servicios', 'index')->name('servicios.index');
@@ -55,7 +59,12 @@ Route::controller(ServiciosController::class)->group(function(){
 Route::controller(ArticulosController::class)->group(function(){
     Route::get('/articulos', 'index')->name('articulos.index');
     
+<<<<<<< HEAD
 });
+=======
+});*/
+//Grupos diseñados para la parte administrativas
+>>>>>>> 5fae8a94f0ed90d069fa73e993096b6d30095327
 
 Route::middleware([
     'auth:sanctum',

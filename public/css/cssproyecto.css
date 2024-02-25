@@ -29,7 +29,7 @@ nav a {
 }
 
 .navbar-nav li img {
-    height: 100px; /* Cambia el valor a 60px o cualquier otro valor que desees */
+    height: 30px; /* Cambia el valor a 60px o cualquier otro valor que desees */
     margin-right: 10px; /* Ajusta el margen derecho para separar la imagen de los otros elementos */
     display: inline-block; /* Permite alinear la imagen con los otros elementos en línea */
     vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
