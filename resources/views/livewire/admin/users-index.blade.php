@@ -20,7 +20,15 @@
                     <td>{{$usuario->email}}</td>
                     <td></td>
                     <td><a href="{{route('usuario.mostrar', $usuario->id)}}">Mostrar</a></td>
-                    
+                    <td><a href="{{route('usuario.editar', $usuario->id)}}">Editar</a></td>
+                    <td>
+                        <form method="POST" action="{{route('usuario.eliminar', $usuario->id)}}">
+                            @csrf
+
+                            @method('delete')
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

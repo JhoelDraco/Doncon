@@ -15,7 +15,7 @@
             @csrf
 
             @method('PUT')
-            @include('administrador.servicios.components.formulario')
+            @include('administrador.usuarios.components.formulario')
         </form>
     </section>
 

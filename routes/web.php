@@ -59,13 +59,8 @@ Route::controller(ServiciosController::class)->group(function(){
 Route::controller(ArticulosController::class)->group(function(){
     Route::get('/articulos', 'index')->name('articulos.index');
     
-<<<<<<< HEAD
 });
-=======
-});*/
-//Grupos diseñados para la parte administrativas
->>>>>>> 5fae8a94f0ed90d069fa73e993096b6d30095327
-
+*/
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
