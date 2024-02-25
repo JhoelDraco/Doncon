@@ -15,7 +15,7 @@
 
     <a href="{{route('producto.crear')}}">crear producto</a>
     
-    @include('administrador.productos.components.tabla')
+    @livewire('admin.producto-index')
 
 @stop
 
