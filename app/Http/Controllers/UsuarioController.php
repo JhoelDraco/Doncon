@@ -34,6 +34,6 @@ class UsuarioController extends Controller
 
         $usuario->roles()->sync($request->roles);
 
-        return redirect()->route('producto.index');
+        return redirect()->route('usuario.index');
     }
 }
