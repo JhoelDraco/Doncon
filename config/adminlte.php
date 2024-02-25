@@ -335,6 +335,10 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
+                    'text' => 'Usuarios',
+                    'url'  => '/usuario',
+                ],
+                [
                     'text' => 'Clientes',
                     'url'  => '/cliente',
                 ],
@@ -345,7 +349,7 @@ return [
                 [
                     'text' => 'Servicios',
                     'url'  => '/servicio',
-                ],
+                ]
             ],
         ],
 
