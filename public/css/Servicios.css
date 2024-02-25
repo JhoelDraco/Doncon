@@ -291,21 +291,21 @@ footer {
 
 }
 .card:nth-child(1) {
-    background-image: url('Asesoramiento.jpg'); /* Ruta de la imagen para la primera tarjeta */
+    background-image: url('/imagenes/Asesoramiento.jpg'); /* Ruta de la imagen para la primera tarjeta */
 }
 
 .card:nth-child(2) {
-    background-image: url('Mantenimiento.jpg'); /* Ruta de la imagen para la segunda tarjeta */
+    background-image: url('/imagenes/Mantenimiento.jpg'); /* Ruta de la imagen para la segunda tarjeta */
 }
 .card:nth-child(3) {
-    background-image: url('Diseno\ Web.jpg'); /* Ruta de la imagen para la tercera tarjeta */
+    background-image: url('/imagenes/Diseno\ Web.jpg'); /* Ruta de la imagen para la tercera tarjeta */
 }
 
 .card:nth-child(4) {
-    background-image: url('Redes.jpg'); /* Ruta de la imagen para la cuarta tarjeta */
+    background-image: url('/imagenes/Redes.jpg'); /* Ruta de la imagen para la cuarta tarjeta */
 }
 .card:nth-child(5) {
-    background-image: url('Calidad.jpg'); /* Ruta de la imagen para la cuarta tarjeta */
+    background-image: url('/imagenes/Calidad.jpg'); /* Ruta de la imagen para la cuarta tarjeta */
 }
 
 /* Agrega lo mismo para las otras tarjetas cambiando la ruta de la imagen según sea necesario */
