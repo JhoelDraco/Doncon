@@ -45,6 +45,7 @@ Route::controller(InicioController::class)->group(function(){
      Route::get('/nosotros', 'nosotros')->name('nosotros.nosotros');
      Route::get('/servicios', 'servicios')->name('servicios.servicios');
      Route::get('/articulos', 'articulos')->name('articulos.articulos');
+     Route::get('/artiordenadores', 'artiordenadores')->name('artiordenadores.artiordenadores');
      
  });
 /*

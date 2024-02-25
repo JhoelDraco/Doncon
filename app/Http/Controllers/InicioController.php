@@ -21,4 +21,7 @@ class InicioController extends Controller
     public function articulos() {
         return view("Clientes.articulos");
     }
+    public function artiordenadores() {
+        return view("Clientes.artiordenadores");
+    }
 }

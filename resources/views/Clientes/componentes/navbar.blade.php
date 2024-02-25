@@ -12,12 +12,12 @@
                     <a class="nav-link" id="NOSOTROS" href="{{ route('nosotros.nosotros') }}">NOSOTROS</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="SERVICIOS.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             SERVICIOS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Soporte para impresoras</a>
-                            <a class="dropdown-item" href="#">Soporte de Ordenadores</a>
+                            <a class="dropdown-item" href="{{ route('articulos.articulos') }}">Soporte para impresoras</a>
+                            <a class="dropdown-item" href="{{ route('artiordenadores.artiordenadores') }}">Soporte de Ordenadores</a>
                             <a class="dropdown-item" href="#">Otros</a>
                         </div>
                     </li>
