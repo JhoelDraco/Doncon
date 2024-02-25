@@ -3,10 +3,22 @@
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ServicioController;
-
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 //Grupos diseñados para la parte administrativas
+
+//Grupo diseñado para el crud de los usuarios
+Route::controller(UsuarioController::class)->group(function(){
+    Route::get('/usuario', 'index')->name('usuario.index');
+    Route::get('/usuario/crear', 'crear')->name('usuario.crear');
+    Route::get('/usuario/{usuario}/mostrar', 'mostrar')->name('usuario.mostrar');
+    Route::get('/usuario/{usuario}/editar', 'editar')->name('usuario.editar');
+
+    Route::post('/usuario', 'almacenar')->name('usuario.almacenar');
+    Route::put('/usuario/{usuario}', 'actualizar')->name('usuario.actualizar');
+    Route::delete('/usuario/{usuario}', 'eliminar')->name('usuario.eliminar');
+});
 
 //Grupo diseñado para el crud del producto
 Route::controller(ProductoController::class)->group(function(){
