@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
+
 
 class InicioController extends Controller
 {
@@ -20,8 +22,11 @@ class InicioController extends Controller
 
     public function articulos() {
         return view("Clientes.articulos");
+    
     }
     public function artiordenadores() {
-        return view("Clientes.artiordenadores");
+        $productos=Producto::all();
+        return view("Clientes.artiordenadores",compact('productos'));
+    
     }
 }

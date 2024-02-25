@@ -11,13 +11,7 @@ class ProductoController extends Controller
     //Funciones para las vistas
     public function index(){
 
-        $productos = Producto::paginate(10);
-
-        $data=[
-            'productos' => $productos
-        ];
-
-        return view("administrador.productos.index", $data);
+        return view("administrador.productos.index");
     }
 
     public function crear(){

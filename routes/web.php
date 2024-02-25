@@ -11,6 +11,7 @@ use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Rutas de la web
@@ -45,35 +46,18 @@ Route::controller(InicioController::class)->group(function(){
      Route::get('/artiordenadores', 'artiordenadores')->name('artiordenadores.artiordenadores');
      
  });
+
+
+
 /*
-Route::controller(NosotrosController::class)->group(function(){
-    Route::get('/nosotros', 'index')->name('nosotros.index');
-    
-});
-
-
-Route::controller(ServiciosController::class)->group(function(){
-    Route::get('/servicios', 'index')->name('servicios.index');
-    
-});
-
-Route::controller(ArticulosController::class)->group(function(){
-    Route::get('/articulos', 'index')->name('articulos.index');
-    
-<<<<<<< HEAD
-});
-=======
-});*/
-//Grupos diseñados para la parte administrativas
->>>>>>> 5fae8a94f0ed90d069fa73e993096b6d30095327
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
+    
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });
-
+*/
