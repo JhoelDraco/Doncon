@@ -20,8 +20,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li> <img src="{{ asset('imagenes/header logo.jpg') }}" alt="header"></li> <!-- Ajusta la ruta de la imagen -->
-                    <li class="nav-item"><a class="nav-link" id="INICIO" href="hindex.html">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link" id="NOSOTROS" href="NOSOTROS.html">NOSOTROS</a></li>
+                    <li class="nav-item"><a class="nav-link" id="INICIO" href="{{ route('inicio.inicio') }}">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" id="NOSOTROS" href="{{ route('nosotros') }}">NOSOTROS</a></li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="SERVICIOS.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             SERVICIOS

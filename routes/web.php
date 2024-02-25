@@ -50,6 +50,7 @@ Route::controller(NosotrosController::class)->group(function(){
     
 });
 
+
 Route::controller(ServiciosController::class)->group(function(){
     Route::get('/servicios', 'index')->name('servicios.index');
     
