@@ -1,0 +1,96 @@
+.form_image_admin{
+    height: 100%;
+    place-items: center;
+    /*background-color: #673AB7;*/
+    text-align: center;
+}
+
+.image_wrapper_admin{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px dashed #DAE0E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image_wrapper_admin.active{
+    border: none;
+}
+
+.image_wrapper_admin .image_admin{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image_wrapper_admin .image_admin img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image_wrapper_admin .icon_image_admin{
+    font-size: 50px;
+    color: #673AB7;
+}
+
+.image_wrapper_admin .text_image_admin{
+    font-size: 15px;
+    color: #673AB7;
+}
+
+.image_wrapper_admin #cancel_btn_admin{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #673AB7;
+    display: none;
+}
+
+.image_wrapper_admin.active:hover #cancel_btn_admin{
+    display: block;
+}
+
+.image_wrapper_admin #cancel_btn_admin:hover{
+    color: #F7F6FB;
+}
+
+.image_wrapper_admin .file_name_admin{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    color: #F7F6FB;
+    font-size: 15px;
+    background-color: #673AB7;
+    display: none;
+}
+
+.image_wrapper_admin.active:hover .file_name_admin{
+    display: block;
+}
+
+.form_image_admin #custom_btn_image{
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px 0px;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    color: #F7F6FB;
+    font-size: 15px;
+    letter-spacing: 1px;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #673AB7;
+}

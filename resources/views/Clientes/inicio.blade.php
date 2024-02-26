@@ -77,7 +77,7 @@
                     <img src="{{ asset('imagenes/tarjeta5.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h2 class="card-title">Articulos</h2>
-                        <p class="card-text"></p>
+                        <p class="card-text">Realizamos la venta de ordenadores y productos de tecnologia</p>
                     </div>
                 </div>
             </div>

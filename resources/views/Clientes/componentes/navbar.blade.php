@@ -13,17 +13,17 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            SERVICIOS
+                            ARTICULOS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('articulos.articulos') }}">Soporte para impresoras</a>
-                            <a class="dropdown-item" href="{{ route('artiordenadores.artiordenadores') }}">Soporte de Ordenadores</a>
+                            <a class="dropdown-item" href="{{ route('articulos.articulos') }}">Venta de impresoras</a>
+                            <a class="dropdown-item" href="{{ route('artiordenadores.artiordenadores') }}">Venta de Ordenadores</a>
                             <a class="dropdown-item" href="#">Otros</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ARTICULOS
+                            SERVICIOS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                             <a class="dropdown-item" href="#">Artículo 1</a>

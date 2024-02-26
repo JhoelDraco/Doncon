@@ -15,7 +15,17 @@ class ProductoIndex extends Component
     
     public function render()
     {   
-        $productos=Producto::where('nombre','LIKE','%'.$this->productobuscar.'%')->paginate(10);
-        return view('livewire.admin.producto-index',compact('productos'));
+        $productos = Producto::query();
+
+        if (!empty($this->productobuscar)) {
+            $productos->where(function ($query) {
+                $query->where('nombre', 'LIKE', '%' . $this->productobuscar . '%')
+                      ->orWhere('codigo', 'LIKE', '%' . $this->productobuscar . '%');
+            });
+        }
+
+        $productos = $productos->paginate(10);
+
+        return view('livewire.admin.producto-index', compact('productos'));
     }
 }
