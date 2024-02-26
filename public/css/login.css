@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url('../imagenes/fondo de login.png');
+    background-image: url('../imagenes/tarjeta1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,6 +22,7 @@ main{
 }
 
 .contenedor__todo{
+
     width: 100%;
     max-width: 800px;
     margin: auto;
@@ -98,7 +99,7 @@ main{
 .contenedor__login-register form{
     width: 100%;
     padding: 80px 20px;
-    background: white;
+    background: #ffffff;
     position: absolute;
     border-radius: 20px;
 }
@@ -107,7 +108,7 @@ main{
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
-    color: #46A2FD;
+    color: #000000;
 }
 
 .contenedor__login-register form input{
@@ -125,7 +126,7 @@ main{
     margin-top: 40px;
     border: none;
     font-size: 14px;
-    background: #46A2FD;
+    background: #32adb9;
     font-weight: 600;
     cursor: pointer;
     color: white;
@@ -134,7 +135,7 @@ main{
 }
 
 .contenedor__login-register form button:hover{
-    background-color: #e02c7a;
+    background-color: #5898e7;
     color: #04182c;
 }
 

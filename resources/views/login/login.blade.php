@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/login.css') }}"> <!-- Ajusta la ruta de tu archivo CSS -->
 </head>
-<body>
+<body> 
 
         <main>
 
@@ -33,7 +33,6 @@
                     <!--Formulario de Login-->
                     <form action="php/login_usuario_be.php" method="POST" class="formulario__login">
                         <h2>Iniciar Sesión</h2>
-                        <input type="name" placeholder="Nombre Usuario" name="name">
                         <input type="email" placeholder="Correo Electronico" name="correo">
                         <input type="password" placeholder="Contraseña" name="contrasena">
                         <button>Entrar</button>
@@ -41,7 +40,7 @@
 
                     <!--Formulario de Registro-->
                     <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
-                        <h2>Llena Datos para tu verificaion</h2>
+                        <h2>Llena Datos para tu verificación</h2>
                         <input type="text" placeholder="Nombre de Usuario" name="nombre_completo">
                         <input type="email" placeholder="Correo Electronico" name="correo">
                         <input type="password" placeholder="Ultima Contrasena" name="contrasena">
