@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'name' => 'Jhoel El FullStack',
             'email' => 'jhoel.bo@gmail.com',
             'password' => bcrypt('jhoel1234'),
-        ])->assignRole('Observador');
+        ])->assignRole('Administrador');
 
         User::factory(20)->create();
     }

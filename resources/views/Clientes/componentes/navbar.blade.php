@@ -26,13 +26,13 @@
                             SERVICIOS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="#">Artículo 1</a>
-                            <a class="dropdown-item" href="#">Artículo 2</a>
-                            <a class="dropdown-item" href="#">Artículo 3</a>
+                            <a class="dropdown-item" href="#">Servicios de Correccion y prevencion</a>
+                            <a class="dropdown-item" href="#">Servicios de Mantenimiento</a>
+                            <a class="dropdown-item" href="#">Servicio de Infrestructura</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" id="CONTACTANOS" href="#">CONTACTANOS</a></li>
-                    <li class="nav-item"><a class="nav-link" id="INGRESAR" href="{{ route('login.acceso') }}">INGRESAR</a></li>
+                    <li class="nav-item"><a class="nav-link" id="INGRESAR" href="{{ route('login') }}">INGRESAR</a></li>
                 </ul>
             </div>
             <div class="loader">

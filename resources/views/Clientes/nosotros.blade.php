@@ -68,6 +68,6 @@
     
      <!----------------------->
      @include('Clientes.componentes.footer')
-
-</body>
+  
+     
 </html>
