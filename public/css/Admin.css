@@ -1,0 +1,100 @@
+/* Estilo para el contenedor principal del formulario */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las etiquetas de los campos */
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Estilo para los campos de entrada */
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilo específico para el campo de descripción (textarea) */
+textarea {
+    resize: vertical;
+}
+
+/* Estilo para el botón de submit */
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Cambia el color del botón al pasar el ratón sobre él */
+button:hover {
+    background-color: #2980b9;
+}
+
+section {
+    margin: 20px;
+}
+
+/* Estilo para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilo para las celdas de la tabla */
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilo para las celdas del encabezado de la tabla */
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Estilo para los enlaces dentro de las celdas de la tabla */
+td a {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #3498db;
+    border: 1px solid #3498db;
+    border-radius: 3px;
+}
+
+/* Cambia el color del enlace al pasar el ratón sobre él */
+td a:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Estilo para el botón de eliminar en el formulario */
+form button {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Cambia el color del botón de eliminar al pasar el ratón sobre él */
+form button:hover {
+    background-color: #c0392b;
+}

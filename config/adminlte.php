@@ -15,7 +15,7 @@ return [
     */
 
     'title' => '',
-    'title_prefix' => 'RevientaBack |',
+    'title_prefix' => 'Tic Centec |',
     'title_postfix' => '',
 
     /*
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Revienta</b>Back',
+    'logo' => '<b>Tic</b>Centec',
     'logo_img' => 'vendor/adminlte/dist/img/TICFin.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
