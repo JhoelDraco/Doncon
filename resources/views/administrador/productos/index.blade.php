@@ -13,7 +13,10 @@
 
 @section('content')
 
-    <a href="{{route('producto.crear')}}">crear producto</a>
+    @can('admin.producto.crear')
+        <a href="{{route('producto.crear')}}">crear producto</a> 
+    @endcan
+    
     
     @livewire('admin.producto-index')
 

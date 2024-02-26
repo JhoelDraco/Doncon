@@ -34,16 +34,26 @@
                     <td>{{$cliente->ubicacion}}</td>
                     <td>{{$cliente->contacto}}</td>
                     
-                    <td><a href="{{route('cliente.mostrar', $cliente->cliente_id)}}">Mostrar</a></td>
-                    <td><a href="{{route('cliente.editar', $cliente->cliente_id)}}">Editar</a></td>
-                    <td>
-                        <form method="POST" action="{{route('cliente.eliminar', $cliente->cliente_id)}}">
-                            @csrf
+                    @can('admin.cliente.mostrar')
+                        <td><a href="{{route('cliente.mostrar', $cliente->cliente_id)}}">Mostrar</a></td> 
+                    @endcan
+                    
+                    @can('admin.cliente.editar')
+                        <td><a href="{{route('cliente.editar', $cliente->cliente_id)}}">Editar</a></td>
+                    @endcan
 
-                            @method('delete')
-                            <button type="submit">Eliminar</button>
-                        </form>
-                    </td>
+                    @can('admin.cliente.eliminar')
+                        <td>
+                            <form method="POST" action="{{route('cliente.eliminar', $cliente->cliente_id)}}">
+                                @csrf
+
+                                @method('DELETE')
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    @endcan
+                    
+                    
                 </tr>
             @endforeach
         </tbody>

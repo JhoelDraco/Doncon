@@ -35,7 +35,7 @@ Route::controller(IndexController::class)->group(function(){
 //Grupo para el login
 Route::controller(loginController::class)->group(function(){
    // Route::get('/login/acceso', 'acceso')->name('login.acceso');//cambio de carpeta login 24/02/24
-    Route::get('/login', 'acceso')->name('login.acceso');
+    //Route::get('/login', 'acceso')->name('login.acceso');
     
 });
 Route::controller(InicioController::class)->group(function(){
@@ -47,9 +47,6 @@ Route::controller(InicioController::class)->group(function(){
      
  });
 
-
-
-/*
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -60,4 +57,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-*/
+
