@@ -13,26 +13,26 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            SERVICIOS
+                            ARTICULOS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('articulos.articulos') }}">Soporte para impresoras</a>
-                            <a class="dropdown-item" href="{{ route('artiordenadores.artiordenadores') }}">Soporte de Ordenadores</a>
+                            <a class="dropdown-item" href="{{ route('articulos.articulos') }}">Venta de impresoras</a>
+                            <a class="dropdown-item" href="{{ route('artiordenadores.artiordenadores') }}">Venta de Ordenadores</a>
                             <a class="dropdown-item" href="#">Otros</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ARTICULOS
+                            SERVICIOS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="#">Artículo 1</a>
-                            <a class="dropdown-item" href="#">Artículo 2</a>
-                            <a class="dropdown-item" href="#">Artículo 3</a>
+                            <a class="dropdown-item" href="#">Servicios de Correccion y prevencion</a>
+                            <a class="dropdown-item" href="#">Servicios de Mantenimiento</a>
+                            <a class="dropdown-item" href="#">Servicio de Infrestructura</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" id="CONTACTANOS" href="#">CONTACTANOS</a></li>
-                    <li class="nav-item"><a class="nav-link" id="INGRESAR" href="{{ route('login.acceso') }}">INGRESAR</a></li>
+                    <li class="nav-item"><a class="nav-link" id="INGRESAR" href="{{ route('login') }}">INGRESAR</a></li>
                 </ul>
             </div>
             <div class="loader">

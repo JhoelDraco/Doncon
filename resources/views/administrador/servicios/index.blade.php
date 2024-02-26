@@ -13,7 +13,10 @@
 
 @section('content')
 
-    <a href="{{route('servicio.crear')}}">añadir servicio</a>
+    @can('admin.servicio.crear')
+        <a href="{{route('servicio.crear')}}">añadir servicio</a>
+    @endcan
+    
     
     @include('administrador.servicios.components.tabla')
 

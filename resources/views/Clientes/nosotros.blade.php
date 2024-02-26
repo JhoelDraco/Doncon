@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -69,6 +68,6 @@
     
      <!----------------------->
      @include('Clientes.componentes.footer')
-
-</body>
+  
+     
 </html>

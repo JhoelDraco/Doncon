@@ -19,8 +19,25 @@
                     <td>{{$usuario->name}}</td>
                     <td>{{$usuario->email}}</td>
                     <td></td>
-                    <td><a href="{{route('usuario.mostrar', $usuario->id)}}">Mostrar</a></td>
-                    
+
+                    @can('admin.usuario.mostrar')
+                        <td><a href="{{route('usuario.mostrar', $usuario->id)}}">Mostrar</a></td>
+                    @endcan
+
+                    @can('admin.usuario.editar')
+                        <td><a href="{{route('usuario.editar', $usuario->id)}}">Editar</a></td>
+                    @endcan
+
+                    @can('admin.usuario.eliminar')
+                        <td>
+                            <form method="POST" action="{{route('usuario.eliminar', $usuario->id)}}">
+                                @csrf
+
+                                @method('DELETE')
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    @endcan
                 </tr>
             @endforeach
         </tbody>

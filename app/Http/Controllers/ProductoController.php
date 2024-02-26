@@ -11,13 +11,7 @@ class ProductoController extends Controller
     //Funciones para las vistas
     public function index(){
 
-        $productos = Producto::paginate(10);
-
-        $data=[
-            'productos' => $productos
-        ];
-
-        return view("administrador.productos.index", $data);
+        return view("administrador.productos.index");
     }
 
     public function crear(){
@@ -35,12 +29,27 @@ class ProductoController extends Controller
     
     //Funciones para los procesos del sistemas
     
+    
     public function almacenar(Request $request){
+        
+        if($request->hasFile('imagen')){
+            $file = $request->file('imagen');
+            $destination = 'imagenes/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('imagen')->move($destination, $filename);
+        }
+        
+
+
         Producto::create([
+            'codigo' => $request->codigo,
             'nombre' => $request->nombre,
+            'marca' =>$request->marca,
+            'tipo' =>$request->tipo,
+            'detalle' =>$request->detalle,           
             'precio' => $request->precio,
             'stock' => $request->stock,
-            'descripcion' => $request->descripcion
+            'imagen' => $destination. $filename
         ]);
         return redirect()->route('producto.index');
     }
@@ -48,10 +57,14 @@ class ProductoController extends Controller
     public function actualizar(Producto $producto, Request $request){
 
         $producto->update([
+            'codigo' => $request->codigo,
             'nombre' => $request->nombre,
+            'marca' =>$request->marca,
+            'tipo' =>$request->tipo,
+            'detalle' =>$request->detalle,           
             'precio' => $request->precio,
             'stock' => $request->stock,
-            'descripcion' => $request->descripcion
+            'imagen' => $destination. $filename
         ]);
 
         return redirect()->route('producto.index');

@@ -13,9 +13,12 @@
 
 @section('content')
 
-    <a href="{{route('producto.crear')}}">crear producto</a>
+    @can('admin.producto.crear')
+        <a href="{{route('producto.crear')}}">crear producto</a> 
+    @endcan
     
-    @include('administrador.productos.components.tabla')
+    
+    @livewire('admin.producto-index')
 
 @stop
 

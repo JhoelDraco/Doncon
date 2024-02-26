@@ -11,6 +11,7 @@ use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Rutas de la web
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Clientes.inicio');
 });
 
 //Grupo para diseñado para el usuario general
@@ -34,7 +35,7 @@ Route::controller(IndexController::class)->group(function(){
 //Grupo para el login
 Route::controller(loginController::class)->group(function(){
    // Route::get('/login/acceso', 'acceso')->name('login.acceso');//cambio de carpeta login 24/02/24
-    Route::get('/login', 'acceso')->name('login.acceso');
+    //Route::get('/login', 'acceso')->name('login.acceso');
     
 });
 Route::controller(InicioController::class)->group(function(){
@@ -50,6 +51,7 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
+    
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');

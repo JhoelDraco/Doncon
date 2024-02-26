@@ -1,89 +1,185 @@
-body {
-    font-family: Arial, sans-serif;
-    background-image: linear-gradient(to bottom, rgba(182, 141, 141, 0.282), rgb(96, 0, 221));
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url('../imagenes/tarjeta1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedor__todo{
+
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.caja__trasera{
+    width: 100%;
+    padding: 10px 20px;
     display: flex;
     justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(33, 45, 57, 0.5);
+    border-radius: 20px;
+
+}
+
+.caja__trasera div{
+    margin: 100px 40px;
+    color: white;
+    transition: all 500ms;
+}
+
+
+.caja__trasera div p,
+.caja__trasera button{
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.caja__trasera div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.caja__trasera div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.caja__trasera button{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.caja__trasera button:hover{
+    background: #fff;
+    color: #46A2FD;
+}
+
+/*Formularios*/
+
+.contenedor__login-register{
+    display: flex;
     align-items: center;
-    height: 100vh;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 
-.container {
-    max-width: 400px; /* Ajusta este valor según el ancho deseado para el formulario */
-    margin: 0 auto; /* Centra el formulario horizontalmente */
-    position: relative; /* Permite alinear la imagen relativa a este contenedor */
-}
-.container img {
-    display: block; /* Asegura que la imagen ocupe todo el ancho disponible */
-    width: 70%; /* Ajusta el ancho de la imagen */
-    border-radius: 10px; /* Agrega borde redondeado */
-    margin: 20px auto; /* Alinea la imagen verticalmente y agrega margen a los lados */
-}
-h2 {
-    text-align: initial;
-    color: #333;
+.contenedor__login-register form{
+    width: 100%;
+    padding: 80px 20px;
+    background: #ffffff;
+    position: absolute;
+    border-radius: 20px;
 }
 
-form {
+.contenedor__login-register form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.contenedor__login-register form input{
+    width: 100%;
     margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
-
-button[type="submit"] {
-    width: 100%;
     padding: 10px;
     border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 3px;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor__login-register form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #32adb9;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    color: white;
+    outline: none;
+    border-radius: 10px;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.card {
-    flex: 1;
-    border: 1px solid #a41313;
-    border-radius: 5px;
-    padding: 20px;
-    margin-left: 20px; /* Espacio entre la tarjeta y el formulario */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
-    background-position: center;
-}
-
-.card img {
-
-    max-width: 100%;
-    height: auto;
+.contenedor__login-register form button:hover{
+    background-color: #5898e7;
+    color: #04182c;
 }
 
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+
+
+.formulario__login{
+    opacity: 1;
+    display: block;
+}
+.formulario__register{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
     }
 
-    .card {
-        margin: 20px 0; /* Espacio entre la tarjeta y el formulario en dispositivos móviles */
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__trasera div{
+        margin: 0px;
+        position: absolute;
+    }
+
+
+    /*Formularios*/
+
+    .contenedor__login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-register form{
+        position: relative;
     }
 }

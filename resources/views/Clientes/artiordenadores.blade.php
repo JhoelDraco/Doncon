@@ -25,6 +25,16 @@
         </div>
         
         <section class="card_novelty col-12 row">
+            @foreach ($productos as $producto)
+                <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #a09d9d;">
+                    <img src="{{asset($producto->imagen)}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h2 class="card-title">{{$producto->nombre}}</h2>
+                    <h5 class="card-text">{{$producto->detalle}}</h5>
+                    </div>
+                </div>
+
+            @endforeach
 
             <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #a09d9d;">
             <img src="{{ asset('imagenes/Asesoramiento.jpg') }}" class="card-img-top" alt="...">
@@ -121,6 +131,7 @@
                     <a href="#" class="btn btn-outline-dark">Ver</a>
                 </div>
             </div>
+         
         </section>
     </section>
 
