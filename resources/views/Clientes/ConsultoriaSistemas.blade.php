@@ -20,8 +20,8 @@
         <!-- Esto es parte del catálogo esto capia -->
         <section class="row sections_cards">
             <div class="col-12">
-                <h4 class="m-4">NOSOTROS</h4>
-                <h4 class="m-4">TECNOLOGIA & CALIDAD</h4>
+                <h4 class="m-4">SEVICIOS</h4>
+                <h4 class="m-4">CONSULTORIA DE SISTEMAS</h4>
             </div>
 
         </section>
