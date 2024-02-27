@@ -21,11 +21,6 @@ return new class extends Migration
             $table->longText('imagen')->nullable();
             $table->timestamps();
 
-            $table->unsignedBigInteger('tipo_id');
-            $table->unsignedBigInteger('marca_id');
-            $table->foreignId('tipo_id')->references('tipo_id')->on('tiposproducto');
-            $table->foreignId('marca_id')->references('marca_id')->on('marcaproducto');
-
         
         });
     }
