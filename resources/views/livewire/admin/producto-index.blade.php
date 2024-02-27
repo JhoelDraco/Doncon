@@ -12,7 +12,8 @@
                 <th>Marca</th>
                 <th>Tipo</th>
                 <th>Detalle</th>
-
+                <th>Precio</th>
+                <th>Stock</th>
             </tr>
         </thead>
 
