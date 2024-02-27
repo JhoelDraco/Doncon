@@ -39,8 +39,8 @@
                     <form method="POST" action="{{ route('login') }}"  class="formulario__login">
                         @csrf
                         <h2>Iniciar Sesión</h2>
-                        <input type="email" value="{{ __('Email') }}" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-                        <input id="password" type="password" name="password" required autocomplete="current-password" />
+                        <input type="email" placeholder="Correo Electronico" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                        <input id="password" placeholder="Contraseña" type="password" name="password" required autocomplete="current-password" />
                         <button>Entrar</button>
                     </form>
 
@@ -49,7 +49,7 @@
                         <h2>Llena Datos Para Tu Verificación</h2>
                         <input type="text" placeholder="Nombre de Usuario" name="Usuario">
                         <input type="email" placeholder="Correo Electronico" name="correo">
-                        <input type="password" placeholder="Ultima Contrasena" name="contrasena">
+                        <input type="password" placeholder="Ultima Contraseña" name="contrasena">
                         <button>Solicitar</button>
                     </form>
                 </div>
