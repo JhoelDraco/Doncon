@@ -15,19 +15,17 @@ return new class extends Migration
             $table->id();
             $table->string('codigo',40);
             $table->string('nombre', 40);
-            $table->string('marca',20);
-            $table->string('tipo',20);
             $table->string('detalle',50)->nullable();
             $table->float('precio');
             $table->integer('stock');
             $table->longText('imagen')->nullable();
             $table->timestamps();
+
+        
         });
     }
+   
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('productos');
