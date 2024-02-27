@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -15,7 +16,8 @@ class UsuarioController extends Controller
     }
 
     public function crear(){
-        return view("administrador.usuarios.crear");
+        $roles = Role::all();
+        return view("administrador.usuarios.crear", compact('roles'));
     }
 
     public function mostrar(User $usuario){
@@ -30,6 +32,25 @@ class UsuarioController extends Controller
     }
 
     //Funciones que no se muestran
+
+    public function almacenar(Request $request){
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+        ]);
+    
+        $user = new User([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => Hash::make($request->get('password')),
+        ]);
+        $user->save();
+    
+        return redirect()->route('usuario.index');
+    }
+
     public function actualizar(User $usuario, Request $request){
 
         $usuario->roles()->sync($request->roles);
