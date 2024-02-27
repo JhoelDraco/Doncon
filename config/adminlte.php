@@ -302,15 +302,23 @@ return [
         ],
 
         // Sidebar items:
+        /*
         [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
+        ],
+        */
+        [
+            'text' => 'Panel de control',
+            'url' => '/dashboard',
+            'icon' => 'fas fa-fw fa-table'
         ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        /*
         [
             'text'        => 'pages',
             'url'         => 'admin/pages',
@@ -318,10 +326,11 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+        */
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'route'  => 'profile.show',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
