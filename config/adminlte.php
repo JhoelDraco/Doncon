@@ -15,7 +15,7 @@ return [
     */
 
     'title' => '',
-    'title_prefix' => 'RevientaBack |',
+    'title_prefix' => 'Tic Centec |',
     'title_postfix' => '',
 
     /*
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Revienta</b>Back',
+    'logo' => '<b>Tic</b>Centec',
     'logo_img' => 'vendor/adminlte/dist/img/TICFin.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -302,15 +302,23 @@ return [
         ],
 
         // Sidebar items:
+        /*
         [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
+        ],
+        */
+        [
+            'text' => 'Panel de control',
+            'url' => '/dashboard',
+            'icon' => 'fas fa-fw fa-table'
         ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        /*
         [
             'text'        => 'pages',
             'url'         => 'admin/pages',
@@ -318,10 +326,11 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+        */
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'route'  => 'profile.show',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

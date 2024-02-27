@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 
-@section('css')   
+@section('css') 
+
 @stop
 
 @section('js')
