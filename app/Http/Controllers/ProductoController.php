@@ -58,7 +58,6 @@ class ProductoController extends Controller
             'detalle' =>$request->detalle,           
             'precio' => $request->precio,
             'stock' => $request->stock,
-            'imagen' => $destination. $filename
         ]);
 
         return redirect()->route('producto.index');

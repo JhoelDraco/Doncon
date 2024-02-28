@@ -58,7 +58,6 @@ class EmpleadoController extends Controller
             'apellido1' =>$request->apellido1,           
             'apellido2' => $request->apellido2,
             'area' => $request->area,
-            'imagen' => $destination. $filename
         ]);
 
         return redirect()->route('empleado.index');
