@@ -19,9 +19,9 @@ return new class extends Migration
             $table->longText('descripcion')->nullable();
 
             $table->unsignedBigInteger('id_clientes')->nullable();
-            $table->unsignedBigInteger('id_usuarios')->nullable();
+            $table->unsignedBigInteger('id_cajadia')->nullable();
             
-            $table->foreign('id_usuarios')->references('id')->on('users')
+            $table->foreign('id_cajadia')->references('id')->on('cajadia')
             ->onDelete('set null')
             ->onUpdate('cascade');
             $table->foreign('id_clientes')->references('id')->on('clientes')

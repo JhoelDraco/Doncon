@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('servicios', function (Blueprint $table) {
+        Schema::create('moneda', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 50);
-            $table->string('tipo', 30);
-            $table->longText('descripcion')->nullable();
+            $table->string('nombre_moneda',20);
+            $table->float('tipo_cambio');
             $table->timestamps();
+
+            $table->unsignedBigInteger('id_cajadia');
+            $table->foreign('id_cajadia')->references('id')->on('cajadia');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('servicios');
+        Schema::dropIfExists('moneda');
     }
 };

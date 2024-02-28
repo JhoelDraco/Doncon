@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('nro_factura', 20);
+            $table->string('codigo_autorizacion', 20);
+            $table->string('nit', 20);
             $table->date('fecha');
             $table->float('total');
 
