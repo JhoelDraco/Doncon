@@ -15,12 +15,12 @@
 
 <div>
     <label for="apellido2">Apellido 2:</label>
-    <input name="apellido2" type="number" value="{{old('apellido2')}}">
+    <input name="apellido2" type="text" value="{{old('apellido2')}}">
 </div>
 
 <div>
     <label for="area">Area:</label>
-    <input name="area" type="number" value="{{old('area')}}">
+    <input name="area" type="text" value="{{old('area')}}">
 </div>
 <div class="col-lg-4 form_image_admin">
     <div class="image_wrapper_admin">
@@ -39,5 +39,5 @@
 </div>
 <div>
     <button type="submit">Aceptar</button>
-    <a href="{{route('personal.index')}}">volver</a>
+    <a href="{{route('empleado.index')}}">volver</a>
 </div>

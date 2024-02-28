@@ -22,3 +22,4 @@
             @include('administrador.tipo.componentes.formulario')
         </form>
     </section>
+@endsection

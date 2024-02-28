@@ -6,16 +6,16 @@
 @section('js')
 @stop
 
-@section('title', 'crecionProducto')
+@section('title', 'crecionEmpleado')
 
 @section('content')
 
     <section>
-        <form method="POST" action="{{route('personal.actualizar', $personal)}}" >
+        <form method="POST" action="{{route('empleado.actualizar', $empleado)}}" >
             @csrf
 
             @method('PUT')
-            @include('administrador.personal.componentes.formulario')
+            @include('administrador.empleado.componentes.formulario')
         </form>
     </section>
 

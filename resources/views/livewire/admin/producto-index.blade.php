@@ -27,7 +27,6 @@
                     <td>{{$producto->detalle}}</td>
                     <td>{{$producto->precio}}</td>
                     <td>{{$producto->stock}}</td>
-                    <td>{{$producto->imagen}}</td>
                     <td><a href="{{route('producto.mostrar', $producto->id)}}">Mostrar</a></td>
                     <td><a href="{{route('producto.editar', $producto->id)}}">Editar</a></td>
                     <td>
