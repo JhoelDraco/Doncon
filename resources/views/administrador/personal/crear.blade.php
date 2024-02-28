@@ -10,16 +10,16 @@
 
 @stop
 
-@section('title', 'creacionProducto')
+@section('title', 'creacionPersonal')
 
 @section('content')
 
     <section>
-        <form method="POST" action="{{route('producto.almacenar')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('personal.almacenar')}}" enctype="multipart/form-data">
 
             @csrf
 
-            @include('administrador.productos.components.formulario')
+            @include('administrador.personal.componentes.formulario')
         </form>
     </section>
     <script>

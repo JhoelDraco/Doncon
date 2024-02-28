@@ -13,8 +13,6 @@
 
     <p>{{$producto->codigo}}</p>
     <p>{{$producto->nombre}}</p>
-    <p>{{$producto->marca}}</p>
-    <p>{{$producto->tipo}}</p>
     <p>{{$producto->detalle}}</p>
     <p>{{$producto->precio}}</p>
     <p>{{$producto->stock}}</p>
