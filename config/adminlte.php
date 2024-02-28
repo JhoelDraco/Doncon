@@ -367,7 +367,19 @@ return [
                     'text' => 'Servicios',
                     'url'  => '/servicio',
                     'can'  => 'admin.servicio.index'
-                ]
+                ],
+                [
+                    'text' => 'Tipo',
+                    'url'  => '/tipo',
+                ],
+                [
+                    'text' => 'Marca',
+                    'url'  => '/marca',
+                ],
+                [
+                    'text' => 'Empleado',
+                    'url'  => '/empleado',
+                ],
             ],
         ],
 

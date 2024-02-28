@@ -13,9 +13,7 @@
 
 @section('content')
 
-    @can('admin.marca.crear')
         <a href="{{route('marca.crear')}}">crear marca</a> 
-    @endcan
     
     
     @livewire('admin.marca-index')

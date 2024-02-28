@@ -5,6 +5,9 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\TipoController;
+use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\EmpleadoController;
 use Illuminate\Support\Facades\Route;
 
 //Grupos diseñados para la parte administrativas
@@ -67,4 +70,38 @@ Route::controller(ServicioController::class)->group(function(){
     Route::post('/servicio', 'almacenar')->middleware('can:admin.servicio.crear')->name('servicio.almacenar');
     Route::put('/servicio/{servicio}', 'actualizar')->middleware('can:admin.servicio.editar')->name('servicio.actualizar');
     Route::delete('/servicio/{servicio}', 'eliminar')->middleware('can:admin.servicio.eliminar')->name('servicio.eliminar');
+});
+
+//GRUPO PARA EL CRUD DE PRODUCTOS TIPO
+Route::controller(TipoController::class)->group(function(){
+    Route::get('/tipo', 'index')->name('tipo.index');
+    Route::get('/tipo/crear', 'crear')->name('tipo.crear');
+    Route::get('/tipo/{tipo}/mostrar', 'mostrar')->name('tipo.mostrar');
+    Route::get('/tipo/{tipo}/editar', 'editar')->name('tipo.editar');
+
+    Route::post('/tipo', 'almacenar')->name('tipo.almacenar');
+    Route::put('/tipo/{tipo}', 'actualizar')->name('tipo.actualizar');
+    Route::delete('/tipo/{tipo}', 'eliminar')->name('tipo.eliminar');
+});
+//GRUPO PARA EL CRUD DE PRODUCTOS MARCA
+Route::controller(MarcaController::class)->group(function(){
+    Route::get('/marca', 'index')->name('marca.index');
+    Route::get('/marca/crear', 'crear')->name('marca.crear');
+    Route::get('/marca/{marca}/mostrar', 'mostrar')->name('marca.mostrar');
+    Route::get('/marca/{marca}/editar', 'editar')->name('marca.editar');
+
+    Route::post('/marca', 'almacenar')->name('marca.almacenar');
+    Route::put('/marca/{marca}', 'actualizar')->name('marca.actualizar');
+    Route::delete('/marca/{marca}', 'eliminar')->name('marca.eliminar');
+});
+//GRUPO PARA EL CRUD DE PRODUCTOS EMPLEADO
+Route::controller(EmpleadoController::class)->group(function(){
+    Route::get('/empleado', 'index')->name('empleado.index');
+    Route::get('/empleado/crear', 'crear')->name('empleado.crear');
+    Route::get('/empleado/{empleado}/mostrar', 'mostrar')->name('empleado.mostrar');
+    Route::get('/empleado/{empleado}/editar', 'editar')->name('empleado.editar');
+
+    Route::post('/empleado', 'almacenar')->name('empleado.almacenar');
+    Route::put('/empleado/{empleado}', 'actualizar')->name('empleado.actualizar');
+    Route::delete('/empleado/{empleado}', 'eliminar')->name('empleado.eliminar');
 });

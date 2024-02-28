@@ -22,3 +22,4 @@
             @include('administrador.marca.componentes.formulario')
         </form>
     </section>
+    @endsection
