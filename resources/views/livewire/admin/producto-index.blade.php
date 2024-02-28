@@ -9,8 +9,6 @@
             <tr>
                 <th>Codigo</th>
                 <th>Nombre</th>
-                <th>Marca</th>
-                <th>Tipo</th>
                 <th>Detalle</th>
                 <th>Precio</th>
                 <th>Stock</th>
@@ -22,8 +20,6 @@
                 <tr>
                     <td>{{$producto->codigo}}</td>
                     <td>{{$producto->nombre}}</td>
-                    <td>{{$producto->marca}}</td>
-                    <td>{{$producto->tipo}}</td>
                     <td>{{$producto->detalle}}</td>
                     <td>{{$producto->precio}}</td>
                     <td>{{$producto->stock}}</td>

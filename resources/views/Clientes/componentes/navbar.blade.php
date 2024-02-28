@@ -25,7 +25,7 @@
                             <a class="dropdown-item" href="{{ route('GestionyCalidad.GestionyCalidad') }}">Consultoria de Gestion de Calidad</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" id="CONTACTANOS" href="#">CONTACTANOS</a></li>
+                    <li class="nav-item"><a class="nav-link" id="CONTACTANOS" href="{{ route('contactanos.contactanos') }}">CONTACTANOS</a></li>
                     <li class="nav-item"><a class="nav-link" id="INGRESAR" href="{{ route('login') }}">INGRESAR</a></li>
                 </ul>
             </div>

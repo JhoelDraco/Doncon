@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/administrador.css') }}">
 @stop
 
 @section('js')
@@ -14,7 +14,7 @@
 @section('content')
 
    
-  
+    
     <a href="{{route('tipo.crear')}}">crear tipo</a> 
     
     @livewire('admin.tipo-index')

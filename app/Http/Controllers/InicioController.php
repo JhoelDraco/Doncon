@@ -24,8 +24,10 @@ class InicioController extends Controller
         return view("Clientes.articulos");
     
     }
-
-
+    public function contactanos() {
+        return view("Clientes.contactanos");
+    
+    }
     public function artiordenadores() {
         $productos=Producto::all();
         return view("Clientes.artiordenadores",compact('productos'));

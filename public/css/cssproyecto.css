@@ -131,6 +131,12 @@ p { color: #2000ad;
     height: 200px; /* Establece la altura deseada de las imágenes */
     object-fit: cover; /* Hace que la imagen mantenga su relación de aspecto y cubra completamente el contenedor */
 }
+.imagen{
+    height: 500px;
+    width: 100%;
+    align-items: center;
+
+}
 
 .imagen{
     width: 100%;
