@@ -1,11 +1,8 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-}
+/* ... (código previo) ... */
 
-div {
-    margin-bottom: 10px;
+/* Estilos para los formularios */
+input[type="radio"] {
+    margin-right: 5px;
 }
 
 label {
@@ -15,11 +12,16 @@ label {
 
 input[type="text"],
 input[type="number"],
-input[type="file"] {
+input[type="email"] {
     width: calc(100% - 20px);
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
+}
+
+#campo_empresa,
+#campo_persona {
+    display: none;
 }
 
 .image_wrapper_admin {
@@ -68,5 +70,70 @@ a {
 
     .image_admin {
         margin-right: 10px;
+    }
+}
+
+/* Resetear algunos estilos por defecto */
+body, h1, h2, h3, p, label, input, button, table {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+section {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilos responsivos - ajustar según sea necesario */
+@media (max-width: 600px) {
+    th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    th {
+        background-color: #f2f2f2;
     }
 }
