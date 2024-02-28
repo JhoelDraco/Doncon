@@ -39,13 +39,12 @@ class ProductoController extends Controller
             $uploadSuccess = $request->file('imagen')->move($destination, $filename);
         }
         
+        
 
 
         Producto::create([
             'codigo' => $request->codigo,
             'nombre' => $request->nombre,
-            'marca' =>$request->marca,
-            'tipo' =>$request->tipo,
             'detalle' =>$request->detalle,           
             'precio' => $request->precio,
             'stock' => $request->stock,
@@ -59,8 +58,6 @@ class ProductoController extends Controller
         $producto->update([
             'codigo' => $request->codigo,
             'nombre' => $request->nombre,
-            'marca' =>$request->marca,
-            'tipo' =>$request->tipo,
             'detalle' =>$request->detalle,           
             'precio' => $request->precio,
             'stock' => $request->stock,

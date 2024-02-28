@@ -1,26 +1,26 @@
 <div>
-    <label for="codigoProducto">Codigo:</label>
-    <input name="codigo" type="text" value="{{old('codigo')}}">
+    <label for="nombre1">Nombre 1:</label>
+    <input name="nombre1" type="text" value="{{old('nombre1')}}">
 </div>
 
 <div>
-    <label for="nombreProducto">Nombre:</label>
-    <input name="nombre" type="text" value="{{old('nombre')}}">
+    <label for="nombre2">Nombre 2:</label>
+    <input name="nombre2" type="text" value="{{old('nombre2')}}">
 </div>
 
 <div>
-    <label for="detalleProducto">Detalle:</label>
-    <input name="detalle" type="text" value="{{old('detalle')}}">
+    <label for="apellido1">Apellido 1:</label>
+    <input name="apellido1" type="text" value="{{old('apellido1')}}">
 </div>
 
 <div>
-    <label for="precioProducto">Precio del producto:</label>
-    <input name="precio" type="number" value="{{old('precio')}}">
+    <label for="apellido2">Apellido 2:</label>
+    <input name="apellido2" type="number" value="{{old('apellido2')}}">
 </div>
 
 <div>
-    <label for="stockProducto">Stock del producto:</label>
-    <input name="stock" type="number" value="{{old('stock')}}">
+    <label for="area">Area:</label>
+    <input name="area" type="number" value="{{old('area')}}">
 </div>
 <div class="col-lg-4 form_image_admin">
     <div class="image_wrapper_admin">
@@ -39,5 +39,5 @@
 </div>
 <div>
     <button type="submit">Aceptar</button>
-    <a href="{{route('producto.index')}}">volver</a>
+    <a href="{{route('personal.index')}}">volver</a>
 </div>
