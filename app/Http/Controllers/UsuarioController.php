@@ -21,7 +21,9 @@ class UsuarioController extends Controller
     }
 
     public function mostrar(User $usuario){
-        return view('administrador.usuarios.mostrar', compact('usuario'));
+
+        $roles = $usuario->roles;
+        return view('administrador.usuarios.mostrar', compact('usuario', 'roles'));
     }
 
     public function editar(User $usuario){
@@ -53,7 +55,40 @@ class UsuarioController extends Controller
 
     public function actualizar(User $usuario, Request $request){
 
+        if($request->cambio_password === 'generar'){
+
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email|unique:users,email,'.$usuario->id,
+                'password' => 'required',
+            ]);
+    
+            $usuario->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
+            ]);
+
+        }elseif($request->cambio_password === 'no_generar'){
+
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email|unique:users,email,'.$usuario->id,
+            ]);
+
+            $usuario->update([
+                'name' => $request->name,
+                'email' => $request->email,
+            ]);
+        }
+
         $usuario->roles()->sync($request->roles);
+
+        return redirect()->route('usuario.index');
+    }
+
+    public function eliminar(User $usuario){
+        $usuario->delete();
 
         return redirect()->route('usuario.index');
     }
