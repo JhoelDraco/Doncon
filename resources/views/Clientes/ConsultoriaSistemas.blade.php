@@ -25,44 +25,13 @@
             </div>
 
         </section>
-    
-        <section class="card_novelty col-12 row d-flex align-items-stretch">
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/asesoramientot1.jpg') }}" class="card-img-top" alt="Asesoramiento">
-                <div class="card-body">
-                    <h5 class="card-title">Asesoramiento Personalizado</h5>
-                    <p class="card-text">Recibe asesoramiento experto para optimizar tus procesos tecnológicos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Calidad2Nosotros.jpg') }}" class="card-img-top" alt="Calidad">
-                <div class="card-body">
-                    <h5 class="card-title">Garantía de Calidad</h5>
-                    <p class="card-text">Nuestros productos pasan rigurosos controles de calidad para tu tranquilidad.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
+        <h5 class="card-title">Asesoramiento Personalizado</h5>
+        <img src="{{ asset('imagenes/asesoramientot1.jpg') }}" class="imagen" alt="Asesoramiento">
+        <p class="card-text">Nuestros Servicios de Consultoría le permiten encontrar soluciones duraderas y adaptables en tecnología de la información con el fin de alcanzar sus objetivos de negocio y crecimiento sostenible. Trabajamos junto con usted para encontrar soluciones a problemas técnicos en las más diversas áreas.</p>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color:hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('ima genes/Responsivo.jpg') }}" class="card-img-top" alt="Diseño Web">
-                <div class="card-body">
-                    <h5 class="card-title">Diseño Web Responsivo</h5>
-                    <p class="card-text">Desarrollamos sitios web modernos y adaptables a todos los dispositivos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
+            
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Mantenimientos1.jpg') }}" class="card-img-top" alt="Mantenimiento">
-                <div class="card-body">
-                    <h5 class="card-title">Servicio de Mantenimiento</h5>
-                    <p class="card-text">Ofrecemos mantenimiento preventivo y correctivo para tus sistemas.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
-        </section>
         
     </div>
     

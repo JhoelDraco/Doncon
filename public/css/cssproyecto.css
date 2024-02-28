@@ -132,6 +132,11 @@ p { color: #2000ad;
     object-fit: cover; /* Hace que la imagen mantenga su relación de aspecto y cubra completamente el contenedor */
 }
 
+.imagen{
+    width: 100%;
+    height: 500px;
+    align-items: center;
+}
 
 section1 h3 {
     color: #2000ad;
@@ -150,6 +155,7 @@ section2 h3 {
     color: #2000ad;
     font-family: 'Times New Roman', Times, serif; /* Cambia la fuente del título */
     font-size: 1.5rem; /* Tamaño de letra mediano */
+    text-align: center;
 }
 
 .card-text h3 {
@@ -175,17 +181,21 @@ section h1 {
 
 .card-body {
     text-align: center;
+    align-items: center;
 }
 
 .card-title {
     font-size: 18px; /* Tamaño de fuente del título */
     font-weight: bold;
     color: #333; /* Color del texto del título */
+    text-align: center;
+    align-items: center;
 }
 
 .card-text {
     font-size: 16px; /* Tamaño de fuente del texto */
     color: #0f0909; /* Color del texto */
+    text-align: center;
 }
    .loader {
     position: relative;
