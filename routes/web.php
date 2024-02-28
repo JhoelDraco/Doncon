@@ -7,6 +7,7 @@ use App\Http\Controllers\InicioController;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\ArticulosController;
+use App\Http\Controllers\ContactanosController;
 use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,7 @@ Route::controller(InicioController::class)->group(function(){
      Route::get('/nosotros', 'nosotros')->name('nosotros.nosotros');
      Route::get('/servicios', 'servicios')->name('servicios.servicios');
      Route::get('/articulos', 'articulos')->name('articulos.articulos');
+     Route::get('/contactanos', 'contactanos')->name('contactanos.contactanos');
      Route::get('/artiordenadores', 'artiordenadores')->name('artiordenadores.artiordenadores');
      Route::get('/ConsultoriaSistemas', 'ConsultoriaSistemas')->name('ConsultoriaSistemas.ConsultoriaSistemas');
      Route::get('/MantenimientoCorrectivoyPreventivo', 'MantenimientoCorrectivoyPreventivo')->name('MantenimientoCorrectivoyPreventivo.MantenimientoCorrectivoyPreventivo');

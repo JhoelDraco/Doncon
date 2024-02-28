@@ -46,7 +46,7 @@
             </div>
         
             <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color:hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('ima genes/Responsivo.jpg') }}" class="card-img-top" alt="Diseño Web">
+                <img src="{{ asset('imagenes/Responsivo.jpg') }}" class="card-img-top" alt="Diseño Web">
                 <div class="card-body">
                     <h5 class="card-title">Diseño Web Responsivo</h5>
                     <p class="card-text">Desarrollamos sitios web modernos y adaptables a todos los dispositivos.</p>
