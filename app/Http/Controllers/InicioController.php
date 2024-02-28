@@ -24,13 +24,31 @@ class InicioController extends Controller
         return view("Clientes.articulos");
     
     }
-    public function ConsultoriaSistemas() {
-        return view("Clientes.ConsultoriaSistemas");
-    
-    }
+
+
     public function artiordenadores() {
         $productos=Producto::all();
         return view("Clientes.artiordenadores",compact('productos'));
-    
+    }
+
+    //estos son los servicios
+    public function ConsultoriaSistemas() {
+        return view("Clientes.ConsultoriaSistemas"); 
+    }
+
+    public function MantenimientoCorrectivoyPreventivo() {
+        return view("Clientes.MantenimientoCorrectivoyPreventivo"); 
+    }
+
+    public function DisenoPaginasWeb() {
+        return view("Clientes.DisenoPaginasWeb"); 
+    }
+
+    public function RedesEstructuradas() {
+        return view("Clientes.RedesEstructuradas"); 
+    }
+
+    public function GestionyCalidad() {
+        return view("Clientes.GestionyCalidad"); 
     }
 }

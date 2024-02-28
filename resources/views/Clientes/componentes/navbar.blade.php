@@ -13,15 +13,16 @@
                     </li>
                     <li class="nav-items"><a class="nav-link" href="{{ route('artiordenadores.artiordenadores') }}">ARTICULOS</a>
                     <li class="nav-item dropdown">
+                        
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             SERVICIOS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="#">Consultoria de Sistemas</a>
-                            <a class="dropdown-item" href="#">Mantenimiento Correctivo y Preventivo</a>
-                            <a class="dropdown-item" href="#">Diseno de Pagina Web</a>
-                            <a class="dropdown-item" href="#">Redes Estructuradas</a>
-                            <a class="dropdown-item" href="#">Consultoria de Gestion de Calidad</a>
+                            <a class="dropdown-item" href="{{ route('ConsultoriaSistemas.ConsultoriaSistemas') }}">Consultoria de Sistemas</a>
+                            <a class="dropdown-item" href="{{ route('MantenimientoCorrectivoyPreventivo.MantenimientoCorrectivoyPreventivo') }}">Mantenimiento Correctivo y Preventivo</a>
+                            <a class="dropdown-item" href="{{ route('DisenoPaginasWeb.DisenoPaginasWeb') }}">Diseno de Pagina Web</a>
+                            <a class="dropdown-item" href="{{ route('RedesEstructuradas.RedesEstructuradas') }}">Redes Estructuradas</a>
+                            <a class="dropdown-item" href="{{ route('GestionyCalidad.GestionyCalidad') }}">Consultoria de Gestion de Calidad</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" id="CONTACTANOS" href="#">CONTACTANOS</a></li>

@@ -38,7 +38,11 @@ Route::controller(InicioController::class)->group(function(){
      Route::get('/servicios', 'servicios')->name('servicios.servicios');
      Route::get('/articulos', 'articulos')->name('articulos.articulos');
      Route::get('/artiordenadores', 'artiordenadores')->name('artiordenadores.artiordenadores');
-     
+     Route::get('/ConsultoriaSistemas', 'ConsultoriaSistemas')->name('ConsultoriaSistemas.ConsultoriaSistemas');
+     Route::get('/MantenimientoCorrectivoyPreventivo', 'MantenimientoCorrectivoyPreventivo')->name('MantenimientoCorrectivoyPreventivo.MantenimientoCorrectivoyPreventivo');
+     Route::get('/DisenoPaginasWeb', 'DisenoPaginasWeb')->name('DisenoPaginasWeb.DisenoPaginasWeb');
+     Route::get('/RedesEstructuradas', 'RedesEstructuradas')->name('RedesEstructuradas.RedesEstructuradas');
+     Route::get('/GestionyCalidad', 'GestionyCalidad')->name('GestionyCalidad.GestionyCalidad');
  });
 
 Route::middleware([
