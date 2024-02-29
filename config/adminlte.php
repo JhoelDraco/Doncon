@@ -336,6 +336,11 @@ return [
         [
             'text' => 'Cajas',
             'url' => '/caja',
+            'icon' => 'fas fa-box'
+        ],
+        [
+            'text' => 'Activar Caja',
+            'url' => '/vendedor_cajas',
             'icon' => 'fas fa-shopping-cart'
         ],
         /*

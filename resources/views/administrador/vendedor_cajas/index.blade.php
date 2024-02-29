@@ -10,13 +10,13 @@
 
 @section('title', 'index')
 
-
 @section('content')
 
     @empty($caja)
         <a href="{{route('vendedor_cajas.crear')}}">Iniciar Caja</a>
     @else
-        {{$caja->id}}
+        <p>Numero de caja: {{$caja->id}}</p>
+        <p>Monto Inicial: {{$caja_dia->monto_inicial}}</p>
     @endempty
 
 @stop

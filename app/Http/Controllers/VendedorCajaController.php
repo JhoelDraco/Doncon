@@ -19,22 +19,25 @@ class VendedorCajaController extends Controller
 
         $usuario = User::findOrFail($usuario->id);
 
-        $caja_dia = DB::select('SELECT cajadia.id FROM cajadia 
-                    JOIN users ON users.id = cajadia.id_usuario ORDER BY cajadia.id DESC');
+        $caja_dia = DB::select('SELECT cajadia.* FROM cajadia 
+                    JOIN users ON users.id = cajadia.id_usuario 
+                    WHERE cajadia.id_usuario = ' . $usuario->id . ' ORDER BY cajadia.id DESC LIMIT 1');
 
         if (!empty($caja_dia)) {
-            $caja_dia_id = $caja_dia[0]; // Obtener el primer resultado
+            $caja_dia = $caja_dia[0]; // Obtener el primer resultado
+        }else{
+            $caja_dia = [];
         }
-        
 
         if($caja_dia == null){
             $caja = [];
         }else{
             $caja = Caja::select('caja.*', 'cajadia.id as id_caja_dia')
             ->join('cajadia', 'caja.id', '=', 'cajadia.id_caja')
-            ->where('num_caja_dia', $caja_dia_id->id)
+            ->where('num_caja_dia', $caja_dia->id)
             ->first();
         }
+
 
         return view("administrador.vendedor_cajas.index", compact('caja_dia', 'caja'));
     }
@@ -42,8 +45,10 @@ class VendedorCajaController extends Controller
     public function crear(){
 
         $usuario = Auth::user();
-        $cajas = Caja::all();
+        $cajas = Caja::where('estado', true)->get();
 
+
+        
         return view("administrador.vendedor_cajas.crear", compact('usuario', 'cajas'));
     }
 
