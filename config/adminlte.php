@@ -334,10 +334,17 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Cajas',
+            'url' => '/caja',
+            'icon' => 'fas fa-shopping-cart'
+        ],
+        /*
+        [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        */
         [
             'text' => 'Roles',
             'url'  => '/rol',

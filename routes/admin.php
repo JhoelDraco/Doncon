@@ -8,6 +8,8 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\CajaController;
+
 use Illuminate\Support\Facades\Route;
 
 //Grupos diseñados para la parte administrativas
@@ -34,6 +36,16 @@ Route::controller(RoleController::class)->group(function(){
     Route::post('/rol', 'almacenar')->middleware('can:admin.rol.crear')->name('rol.almacenar');
     Route::put('/rol/{rol}', 'actualizar')->middleware('can:admin.rol.editar')->name('rol.actualizar');
     Route::delete('/rol/{rol}', 'eliminar')->middleware('can:admin.rol.eliminar')->name('rol.eliminar');
+});
+
+//GRUPO PARA EL CRUD DE CAJAS
+Route::controller(CajaController::class)->group(function(){
+    Route::get('/caja', 'index')->name('caja.index');
+
+    Route::post('/caja', 'almacenar')->name('caja.almacenar');
+    Route::put('/caja/{caja}/activar', 'activar')->name('caja.activar');
+    Route::put('/caja/{caja}/desactivar', 'desactivar')->name('caja.desactivar');
+    Route::delete('/caja/{caja}', 'eliminar')->name('caja.eliminar');
 });
 
 //Grupo diseñado para el crud del producto
@@ -83,6 +95,7 @@ Route::controller(TipoController::class)->group(function(){
     Route::put('/tipo/{tipo}', 'actualizar')->name('tipo.actualizar');
     Route::delete('/tipo/{tipo}', 'eliminar')->name('tipo.eliminar');
 });
+
 //GRUPO PARA EL CRUD DE PRODUCTOS MARCA
 Route::controller(MarcaController::class)->group(function(){
     Route::get('/marca', 'index')->name('marca.index');
@@ -94,6 +107,7 @@ Route::controller(MarcaController::class)->group(function(){
     Route::put('/marca/{marca}', 'actualizar')->name('marca.actualizar');
     Route::delete('/marca/{marca}', 'eliminar')->name('marca.eliminar');
 });
+
 //GRUPO PARA EL CRUD DE PRODUCTOS EMPLEADO
 Route::controller(EmpleadoController::class)->group(function(){
     Route::get('/empleado', 'index')->name('empleado.index');
