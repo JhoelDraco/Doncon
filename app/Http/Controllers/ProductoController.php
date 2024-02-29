@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Tipo;
+use App\Models\Marca;
+
 
 class ProductoController extends Controller
 {
@@ -14,10 +17,13 @@ class ProductoController extends Controller
         return view("administrador.productos.index");
     }
 
-    public function crear(){
-        return view("administrador.productos.crear");
-    }
+    public function crear()
+    {
+        $tiposProductos = Tipo::all();
+        $marcasProductos = Marca::all();
 
+        return view("administrador.productos.crear", compact('tiposProductos', 'marcasProductos'));
+    }
     public function mostrar(Producto $producto){
         return view('administrador.productos.mostrar', compact('producto'));
     }
@@ -46,6 +52,7 @@ class ProductoController extends Controller
             'precio' => $request->precio,
             'stock' => $request->stock,
             'imagen' => $destination. $filename
+            
         ]);
         return redirect()->route('producto.index');
     }
