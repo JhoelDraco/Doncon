@@ -17,8 +17,6 @@ return new class extends Migration
             $table->float('tipo_cambio');
             $table->timestamps();
 
-            $table->unsignedBigInteger('id_monedacaja');
-            $table->foreign('id_monedacaja')->references('id')->on('monedacaja');
         });
     }
 

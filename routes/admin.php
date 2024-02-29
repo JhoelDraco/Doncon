@@ -9,6 +9,7 @@ use App\Http\Controllers\TipoController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CajaController;
+use App\Http\Controllers\VendedorCajaController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -46,6 +47,16 @@ Route::controller(CajaController::class)->group(function(){
     Route::put('/caja/{caja}/activar', 'activar')->name('caja.activar');
     Route::put('/caja/{caja}/desactivar', 'desactivar')->name('caja.desactivar');
     Route::delete('/caja/{caja}', 'eliminar')->name('caja.eliminar');
+});
+
+//GRUPO PARA LA ACTIVACIÓN DE CAJAS
+Route::controller(VendedorCajaController::class)->group(function(){
+    Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
+    Route::get('/vendedor_cajas/crear', 'crear')->name('vendedor_cajas.crear');
+
+    Route::post('/vendedor_cajas', 'almacenar')->name('vendedor_cajas.almacenar');
+    //Route::put('/caja/activacion/{caja}/actualizar', 'activar')->name('caja.activacion.actualizar');
+    //Route::delete('/caja/activacion/{caja}', 'eliminar')->name('caja.eliminar');
 });
 
 //Grupo diseñado para el crud del producto

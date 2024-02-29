@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Caja;
 
 use Spatie\Permission\Traits\HasRoles;
 
@@ -61,4 +62,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function caja_dia(){
+        return $this->belongsToMany(Caja::class, 'cajadia', 'id_usuario', 'id_caja')->withPivot('fecha_hora', 'monto_inicial', 'monto_final', 'estado');
+    }
 }

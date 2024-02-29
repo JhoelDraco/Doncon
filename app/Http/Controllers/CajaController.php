@@ -14,15 +14,6 @@ class CajaController extends Controller
         return view("administrador.cajas.index", compact('cajas'));
     }
 
-    /*
-    public function crear(){
-        return view("administrador.cajas.crear");
-    }
-
-    public function mostrar(Tipo $tipo){
-        return view('administrador.cajas.mostrar', compact('tipo'));
-    }
-    */
 
     public function activar(Caja $caja){
 
@@ -37,6 +28,7 @@ class CajaController extends Controller
         
         $caja->update([
             'estado' => false,
+            'num_caja_dia' => 0,
         ]);
 
         return redirect()->route('caja.index');
@@ -46,6 +38,7 @@ class CajaController extends Controller
         
         Caja::create([
             'estado' => false,
+            'num_caja_dia' => 0,
         ]);
         return redirect()->route('caja.index');
     }
