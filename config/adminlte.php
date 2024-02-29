@@ -393,6 +393,10 @@ return [
                     'text' => 'Empleado',
                     'url'  => '/empleado',
                 ],
+                [
+                    'text' => 'Moneda',
+                    'url'  => '/moneda',
+                ],
             ],
         ],
 

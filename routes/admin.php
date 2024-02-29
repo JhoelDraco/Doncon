@@ -7,6 +7,7 @@ use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\MonedaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CajaController;
 use App\Http\Controllers\VendedorCajaController;
@@ -129,4 +130,14 @@ Route::controller(EmpleadoController::class)->group(function(){
     Route::post('/empleado', 'almacenar')->name('empleado.almacenar');
     Route::put('/empleado/{empleado}', 'actualizar')->name('empleado.actualizar');
     Route::delete('/empleado/{empleado}', 'eliminar')->name('empleado.eliminar');
+});
+Route::controller(MonedaController::class)->group(function(){
+    Route::get('/moneda', 'index')->name('moneda.index');
+    Route::get('/moneda/crear', 'crear')->name('moneda.crear');
+    Route::get('/moneda/{moneda}/mostrar', 'mostrar')->name('moneda.mostrar');
+    Route::get('/moneda/{moneda}/editar', 'editar')->name('moneda.editar');
+
+    Route::post('/moneda', 'almacenar')->name('moneda.almacenar');
+    Route::put('/moneda/{moneda}', 'actualizar')->name('moneda.actualizar');
+    Route::delete('/moneda/{moneda}', 'eliminar')->name('moneda.eliminar');
 });
