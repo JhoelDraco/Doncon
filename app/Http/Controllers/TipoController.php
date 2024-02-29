@@ -38,7 +38,7 @@ class TipoController extends Controller
 
     public function actualizar(Tipo $tipo, Request $request){
 
-        $personal->update([
+        $tipo->update([
             'tipo' => $request->tipo,
         ]);
 
@@ -46,7 +46,7 @@ class TipoController extends Controller
     }
 
     public function eliminar(Tipo $tipo){
-        $personal->delete();
+        $tipo->delete();
 
         return redirect()->route('tipo.index');
     }
