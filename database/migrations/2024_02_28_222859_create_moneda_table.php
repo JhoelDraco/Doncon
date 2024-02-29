@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('moneda', function (Blueprint $table) {
             $table->id();
             $table->string('nombre_moneda',20);
+            $table->float('moneda_entrante');
             $table->float('tipo_cambio');
             $table->timestamps();
 
-            $table->unsignedBigInteger('id_monedacaja');
-            $table->foreign('id_monedacaja')->references('id')->on('monedacaja');
         });
     }
 

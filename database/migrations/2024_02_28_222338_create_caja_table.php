@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('caja', function (Blueprint $table) {
             $table->id();
             $table->boolean('estado');
+            $table->int('num_caja_dia',11);
             $table->timestamps();
         });
     }
