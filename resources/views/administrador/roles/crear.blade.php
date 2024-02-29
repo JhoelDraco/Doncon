@@ -14,6 +14,7 @@
 
     
     <section>
+        <h3>FORMULARIO PARA CREAR ROLES</h3>
         <form method="POST" action="{{route('rol.almacenar')}}" >
             @csrf
 

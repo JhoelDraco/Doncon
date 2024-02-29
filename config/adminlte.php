@@ -329,7 +329,7 @@ return [
         */
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
+            'text' => 'Información de cuenta',
             'route'  => 'profile.show',
             'icon' => 'fas fa-fw fa-user',
         ],
@@ -346,6 +346,12 @@ return [
         ],
         */
         [
+            'text' => 'Usuarios',
+            'url' => '/usuario',
+            'icon' => 'fas fa-users',
+            'can'  => 'admin.usuario.index',
+        ],
+        [
             'text' => 'Roles',
             'url'  => '/rol',
             'icon' => 'fas fa-users-cog fa-lock',
@@ -355,11 +361,6 @@ return [
             'text'    => 'Registros',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
-                [
-                    'text' => 'Usuarios',
-                    'url'  => '/usuario',
-                    'can'  => 'admin.usuario.index'
-                ],
                 [
                     'text' => 'Clientes',
                     'url'  => '/cliente',

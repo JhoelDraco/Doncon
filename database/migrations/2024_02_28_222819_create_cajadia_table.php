@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->dateTime('fecha_hora');
             $table->float('monto_inicial');
-            $table->float('monto_final');
+            $table->float('monto_final')->nullable();
+            $table->boolean('estado');
             $table->timestamps();
 
             $table->unsignedBigInteger('id_caja');

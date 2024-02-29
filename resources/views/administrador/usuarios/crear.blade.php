@@ -12,6 +12,7 @@
 @section('content')
 
     <section>
+        <h3>FORMULARIO PARA CREAR USUARIOS</h3>
         <form method="POST" action="{{route('usuario.almacenar')}}" >
             @csrf
 

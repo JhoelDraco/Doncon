@@ -21,7 +21,6 @@ return new class extends Migration
             $table->float('total');
 
             $table->unsignedBigInteger('id_ventas');
-
             $table->foreign('id_ventas')->references('id')->on('ventas');
 
             $table->timestamps();

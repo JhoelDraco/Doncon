@@ -7,7 +7,7 @@ use App\Models\Marca;
 
 class MarcaController extends Controller
 {
-    //
+    //Funciones para las vistas
     public function index(){
 
         return view("administrador.marca.index");
@@ -25,6 +25,7 @@ class MarcaController extends Controller
         return view('administrador.marca.editar', compact('marca'));
     }
 
+    //Funciones que no se deberian ver
     public function almacenar(Request $request){
         
 
