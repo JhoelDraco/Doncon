@@ -12,6 +12,7 @@
 @section('content')
 
     <section>
+        <h3>FORMULARIO PARA CREAR SERVICIOS</h3>
         <form method="POST" action="{{route('servicio.almacenar')}}" >
             @csrf
 
