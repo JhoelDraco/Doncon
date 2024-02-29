@@ -15,6 +15,7 @@
 @section('content')
 
     <section>
+        <h3>FORMULARIO PARA CREAR EMPLEADOS</h3>
         <form method="POST" action="{{route('empleado.almacenar')}}" enctype="multipart/form-data">
 
             @csrf

@@ -15,6 +15,7 @@
 @section('content')
 
     <section>
+        <h3>FORMULARIO PARA CREAR TIPOS DE PRODUCTOS</h3>
         <form method="POST" action="{{route('tipo.almacenar')}}" enctype="multipart/form-data">
 
             @csrf

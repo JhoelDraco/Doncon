@@ -15,6 +15,7 @@
 @section('content')
 
     <section>
+        <h3>FORMULARIO PARA CREAR PRODUCTOS</h3>
         <form method="POST" action="{{route('producto.almacenar')}}" enctype="multipart/form-data">
 
             @csrf
