@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detalleproducto', function (Blueprint $table) {
+        Schema::create('detalleventa', function (Blueprint $table) {
             $table->id();
 
             $table->integer('cantidad');
-            $table->date('fecha');
             $table->float('subtotal');
 
             $table->unsignedBigInteger('id_productos')->nullable();
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detalleproducto');
+        Schema::dropIfExists('detalleventa');
     }
 };

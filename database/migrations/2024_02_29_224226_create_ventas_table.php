@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('ventas', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha');
-            $table->float('subtotal');
+            $table->dateTime('fecha_hora');
+            $table->float('total');
             $table->string('estado', 15);
             $table->longText('descripcion')->nullable();
 
