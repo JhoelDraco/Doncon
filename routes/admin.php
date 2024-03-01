@@ -62,7 +62,7 @@ Route::controller(VendedorCajaController::class)->group(function(){
 
 Route::controller(VentasController::class)->group(function(){
     //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
-    Route::get('/venta/crear', 'crear')->name('venta.crear');
+    Route::get('/venta/{cliente}/crear', 'crear')->name('venta.crear');
     //Route::post('/ventas', 'almacenar')->name('ventas.almacenar');
 });
 

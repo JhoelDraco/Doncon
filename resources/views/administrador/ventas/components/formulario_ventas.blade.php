@@ -1,20 +1,5 @@
-<div>
-    <label for="clientes">Tipo de Producto:</label>
-    <select name="id_clientes">
-        @foreach ($clientes as $ci)
-            <option value="{{ $clientes->id }}">{{ $clientes->ci }}</option>
-        @endforeach
-    </select>
-</div>
+{{$cliente->ci}}
 
-<div>
-    <label for="clientes">Marca de Producto:</label>
-    <select name="id_marca_producto">
-        @foreach ($marcasProductos as $marca)
-            <option value="{{ $marca->id }}">{{ $marca->marca }}</option>
-        @endforeach
-    </select>
-</div>
 
 <div>
     <label for="ventas">Estado:</label>
