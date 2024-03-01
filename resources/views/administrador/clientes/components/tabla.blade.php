@@ -28,7 +28,6 @@
                         <td>{{$cliente->nombre1}} {{$cliente->nombre2}}</td>
                         <td>{{$cliente->apellido1}} {{$cliente->apellido2}}</td>
                     @endif
-
                     <td>{{$cliente->correo}}</td>
                     <td>{{$cliente->celular}}</td>
                     <td>{{$cliente->ubicacion}}</td>
@@ -53,7 +52,7 @@
                         </td>
                     @endcan
 
-                    <td><a href="{{route('venta.crear', $cliente->cliente_id)}}">Editar</a></td>
+                    <td><a href="{{route('venta.crear', $cliente->cliente_id)}}">Venta</a></td>
                     
                     
                 </tr>

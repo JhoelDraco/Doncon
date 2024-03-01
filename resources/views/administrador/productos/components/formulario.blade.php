@@ -10,7 +10,7 @@
         @foreach ($tiposProductos as $tipo)
             <option value="{{ $tipo->id }}">{{ $tipo->tipo }}</option>
         @endforeach
-    </select>
+    </select>   
 </div>
 
 <div>

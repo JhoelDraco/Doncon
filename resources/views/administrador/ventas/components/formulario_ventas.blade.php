@@ -1,4 +1,18 @@
+@if($cliente->tipo==='P')
 {{$cliente->ci}}
+<br>{{$cliente->nombre1}}
+<br>{{$cliente->nombre2}}
+<br>{{$cliente->apellido1}}
+<br>{{$cliente->apellido2}}
+
+@elseif($cliente->tipo==='E')
+{{$cliente->ci}}
+<br>{{$cliente->cirs}}
+@endif
+
+
+
+
 
 
 <div>
