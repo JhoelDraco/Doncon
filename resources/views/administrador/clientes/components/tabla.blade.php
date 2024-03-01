@@ -52,6 +52,8 @@
                             </form>
                         </td>
                     @endcan
+
+                    <td><a href="{{route('venta.crear')}}">Venta</a></td>
                     
                     
                 </tr>
