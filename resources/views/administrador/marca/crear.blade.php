@@ -17,10 +17,9 @@
     <section>
         <h3>FORMULARIO PARA CREAR MARCAS</h3>
         <form method="POST" action="{{route('marca.almacenar')}}" enctype="multipart/form-data">
-
             @csrf
 
             @include('administrador.marca.componentes.formulario')
         </form>
     </section>
-    @endsection
+@endsection

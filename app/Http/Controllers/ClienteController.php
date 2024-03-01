@@ -55,7 +55,13 @@ class ClienteController extends Controller
 
     public function editar(Cliente $cliente){
 
-        return view('administrador.clientes.editar', compact('cliente'));
+        if($cliente->tipo === 'P'){
+            $c_cliente = $cliente->persona()->first();
+        }else{
+            $c_cliente = $cliente->empresa()->first();
+        }
+        
+        return view('administrador.clientes.editar', compact('cliente', 'c_cliente'));
     }
 
     

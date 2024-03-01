@@ -16,11 +16,11 @@
 
     <section>
         <h3>FORMULARIO PARA CREAR MONEDAS</h3>
-        <form method="POST" action="{{route('moneda.almacenar')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('moneda.almacenar')}}">
 
             @csrf
 
             @include('administrador.moneda.componentes.formulario')
         </form>
     </section>
-    @endsection
+@endsection

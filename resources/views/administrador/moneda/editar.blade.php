@@ -19,5 +19,4 @@
             @include('administrador.moneda.componentes.formulario')
         </form>
     </section>
-
 @endsection

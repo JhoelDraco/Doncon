@@ -5,7 +5,9 @@
 
 <select name="id_caja">
     @foreach($cajas as $caja)
-        <option value="{{ $caja->id }}">Caja {{$caja->id}}</option>
+        @if ($caja->num_caja_dia == 0)
+            <option value="{{ $caja->id }}">Caja {{$caja->id}}</option>
+        @endif
     @endforeach
 </select>
 

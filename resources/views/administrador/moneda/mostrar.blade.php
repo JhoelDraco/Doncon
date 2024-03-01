@@ -11,7 +11,9 @@
 
 @section('content')
 
-    <p>{{$marca->marca}}</p>
+    <p>{{$moneda->nombre_moneda}}</p>
+    <p>{{$moneda->moneda_entrante}}</p>
+    <p>{{$moneda->tipo_cambio}}</p>
     
 
     <a href="{{route('moneda.index')}}">volver</a>
