@@ -12,10 +12,8 @@
 
 @section('content')
 
-    @can('admin.cliente.crear')
-        <a href="{{route('cliente.crear')}}">añadir cliente</a>
-    @endcan
+    <a href="{{route('venta.crear')}}">Venta</a>
     
-    @include('administrador.clientes.components.tabla')
+    @include('administrador.venta.components.formulario_ventas')
 
 @stop

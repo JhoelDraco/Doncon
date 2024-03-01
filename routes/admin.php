@@ -11,7 +11,7 @@ use App\Http\Controllers\MonedaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CajaController;
 use App\Http\Controllers\VendedorCajaController;
-
+use App\Http\Controllers\VentasController;
 use Illuminate\Support\Facades\Route;
 
 //Grupos diseñados para la parte administrativas
@@ -58,6 +58,12 @@ Route::controller(VendedorCajaController::class)->group(function(){
     Route::post('/vendedor_cajas', 'almacenar')->name('vendedor_cajas.almacenar');
     //Route::put('/caja/activacion/{caja}/actualizar', 'activar')->name('caja.activacion.actualizar');
     //Route::delete('/caja/activacion/{caja}', 'eliminar')->name('caja.eliminar');
+});
+
+Route::controller(VentasController::class)->group(function(){
+    //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
+    Route::get('/venta/crear', 'crear')->name('venta.crear');
+    //Route::post('/ventas', 'almacenar')->name('ventas.almacenar');
 });
 
 //Grupo diseñado para el crud del producto
