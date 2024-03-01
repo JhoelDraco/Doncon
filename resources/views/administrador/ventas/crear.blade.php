@@ -12,7 +12,7 @@
 @section('content')
 
     <section>
-        <h3>FORMULARIO PARA REALIZAR UNA VENTA</h3>
+        <h3>VENTAS</h3>
         <form method="POST" action="{{route('cliente.almacenar')}}" >
             @csrf
 

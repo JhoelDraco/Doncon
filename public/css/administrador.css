@@ -137,3 +137,10 @@ button:hover {
         background-color: #f2f2f2;
     }
 }
+    /*Estilo para los cliente*/
+    .cliente-info {
+        display: flex;
+        flex-direction: row;
+    }
+    
+
