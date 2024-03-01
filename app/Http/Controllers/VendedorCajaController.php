@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Caja;
 use DateTime;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Admin\FuncionesVentaController;
+
+use Illuminate\Http\Request;
+
 
 class VendedorCajaController extends Controller
 {
@@ -15,29 +17,9 @@ class VendedorCajaController extends Controller
     //Funciones relacionadas con las vistas
     public function index(){
 
-        $usuario = Auth::user();
-
-        $usuario = User::findOrFail($usuario->id);
-
-        $caja_dia = DB::select('SELECT cajadia.* FROM cajadia 
-                    JOIN users ON users.id = cajadia.id_usuario 
-                    WHERE cajadia.id_usuario = ' . $usuario->id . ' ORDER BY cajadia.id DESC LIMIT 1');
-
-        if (!empty($caja_dia)) {
-            $caja_dia = $caja_dia[0]; // Obtener el primer resultado
-        }else{
-            $caja_dia = [];
-        }
-
-        if($caja_dia == null){
-            $caja = [];
-        }else{
-            $caja = Caja::select('caja.*', 'cajadia.id as id_caja_dia')
-            ->join('cajadia', 'caja.id', '=', 'cajadia.id_caja')
-            ->where('num_caja_dia', $caja_dia->id)
-            ->first();
-        }
-
+        $funciones_venta = new FuncionesVentaController();
+        $caja_dia = $funciones_venta->cajaDiaUsuario();
+        $caja = $funciones_venta->encontrarCajaUsuario($caja_dia);
 
         return view("administrador.vendedor_cajas.index", compact('caja_dia', 'caja'));
     }
@@ -50,15 +32,6 @@ class VendedorCajaController extends Controller
         return view("administrador.vendedor_cajas.crear", compact('usuario', 'cajas'));
     }
     
-    /*
-    public function mostrar(Marca $marca){
-        return view('administrador.marca.mostrar', compact('marca'));
-    }
-
-    public function editar(Marca $marca){
-        return view('administrador.marca.editar', compact('marca'));
-    }
-    */
 
     //Funciones que no se muestran
     public function almacenar(Request $request){
@@ -80,14 +53,11 @@ class VendedorCajaController extends Controller
             'estado' => true
         ]);
 
-        $caja_dia_id = User::select('users.id', 'cajadia.id', 'cajadia.id as caja_dia_id')
-        ->join('cajadia', 'users.id', '=', 'id_usuario')
-        ->where('id_usuario', $usuario->id)
-        ->orderBy('fecha_hora', 'desc')
-        ->first();
+        $funciones_venta = new FuncionesVentaController();
+        $caja_dia = $funciones_venta->cajaDiaUsuario();
 
         $caja->update([
-            'num_caja_dia' => $caja_dia_id->caja_dia_id
+            'num_caja_dia' => $caja_dia->id
         ]);
 
         return redirect()->route('vendedor_cajas.index');
@@ -104,4 +74,5 @@ class VendedorCajaController extends Controller
 
         return redirect()->route('vendedor_cajas.index');
     }
+
 }
