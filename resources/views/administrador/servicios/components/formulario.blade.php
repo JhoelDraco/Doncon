@@ -10,4 +10,5 @@
 
 <div>
     <button type="submit">Aceptar</button>
+    <a href="{{ route('servicio.index') }}">Volver</a>
 </div>

@@ -16,6 +16,7 @@
         @csrf
 
         <button type="submit">Agregar Caja</button>
+        <a href="{{ route('caja.index') }}">Volver</a>
     </form>
     
     @include('administrador.cajas.components.tabla')

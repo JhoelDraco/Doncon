@@ -54,6 +54,7 @@
 
 <div>
     <button type="submit">Aceptar</button>
+    <a href="{{ route('usuario.index') }}">Volver</a>
 </div>
 
 

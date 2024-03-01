@@ -20,4 +20,5 @@
 
 <div>
     <button type="submit">Aceptar</button>
+    <a href="{{ route('rol.index') }}">Volver</a>
 </div>
