@@ -30,9 +30,9 @@ Route::get('/', function () {
 //Grupo para el login
 Route::controller(loginController::class)->group(function(){
    // Route::get('/login/acceso', 'acceso')->name('login.acceso');//cambio de carpeta login 24/02/24
-    //Route::get('/login', 'acceso')->name('login.acceso');
-    
+    //Route::get('/login', 'acceso')->name('login.acceso');    
 });
+
 Route::controller(InicioController::class)->group(function(){
      Route::get('/inicio', 'inicio')->name('inicio.inicio');
      Route::get('/nosotros', 'nosotros')->name('nosotros.nosotros');
