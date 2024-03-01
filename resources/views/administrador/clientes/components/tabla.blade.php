@@ -53,8 +53,9 @@
                         </td>
                     @endcan
 
-                    <td><a href="{{route('venta.crear', $cliente->cliente_id)}}">Editar</a></td>
-                    
+                    @empty(!$caja)
+                        <td><a href="{{route('venta.crear', $cliente->cliente_id)}}">Editar</a></td>
+                    @endempty
                     
                 </tr>
             @endforeach
