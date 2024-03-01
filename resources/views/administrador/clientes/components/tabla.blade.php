@@ -53,7 +53,7 @@
                         </td>
                     @endcan
 
-                    <td><a href="{{route('venta.crear')}}">Venta</a></td>
+                    <td><a href="{{route('venta.crear', $cliente->cliente_id)}}">Editar</a></td>
                     
                     
                 </tr>
