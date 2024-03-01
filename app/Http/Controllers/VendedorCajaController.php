@@ -47,11 +47,9 @@ class VendedorCajaController extends Controller
         $usuario = Auth::user();
         $cajas = Caja::where('estado', true)->get();
 
-
-        
         return view("administrador.vendedor_cajas.crear", compact('usuario', 'cajas'));
     }
-
+    
     /*
     public function mostrar(Marca $marca){
         return view('administrador.marca.mostrar', compact('marca'));
