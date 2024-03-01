@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Admin\FuncionesVentaController;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\Empresa;
@@ -24,10 +25,15 @@ class ClienteController extends Controller
         ->whereNotNull('empresas.id')->orWhereNotNull('personas.id')
         ->get();
 
+        $funciones_venta = new FuncionesVentaController();
+        $caja_dia = $funciones_venta->cajaDiaUsuario();
+        $caja = $funciones_venta->encontrarCajaUsuario($caja_dia);
+
         //$cliente_empresa = Cliente::paginate(10);
 
         $data=[
-            'clientes' => $clientes
+            'clientes' => $clientes,
+            'caja' => $caja
         ];
 
         return view("administrador.clientes.index", $data);
