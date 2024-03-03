@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Caja;
+use App\Models\Producto;
+use App\Models\Venta;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -62,5 +64,41 @@ class FuncionesVentaController extends Controller
         }
 
         return $caja;
+    }
+
+    /*
+    * -------------------------------------------------
+    * Almacenar subtotal y cantidad dentro de la venta.
+    * -------------------------------------------------
+    * No retorna nada, solamente almacena en la base
+    * de datos.
+    * -------------------------------------------------
+    */
+    public function almacenarVentas($venta, $codigoProductos, $cantidadProductos, $subtotales){
+        $dimension = count($codigoProductos);
+        $productos = [];
+
+        for($i = 0; $i < $dimension; $i++){
+            $producto = Producto::where('codigo', $codigoProductos[$i])->firstOrFail();
+            $productos[] = $producto;
+
+            $venta->detalle_venta()->attach($producto, [
+                'cantidad' => $cantidadProductos[$i],
+                'subtotal' => $subtotales[$i],
+            ]);
+        }
+    }
+
+    /*
+    * Encontrar los productos para la facturacion
+    * 
+    */
+    public function encontrarProductoFacturacion($id_venta){
+        $productos = DB::select('SELECT productos.*, detalleventa.* FROM ventas
+                    JOIN detalleventa ON ventas.id = detalleventa.id_ventas
+                    JOIN productos ON detalleventa.id_productos = productos.id
+                    WHERE detalleventa.id_ventas = ' . $id_venta);
+
+        return $productos;
     }
 }

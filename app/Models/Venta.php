@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Producto extends Model
+class Venta extends Model
 {
     use HasFactory;
 
-    protected $table = 'productos';
+    protected $table = 'ventas';
 
     protected $guarded = [];
 
     public function detalle_venta(){
-        return $this->belongsToMany(Venta::class, 'detalleVenta', 'id_productos', 'id_ventas')->withPivot('cantidad', 'subtotal');
+        return $this->belongsToMany(Producto::class, 'detalleVenta', 'id_ventas', 'id_productos')->withPivot('cantidad', 'subtotal');
     }
 }

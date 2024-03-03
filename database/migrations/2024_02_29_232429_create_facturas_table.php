@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('nro_factura', 20);
             $table->string('codigo_autorizacion', 20);
             $table->string('nit', 20);
-            $table->float('total');
 
             $table->unsignedBigInteger('id_ventas');
             $table->foreign('id_ventas')->references('id')->on('ventas');

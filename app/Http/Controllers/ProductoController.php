@@ -43,6 +43,9 @@ class ProductoController extends Controller
             $destination = 'imagenes/';
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('imagen')->move($destination, $filename);
+        }else{
+            $destination = '';
+            $filename = '';
         }
 
         Producto::create([
