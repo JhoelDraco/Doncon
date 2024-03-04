@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('moneda', function (Blueprint $table) {
             $table->id();
             $table->string('nombre_moneda',20);
-            $table->float('moneda_entrante');
-            $table->float('tipo_cambio');
+            $table->decimal('moneda_entrante', 8, 2);
+            $table->decimal('tipo_cambio');
             $table->timestamps();
 
         });

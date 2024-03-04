@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('codigo',40);
             $table->string('nombre', 40);
             $table->string('detalle',50)->nullable();
-            $table->float('precio');
+            $table->decimal('precio', 8, 2);
             $table->integer('stock');
             $table->longText('imagen')->nullable();
             $table->timestamps();
