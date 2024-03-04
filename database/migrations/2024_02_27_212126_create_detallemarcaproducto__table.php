@@ -15,11 +15,19 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-
             $table->unsignedBigInteger('id_producto');
-            $table->foreign('id_producto')->references('id')->on('productos');
             $table->unsignedBigInteger('id_marcaproducto');
-            $table->foreign('id_marcaproducto')->references('id')->on('marcaproducto');
+
+            // Definir restricciones de clave externa con borrado y actualización en cascada
+            $table->foreign('id_producto')
+                ->references('id')->on('productos')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('id_marcaproducto')
+                ->references('id')->on('marcaproducto')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

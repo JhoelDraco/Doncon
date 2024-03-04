@@ -17,6 +17,7 @@ class ProductoController extends Controller
         return view("administrador.productos.index");
     }
 
+
     public function crear()
     {
         $tiposProductos = Tipo::all();
@@ -47,7 +48,7 @@ class ProductoController extends Controller
             $destination = '';
             $filename = '';
         }
-
+        
         Producto::create([
             'codigo' => $request->codigo,
             'nombre' => $request->nombre,
@@ -57,6 +58,17 @@ class ProductoController extends Controller
             'imagen' => $destination. $filename
             
         ]);
+
+
+        $tipoId = Tipo::findOrFail($request->id_tipo_producto);
+        $marcaId = Marca::findOrFail($request->id_marca_producto);
+
+        $producto = Producto::latest()->first();
+
+        $producto->tipos()->attach($tipoId);
+        $producto->marcas()->attach($marcaId);
+        
+
         return redirect()->route('producto.index');
     }
 
