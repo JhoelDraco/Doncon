@@ -51,9 +51,9 @@
             @endforeach
         </tbody>
     </table>
-
+    
     <div>
-        <label for="ventas">Total:</label>
+        <label for="ventas">Total en Bolivianos:</label>
         <input id="totalVenta" name="total" type="number" value="{{$venta->total}}" readonly>
     </div>
 
