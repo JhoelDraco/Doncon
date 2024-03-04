@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('cantidad');
             $table->longText('detalle');
             $table->date('fecha');
-            $table->float('subtotal');
+            $table->decimal('subtotal', 8, 2);
 
             $table->unsignedBigInteger('id_proveedores');
             $table->unsignedBigInteger('id_productos');
