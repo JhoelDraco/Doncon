@@ -394,6 +394,10 @@ return [
                     'url'  => '/empleado',
                 ],
                 [
+                    'text' => 'Comprar',
+                    'url'  => '/compra',
+                ],
+                [
                     'text' => 'Moneda',
                     'url'  => '/moneda',
                 ],
