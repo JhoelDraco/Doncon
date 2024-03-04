@@ -8,7 +8,7 @@
     <label for="tipoProducto">Tipo de Producto:</label>
     <select name="id_tipo_producto">
         @foreach ($tiposProductos as $tipo)
-            <option value="{{ $tipo->id }}">{{ $tipo->tipo }}</option>
+            <option name="id_tipo" value="{{ $tipo->id }}">{{ $tipo->tipo }}</option>
         @endforeach
     </select>   
 </div>
@@ -17,7 +17,7 @@
     <label for="marcaProducto">Marca de Producto:</label>
     <select name="id_marca_producto">
         @foreach ($marcasProductos as $marca)
-            <option value="{{ $marca->id }}">{{ $marca->marca }}</option>
+            <option name="id_marca" value="{{ $marca->id }}">{{ $marca->marca }}</option>
         @endforeach
     </select>
 </div>
