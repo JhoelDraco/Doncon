@@ -34,9 +34,38 @@
     </table>
 </div>
 
+<table>
+    <thead>
+        <tr>
+            <td>
+                <label for="ventasTotalBoliviano">Total en Bolivianos:</label>
+                <input id="totalVenta" name="total" type="number" value="" readonly>
+            </td>
+            
+            <div>
+                <label for="">Cantidad de monedas de cambio: {{$cantidad_m = count($monedas)}}</label>
+                <input id="cantidad_m" type="text" name="cantidad_m" value="{{$cantidad_m}}" hidden="true" readonly>
+            </div>
+
+            @foreach($monedas as $index => $moneda)
+                <td>
+                    <label for="ventasTotal{{$moneda->nombre_moneda}}">Total en {{$moneda->nombre_moneda}}:</label>
+                    <input id="moneda{{$index}}" type="number" step="0.01" value="{{$moneda->tipo_cambio}}" hidden="true" readonly>
+                    <input id="mostrarMoneda{{$index}}" step="0.01" type="text"  value="" readonly>
+                </td>
+            @endforeach
+        </tr>
+    </thead>
+</table>
+
 <div>
-    <label for="ventas">Total:</label>
-    <input id="totalVenta" name="total" type="number" value="" readonly>
+    <label for="dineroRecibido">Dinero recibido:</label>
+    <input id="dineroRecibido" name="recibido" type="number" step="0.01" value="">
+</div>
+
+<div>
+    <label for="cambioDar">Cambio a dar:</label>
+    <input id="cambioDar" name="cambio" type="number" step="0.01" value="" readonly>
 </div>
 
 <div>

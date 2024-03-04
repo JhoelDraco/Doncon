@@ -382,6 +382,10 @@ return [
                     'can'  => 'admin.servicio.index'
                 ],
                 [
+                    'text' => 'Proveedores',
+                    'url'  => '/proveedor',
+                ],
+                [
                     'text' => 'Tipo',
                     'url'  => '/tipo',
                 ],

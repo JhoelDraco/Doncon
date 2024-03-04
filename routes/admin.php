@@ -12,7 +12,11 @@ use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CajaController;
 use App\Http\Controllers\VendedorCajaController;
 use App\Http\Controllers\VentasController;
+<<<<<<< HEAD
 use App\Http\Controllers\ComprasController;
+=======
+use App\Http\Controllers\ProveedorController;
+>>>>>>> 97152e82639c2c60d6a2fd63cabf6c5fa8095bdd
 use Illuminate\Support\Facades\Route;
 
 //Grupos diseñados para la parte administrativas
@@ -162,4 +166,15 @@ Route::controller(MonedaController::class)->group(function(){
     Route::post('/moneda', 'almacenar')->name('moneda.almacenar');
     Route::put('/moneda/{moneda}', 'actualizar')->name('moneda.actualizar');
     Route::delete('/moneda/{moneda}', 'eliminar')->name('moneda.eliminar');
+});
+//CRUD PARA LOS PROVEEDORES
+Route::controller(ProveedorController::class)->group(function(){
+    Route::get('/proveedor', 'index')->name('proveedor.index');
+    Route::get('/proveedor/crear', 'crear')->name('proveedor.crear');
+    Route::get('/proveedor/{proveedor}/mostrar', 'mostrar')->name('proveedor.mostrar');
+    Route::get('/proveedor/{proveedor}/editar', 'editar')->name('proveedor.editar');
+
+    Route::post('/proveedor', 'almacenar')->name('proveedor.almacenar');
+    Route::put('/proveedor/{proveedor}', 'actualizar')->name('proveedor.actualizar');
+    Route::delete('/proveedor/{proveedor}', 'eliminar')->name('proveedor.eliminar');
 });
