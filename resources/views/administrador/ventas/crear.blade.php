@@ -32,12 +32,21 @@
         const nombreProducto = document.getElementById('nombreProducto');
         const stockProducto = document.getElementById('stockProducto');
         const precioProducto = document.getElementById('precioProducto');
+
+        //Inputs relacionados con el cambio de moneda
         const totalVenta = document.getElementById('totalVenta');
+        var cantidad_m = document.getElementById('cantidad_m').value;
 
         const cantidadProducto = document.getElementById('cantidadProducto');
+        const dineroRecibido = document.getElementById('dineroRecibido');
+        const cambioDar = document.getElementById('cambioDar');
        
+        //Evitar que precione enter para enviarZ
+        event.preventDefault();
+
         var conteoVenta = 0;
         totalVenta.value = 0;
+        cantidad_m = parseInt(cantidad_m);
 
         productoBuscado.style.display = 'none';
 
@@ -48,6 +57,18 @@
 
         buscadorProducto.addEventListener('blur', function() {
             productoBuscado.style.display = 'none';
+        });
+
+        //Función para dar cambio
+        dineroRecibido.addEventListener("keypress", function(event) {
+        // Verificar si la tecla presionada es Enter (código 13)
+            if (event.keyCode === 13) {
+                // Aquí puedes ejecutar la acción que desees al presionar Enter
+                var dinero = parseFloat(dineroRecibido.value);
+                event.preventDefault();
+                dinero = dinero.toFixed(2);
+                cambioDar.value = parseFloat(dinero) - parseFloat(totalVenta.value);
+            }
         });
 
         //Función para limpiar todos los inputs de producto
@@ -86,6 +107,14 @@
                             '<input type="text" name="subtotal' + "[" + conteoVenta + "]" + '" value="'+ subtotal +'" hidden="true">';
 
             totalVenta.value = parseFloat(subtotal) + parseFloat(totalVenta.value);
+
+            for(let i = 0; i < cantidad_m; i++){
+                var moneda = document.getElementById('moneda' + i);
+                var monedaMostrar = document.getElementById('mostrarMoneda' + i);
+                
+                var monto = parseFloat(totalVenta.value) / parseFloat(moneda.value);
+                monedaMostrar.value = parseFloat(monto.toFixed(2));
+            }
 
             conteoVenta++;
         }

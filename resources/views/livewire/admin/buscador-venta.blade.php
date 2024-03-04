@@ -33,6 +33,7 @@
     </table>
 
     <div>
+        <label for="">Cantidad a llevar:</label>
         <input type="text" name="cantidad" id="cantidadProducto">
     </div>
 

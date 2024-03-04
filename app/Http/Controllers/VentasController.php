@@ -11,6 +11,7 @@ use App\Models\Ventas;
 use App\Models\Cliente;
 use App\Models\Empresa;
 use App\Models\Factura;
+use App\Models\Moneda;
 use App\Models\Persona;
 use App\Models\Producto;
 use App\Models\Venta;
@@ -22,10 +23,8 @@ class VentasController extends Controller
         $encontrarCliente = new FuncionesClienteController();
         $cliente = $encontrarCliente->informacionCliente($cliente->id);
     
-    $data = [
-        'cliente' => $cliente
-    ];
-        return view("administrador.ventas.crear", compact('cliente'));
+        $monedas = Moneda::all();
+        return view("administrador.ventas.crear", compact('cliente', 'monedas'));
     }
 
     public function facturar(){
