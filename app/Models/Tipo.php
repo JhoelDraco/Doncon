@@ -11,4 +11,8 @@ class Tipo extends Model
 
     protected $table = 'tiposproducto';
     protected $guarded = [];
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class, 'detalletipoproducto');
+    }
 }
