@@ -81,10 +81,13 @@ body, h1, h2, h3, p, label, input, button, table {
 
 body {
     font-family: 'Arial', sans-serif;
+    
 }
 
 section {
+    
     margin: 20px;
+    
 }
 
 table {
@@ -150,3 +153,32 @@ button:hover {
     padding: 0;
     margin: 0;
 }
+
+.custom-card {
+    max-width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #c4d7f7, #f0f0f0); /* Fondo degradado */
+}
+
+.product-info {
+    margin-bottom: 10px;
+}
+
+.product-label {
+    font-weight: bold;
+}
+
+.product-value {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+

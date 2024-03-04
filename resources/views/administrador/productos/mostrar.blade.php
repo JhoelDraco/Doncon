@@ -11,12 +11,51 @@
 
 @section('content')
 
-    <p>{{$producto->codigo}}</p>
-    <p>{{$producto->nombre}}</p>
-    <p>{{$producto->detalle}}</p>
-    <p>{{$producto->precio}}</p>
-    <p>{{$producto->stock}}</p>
-    <p>{{$producto->imagen}}</p>
+
+<div class="container">
+    <div class="custom-card">
+        <div class="product-info">
+            <label for="detalleProducto" class="product-label">Codigo Del Producto:</label>
+            <p class="product-value">{{$producto->codigo}}</p>
+        </div>
+    </div>
+
+    <div class="custom-card">
+        <div class="product-info">
+            <label for="detalleProducto" class="product-label">Nombre del Producto:</label>
+            <p class="product-value">{{$producto->nombre}}</p>
+        </div>
+    </div>
+
+    <div class="custom-card">
+        <div class="product-info">
+            <label for="detalleProducto" class="product-label">Detalle del Producto:</label>
+            <p class="product-value">{{$producto->detalle}}</p>
+        </div>
+    </div>
+
+    <div class="custom-card">
+        <div class="product-info">
+            <label for="detalleProducto" class="product-label">Precio del Producto:</label>
+            <p class="product-value">{{$producto->precio}}</p>
+        </div>
+    </div>
+
+    <div class="custom-card">
+        <div class="product-info">
+            <label for="detalleProducto" class="product-label">Stock del Producto:</label>
+            <p class="product-value">{{$producto->stock}}</p>
+        </div>
+    </div>
+
+    <div class="custom-card">
+        <div class="product-info">
+            <label for="detalleProducto" class="product-label">Imagen del producto:</label>
+            <img src="{{$producto->imagen}}" alt="Imagen del producto" class="product-image">
+        </div>
+    </div>
+</div>
+
     
 
     <a href="{{route('producto.index')}}">volver</a>

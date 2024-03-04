@@ -11,4 +11,8 @@ class Marca extends Model
 
     protected $table = 'marcaproducto';
     protected $guarded = [];
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class, 'detallemarcaproducto');
+    }
 }
