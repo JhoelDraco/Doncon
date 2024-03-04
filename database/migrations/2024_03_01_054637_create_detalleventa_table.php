@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->integer('cantidad');
-            $table->float('subtotal');
+            $table->decimal('subtotal', 8, 2);
 
             $table->unsignedBigInteger('id_productos')->nullable();
             $table->unsignedBigInteger('id_ventas')->nullable();

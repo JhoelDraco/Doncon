@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('detalleservicio', function (Blueprint $table) {
             $table->id();
-            $table->float('subtotal');
+            $table->decimal('subtotal', 8, 2);
             
             $table->unsignedBigInteger('id_servicios');
             $table->unsignedBigInteger('id_ventas');
