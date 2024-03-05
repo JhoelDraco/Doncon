@@ -13,6 +13,6 @@
 
 @section('content')
 
-        <a href="{{route('compras.index')}}">comprar</a> 
+        <a href="{{route('compras.crear')}}">comprar</a> 
 
 @stop

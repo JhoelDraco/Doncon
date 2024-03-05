@@ -15,7 +15,7 @@ return [
     */
 
     'title' => '',
-    'title_prefix' => 'Tic Centec |',
+    'title_prefix' => 'Tic & Centec |',
     'title_postfix' => '',
 
     /*
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Tic</b>Centec',
+    'logo' => '<b>Tic</b><b>&</b>Centec',
     'logo_img' => 'vendor/adminlte/dist/img/TICFin.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -308,11 +308,13 @@ return [
             'text' => 'search',
         ],
         */
+        /*
         [
             'text' => 'Panel de control',
             'url' => '/dashboard',
             'icon' => 'fas fa-fw fa-table'
         ],
+        */
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -327,7 +329,7 @@ return [
             'label_color' => 'success',
         ],
         */
-        ['header' => 'account_settings'],
+        ['header' => 'CONFIGURACION DE CUENTA'],
         [
             'text' => 'Información de cuenta',
             'route'  => 'profile.show',
@@ -396,10 +398,6 @@ return [
                 [
                     'text' => 'Empleado',
                     'url'  => '/empleado',
-                ],
-                [
-                    'text' => 'Comprar',
-                    'url'  => '/compra',
                 ],
                 [
                     'text' => 'Moneda',

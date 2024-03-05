@@ -12,11 +12,8 @@ use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CajaController;
 use App\Http\Controllers\VendedorCajaController;
 use App\Http\Controllers\VentasController;
-<<<<<<< HEAD
 use App\Http\Controllers\ComprasController;
-=======
 use App\Http\Controllers\ProveedorController;
->>>>>>> 97152e82639c2c60d6a2fd63cabf6c5fa8095bdd
 use Illuminate\Support\Facades\Route;
 
 //Grupos diseñados para la parte administrativas
@@ -77,13 +74,13 @@ Route::controller(VentasController::class)->group(function(){
 //Grupo diseñado para el crud del compras
 Route::controller(ComprasController::class)->group(function(){
     Route::get('/compras', 'index')->name('compras.index');
-    Route::get('/compras/crear', 'crear')->middleware('can:admin.compra.crear')->name('compras.crear');
-    Route::get('/compras/{compras}/mostrar', 'mostrar')->middleware('can:admin.compra.mostrar')->name('compras.mostrar');
-    Route::get('/compras/{compras}/editar', 'editar')->middleware('can:admin.compra.editar')->name('compras.editar');
+    Route::get('/compras/crear', 'crear')->name('compras.crear');
+    Route::get('/compras/{compras}/mostrar', 'mostrar')->name('compras.mostrar');
+    Route::get('/compras/{compras}/editar', 'editar')->name('compras.editar');
 
-    Route::post('/compras', 'almacenar')->middleware('can:admin.compra.crear')->name('compras.almacenar');
-    Route::put('/compras/{compras}', 'actualizar')->middleware('can:admin.compra.editar')->name('compras.actualizar');
-    Route::delete('/compras/{compras}', 'eliminar')->middleware('can:admin.compra.eliminar')->name('compras.eliminar');
+    Route::post('/compras', 'almacenar')->name('compras.almacenar');
+    Route::put('/compras/{compras}', 'actualizar')->name('compras.actualizar');
+    Route::delete('/compras/{compras}', 'eliminar')->name('compras.eliminar');
 });
 
 //Grupo diseñado para el crud del producto
