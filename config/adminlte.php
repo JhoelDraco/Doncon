@@ -345,6 +345,11 @@ return [
             'url' => '/vendedor_cajas',
             'icon' => 'fas fa-shopping-cart'
         ],
+        [
+            'text' => 'Registro de Ventas',
+            'url' => '/registro/ventas',
+            'icon' => 'fas fa-shopping-cart'
+        ],
         /*
         [
             'text' => 'change_password',

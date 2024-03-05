@@ -41,8 +41,7 @@
         const dineroRecibido = document.getElementById('dineroRecibido');
         const cambioDar = document.getElementById('cambioDar');
        
-        //Evitar que precione enter para enviarZ
-        event.preventDefault();
+        
 
         var conteoVenta = 0;
         totalVenta.value = 0;
@@ -65,6 +64,8 @@
             if (event.keyCode === 13) {
                 // Aquí puedes ejecutar la acción que desees al presionar Enter
                 var dinero = parseFloat(dineroRecibido.value);
+                //Evitar que precione enter para enviarZ
+                event.preventDefault();
                 event.preventDefault();
                 dinero = dinero.toFixed(2);
                 cambioDar.value = parseFloat(dinero) - parseFloat(totalVenta.value);

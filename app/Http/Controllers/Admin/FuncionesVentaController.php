@@ -91,8 +91,12 @@ class FuncionesVentaController extends Controller
     }
 
     /*
-    * Encontrar los productos para la facturacion
-    * 
+    * ----------------------------------------------
+    * Encontrar los productos para la facturacion.
+    * También funciona para encontrar todas los
+    * productos relacionados con una venta mediante
+    * su id.
+    * ----------------------------------------------
     */
     public function encontrarProductoFacturacion($id_venta){
         $productos = DB::select('SELECT productos.*, detalleventa.* FROM ventas
@@ -103,16 +107,40 @@ class FuncionesVentaController extends Controller
         return $productos;
     }
 
-     /*
-    * Encontrar la compra para la facturacion
+    /*
+    * Obtener registros de ventas sobre los empleados
     * 
     */
-    public function encontrarCompraFacturacion($id_compra){
-        $productos = DB::select('SELECT productos.*, proveedor.* FROM compras
-                    JOIN proveedor ON compras.id = proveedor.id_compras
-                    JOIN productos ON proveedor.id_productos = productos.id
-                    WHERE proveedor.id_compras = ' . $id_compra);
+    public function registroVentas($buscarRegistro){
+        $registrosVentas = DB::table('users')
+        ->join('cajadia', 'users.id', '=', 'cajadia.id_usuario')
+        ->join('ventas', 'ventas.id_cajadia', '=', 'cajadia.id')
+        ->leftJoin('facturas', 'ventas.id', '=', 'facturas.id_ventas')
+        ->select('users.*', 'ventas.*', 'cajadia.*', 'facturas.*', 'ventas.id as venta_id')
+        ->where('ventas.id', 'LIKE', '%' . $buscarRegistro . '%')
+        ->orWhere('facturas.nro_factura', 'LIKE', '%' . $buscarRegistro . '%')
+        ->orderByDesc('venta_id');
 
-        return $productos;
+        return $registrosVentas;
+    }
+
+    /*
+    * ---------------------------------------------------
+    * Encuentra mediante id toda la información de venta.
+    * Siendo: usuario, venta, caja del dia y su
+    * facturación (si encuentra facturación).
+    * ---------------------------------------------------
+    */
+    public function registroVenta($id_venta){
+
+        $registroVenta = DB::table('users')
+        ->join('cajadia', 'users.id', '=', 'cajadia.id_usuario')
+        ->join('ventas', 'ventas.id_cajadia', '=', 'cajadia.id')
+        ->leftJoin('facturas', 'ventas.id', '=', 'facturas.id_ventas')
+        ->select('users.*', 'ventas.*', 'cajadia.*', 'facturas.*', 'ventas.id as venta_id')
+        ->where('ventas.id', $id_venta)
+        ->orderByDesc('venta_id')->first();
+
+        return $registroVenta;
     }
 }
