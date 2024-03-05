@@ -10,6 +10,7 @@ use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\MonedaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CajaController;
+use App\Http\Controllers\RegistroVentaController;
 use App\Http\Controllers\VendedorCajaController;
 use App\Http\Controllers\VentasController;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,7 @@ Route::controller(VendedorCajaController::class)->group(function(){
     //Route::delete('/caja/activacion/{caja}', 'eliminar')->name('caja.eliminar');
 });
 
+//Grupo diseñado para realizar ventas y facturación
 Route::controller(VentasController::class)->group(function(){
     //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
     Route::get('/venta/{cliente}/crear', 'crear')->name('venta.crear');
@@ -68,6 +70,14 @@ Route::controller(VentasController::class)->group(function(){
     Route::post('/venta/{cliente}', 'almacenar')->name('venta.almacenar');
     Route::post('/venta/{venta}/facutura', 'almacenar_factura')->name('factura.almacenar');
 });
+
+//Grupo diseñado para registros de ventas
+Route::controller(RegistroVentaController::class)->group(function(){
+    //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
+    Route::get('/registro/ventas', 'index')->name('registro_venta.index');
+    Route::get('/registro/ventas/{venta}', 'mostrar')->name('registro_venta.mostrar');
+});
+
 
 //Grupo diseñado para el crud del producto
 Route::controller(ProductoController::class)->group(function(){
