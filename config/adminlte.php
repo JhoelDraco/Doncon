@@ -387,6 +387,10 @@ return [
                     'can'  => 'admin.servicio.index'
                 ],
                 [
+                    'text' => 'Proveedores',
+                    'url'  => '/proveedor',
+                ],
+                [
                     'text' => 'Tipo',
                     'url'  => '/tipo',
                 ],
@@ -397,6 +401,10 @@ return [
                 [
                     'text' => 'Empleado',
                     'url'  => '/empleado',
+                ],
+                [
+                    'text' => 'Comprar',
+                    'url'  => '/compra',
                 ],
                 [
                     'text' => 'Moneda',

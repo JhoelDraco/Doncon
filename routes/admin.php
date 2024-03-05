@@ -13,6 +13,11 @@ use App\Http\Controllers\CajaController;
 use App\Http\Controllers\RegistroVentaController;
 use App\Http\Controllers\VendedorCajaController;
 use App\Http\Controllers\VentasController;
+<<<<<<< HEAD
+use App\Http\Controllers\ComprasController;
+=======
+use App\Http\Controllers\ProveedorController;
+>>>>>>> 97152e82639c2c60d6a2fd63cabf6c5fa8095bdd
 use Illuminate\Support\Facades\Route;
 
 //Grupos diseñados para la parte administrativas
@@ -71,6 +76,7 @@ Route::controller(VentasController::class)->group(function(){
     Route::post('/venta/{venta}/facutura', 'almacenar_factura')->name('factura.almacenar');
 });
 
+<<<<<<< HEAD
 //Grupo diseñado para registros de ventas
 Route::controller(RegistroVentaController::class)->group(function(){
     //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
@@ -79,6 +85,20 @@ Route::controller(RegistroVentaController::class)->group(function(){
 });
 
 
+=======
+//Grupo diseñado para el crud del compras
+Route::controller(ComprasController::class)->group(function(){
+    Route::get('/compras', 'index')->name('compras.index');
+    Route::get('/compras/crear', 'crear')->middleware('can:admin.compra.crear')->name('compras.crear');
+    Route::get('/compras/{compras}/mostrar', 'mostrar')->middleware('can:admin.compra.mostrar')->name('compras.mostrar');
+    Route::get('/compras/{compras}/editar', 'editar')->middleware('can:admin.compra.editar')->name('compras.editar');
+
+    Route::post('/compras', 'almacenar')->middleware('can:admin.compra.crear')->name('compras.almacenar');
+    Route::put('/compras/{compras}', 'actualizar')->middleware('can:admin.compra.editar')->name('compras.actualizar');
+    Route::delete('/compras/{compras}', 'eliminar')->middleware('can:admin.compra.eliminar')->name('compras.eliminar');
+});
+
+>>>>>>> a1dfd0d66163e9f07195e7bb7a2587539a9bdbea
 //Grupo diseñado para el crud del producto
 Route::controller(ProductoController::class)->group(function(){
     Route::get('/producto', 'index')->middleware('can:admin.producto.index')->name('producto.index');
@@ -159,4 +179,15 @@ Route::controller(MonedaController::class)->group(function(){
     Route::post('/moneda', 'almacenar')->name('moneda.almacenar');
     Route::put('/moneda/{moneda}', 'actualizar')->name('moneda.actualizar');
     Route::delete('/moneda/{moneda}', 'eliminar')->name('moneda.eliminar');
+});
+//CRUD PARA LOS PROVEEDORES
+Route::controller(ProveedorController::class)->group(function(){
+    Route::get('/proveedor', 'index')->name('proveedor.index');
+    Route::get('/proveedor/crear', 'crear')->name('proveedor.crear');
+    Route::get('/proveedor/{proveedor}/mostrar', 'mostrar')->name('proveedor.mostrar');
+    Route::get('/proveedor/{proveedor}/editar', 'editar')->name('proveedor.editar');
+
+    Route::post('/proveedor', 'almacenar')->name('proveedor.almacenar');
+    Route::put('/proveedor/{proveedor}', 'actualizar')->name('proveedor.actualizar');
+    Route::delete('/proveedor/{proveedor}', 'eliminar')->name('proveedor.eliminar');
 });
