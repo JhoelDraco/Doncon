@@ -27,7 +27,11 @@ class MarcaController extends Controller
 
     //Funciones que no se deberian ver
     public function almacenar(Request $request){
-        
+        $request->validate([
+            'marca' => 'required'
+        ], [
+            'required' => 'El campo debe de ser llenado'
+        ]);
 
         Marca::create([
             'marca' => $request->marca,
@@ -36,6 +40,11 @@ class MarcaController extends Controller
     }
 
     public function actualizar(Marca $marca, Request $request){
+        $request->validate([
+            'marca' => 'required'
+        ], [
+            'required' => 'El campo debe de ser llenado'
+        ]);
 
         $marca->update([
             'marca' => $request->marca,

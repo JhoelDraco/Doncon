@@ -28,12 +28,25 @@ class EmpleadoController extends Controller
     
     
        public function almacenar(Request $request){
+
+        $request->validate([
+            'nombre1' => 'required',
+            'nombre2' => 'required',
+            'apellido1' => 'required',
+            'apellido2' => 'required',
+            'area' => 'required',
+        ], [
+            'required' => 'El campo debe ser llenado'
+        ]);
         
         if($request->hasFile('imagen')){
             $file = $request->file('imagen');
             $destination = 'imagenes/';
             $filename = time() . '-' . $file->getClientOriginalName();
             $uploadSuccess = $request->file('imagen')->move($destination, $filename);
+        }else{
+            $destination = '';
+            $file = '';
         }
         
         Empleado::create([
@@ -48,6 +61,15 @@ class EmpleadoController extends Controller
     }
 
     public function actualizar(Empleado $empleado, Request $request){
+        $request->validate([
+            'nombre1' => 'required',
+            'nombre2' => 'required',
+            'apellido1' => 'required',
+            'apellido2' => 'required',
+            'area' => 'required',
+        ], [
+            'required' => 'El campo debe ser llenado'
+        ]);
 
         $empleado->update([
             'nombre1' => $request->nombre1,

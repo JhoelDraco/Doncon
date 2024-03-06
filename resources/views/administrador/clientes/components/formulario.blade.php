@@ -81,12 +81,12 @@
 </div>
 
 <div>
-    <label for="ubicacion">Ubicación:</label>
+    <label for="ubicacion">Ubicación (opcional):</label>
     <input name="ubicacion" type="text" value="{{old('ubicacion')}}">
 </div>
 
 <div>
-    <label for="contacto">Contacto:</label>
+    <label for="contacto">Contacto (opcional):</label>
     <input name="contacto" type="number" value="{{old('contacto')}}">
 </div>
 

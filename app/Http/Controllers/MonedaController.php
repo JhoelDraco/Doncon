@@ -33,7 +33,14 @@ class MonedaController extends Controller
     
     
     public function almacenar(Request $request){
-        
+        $request->validate([
+            'nombre_moneda' => 'required',
+            'moneda_entrante' => 'required|numeric',
+            'tipo_cambio' => 'required|numeric',
+        ], [
+            'required' => 'El campo debe ser llenado',
+            'numeric' => 'El campo debe de ser numerico'
+        ]);
 
         Moneda::create([
             'nombre_moneda' => $request->nombre_moneda,
@@ -44,6 +51,14 @@ class MonedaController extends Controller
     }
 
     public function actualizar(Moneda $moneda, Request $request){
+        $request->validate([
+            'nombre_moneda' => 'required',
+            'moneda_entrante' => 'required|numeric',
+            'tipo_cambio' => 'required|numeric',
+        ], [
+            'required' => 'El campo debe ser llenado',
+            'numeric' => 'El campo debe de ser numerico'
+        ]);
 
         $moneda->update([
             'nombre_moneda' => $request->nombre_moneda,

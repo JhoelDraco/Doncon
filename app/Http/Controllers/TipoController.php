@@ -28,7 +28,11 @@ class TipoController extends Controller
     }
 
     public function almacenar(Request $request){
-        
+        $request->validate([
+            'tipo' => 'required'
+        ], [
+            'required' => 'El campo debe de ser llenado'
+        ]);
 
         Tipo::create([
             'tipo' => $request->tipo,
@@ -37,6 +41,11 @@ class TipoController extends Controller
     }
 
     public function actualizar(Tipo $tipo, Request $request){
+        $request->validate([
+            'tipo' => 'required'
+        ], [
+            'required' => 'El campo debe de ser llenado'
+        ]);
 
         $tipo->update([
             'tipo' => $request->tipo,

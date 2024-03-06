@@ -45,7 +45,8 @@ class ProductoController extends Controller
             'precio' => 'required|numeric',
             'stock' => 'required|numeric',
         ],[
-            'required' => 'El campo: debe ser llenado'
+            'required' => 'El campo debe de ser llenado',
+            'numeric' => 'El campo debe de ser de tipo numerico'
         ]);
         
         if($request->hasFile('imagen')){
@@ -89,7 +90,8 @@ class ProductoController extends Controller
             'precio' => 'required|numeric',
             'stock' => 'required|numeric',
         ],[
-            'required' => 'El campo: debe ser llenado'
+            'required' => 'El campo debe de ser llenado',
+            'numeric' => 'El campo debe de ser de tipo numerico'
         ]);
 
         $producto->update([

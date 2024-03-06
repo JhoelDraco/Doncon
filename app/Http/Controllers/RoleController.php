@@ -38,7 +38,10 @@ class RoleController extends Controller
 
         $request->validate([
             'name' => 'required'
+        ], [
+            'required' => 'El campo debe de ser llenado'
         ]);
+
         $rol = Role::create($request->all());
 
         $rol->permissions()->sync($request->permisos);
@@ -50,6 +53,8 @@ class RoleController extends Controller
 
         $request->validate([
             'name' => 'required'
+        ], [
+            'required' => 'El campo debe de ser llenado'
         ]);
 
         $rol->update([

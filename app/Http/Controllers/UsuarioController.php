@@ -41,6 +41,10 @@ class UsuarioController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
+        ], [
+            'required' => 'El campo debe de ser llenado',
+            'email' => 'El campo debe de ser un email',
+            'unique' => 'El campo debe de ser unico'
         ]);
     
         $user = new User([
@@ -61,6 +65,10 @@ class UsuarioController extends Controller
                 'name' => 'required',
                 'email' => 'required|email|unique:users,email,'.$usuario->id,
                 'password' => 'required',
+            ], [
+                'required' => 'El campo debe de ser llenado',
+                'email' => 'El campo debe de ser un email',
+                'unique' => 'El campo debe de ser unico'
             ]);
     
             $usuario->update([
@@ -74,6 +82,10 @@ class UsuarioController extends Controller
             $request->validate([
                 'name' => 'required',
                 'email' => 'required|email|unique:users,email,'.$usuario->id,
+            ], [
+                'required' => 'El campo debe de ser llenado',
+                'email' => 'El campo debe de ser un email',
+                'unique' => 'El campo debe de ser unico'
             ]);
 
             $usuario->update([
