@@ -8,10 +8,14 @@ header {
 }
 
 nav {
-    background: url('/imagenes/FondoNav.jpg');
-    backdrop-filter: 50px;
-    padding:0;
+    background: url('/imagenes/Fondoav.jpg');
+    /*background: linear-gradient(to right, #0059ff, #000000, #2a009e, #27ec00);*/
+    padding: 0;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 100px; /* Altura deseada */
+    border-radius: 20px; /* Radio de las esquinas */
 }
+
 
 nav ul {
     list-style: none;
@@ -29,7 +33,7 @@ nav a {
 }
 
 .navbar-nav li img {
-    height: 30px; /* Cambia el valor a 60px o cualquier otro valor que desees */
+    height: 50px; /* Cambia el valor a 60px o cualquier otro valor que desees */
     margin-right: 10px; /* Ajusta el margen derecho para separar la imagen de los otros elementos */
     display: inline-block; /* Permite alinear la imagen con los otros elementos en línea */
     vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
@@ -123,10 +127,7 @@ nav a {
     }
    }
    
-p { color: #2000ad;
-    font-size: 20px; /* Tamaño de letra */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif; /* Tipo de letra */
-}
+
 .card-img-top {
     height: 200px; /* Establece la altura deseada de las imágenes */
     object-fit: cover; /* Hace que la imagen mantenga su relación de aspecto y cubra completamente el contenedor */
@@ -271,84 +272,40 @@ section {
    
 }
 
-@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
-
-@keyframes animate{
-    from{
-        filter: hue-rotate(0deg);
-    }
-    to{
-        filter: hue-rotate(360deg);
-    }
-}
-footer {
-    padding: 20px; /* Reducido el padding para un footer más delgado */
-    margin-top: 15px; /* Agregado margen superior para separar del contenido anterior */
-    color: #fff;
-    background: #060606;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center; /* Alinea verticalmente el contenido */
-    /*position: fixed;  Fijar el footer en la parte inferior de la pantalla */
-    left: 0;
-    bottom: 0;
-    width: 100%; /* Ocupar el ancho completo de la pantalla */
+.mission_card, .vision_card {
+   /* Ajusta la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-.card-container {
-    display: flex; /* Utiliza flexbox para alinear horizontalmente los elementos */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
+.card-body {
+    /* Fondo con degradado */
+    background: linear-gradient(to right, #dbdfe6cc, rgb(218, 249, 212));
+    border-radius: 10px;
+    padding: 20px;
 }
 
-.socialContainer {
-    width: 52px;
-    height: 52px;
-    border-radius: 5px;
-    background-color: rgb(44, 44, 44);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition-duration: 0.3s;
+.card-title, .card-text {
+    color: #333; /* Color del texto */
 }
 
-.containerTwo:hover {
-    background-color: #00acee;
-    transition-duration: 0.3s;
+aside{
+    background-image: url('/imagenes/Fondoseccion.jpg');
 }
 
-.containerFour:hover {
-    background-color: green;
-    transition-duration: 0.3s;
+footer{
+    margin-top: 5px;
+
+    background-color: #0c0b0b;
+    height: auto;
 }
-
-.socialContainer:active {
-    transform: scale(0.9);
-    transition-duration: 0.3s;
+p { color: #ddd9d9;
+    font-size: 20px; /* Tamaño de letra */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif; /* Tipo de letra */
 }
-
-.socialSvg {
-    width: 17px;
-}
-
-.socialSvg path {
-    fill: rgb(255, 255, 255);
-}
-
-.socialContainer:hover .socialSvg {
-    animation: slide-in-top 0.3s both;
-}
-
-@keyframes slide-in-top {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+li{
+    color: #ddd9d9;
 }

@@ -23,51 +23,37 @@
                 <h4 class="m-4">NOSOTROS</h4>
                 <h4 class="m-4">TECNOLOGIA & CALIDAD</h4>
             </div>
-
         </section>
+        <img src="{{ asset('imagenes/MisionVision.jpg') }}" class="imagen" alt="Asesoramiento">
+        <p class="card-text">Somos una empresa de tecnología que simplifica la vida cotidiana mediante soluciones innovadoras y accesibles, siendo preferidos por nuestra atención centrada en el cliente y nuestra constante búsqueda de la excelencia en cada experiencia.</p>
+        
     
-        <section class="card_novelty col-12 row d-flex align-items-stretch">
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/asesoramientot1.jpg') }}" class="card-img-top" alt="Asesoramiento">
-                <div class="card-body">
-                    <h5 class="card-title">Asesoramiento Personalizado</h5>
-                    <p class="card-text">Recibe asesoramiento experto para optimizar tus procesos tecnológicos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
+        <!-- Sección para misión y visión -->
+        <aside class="row mission_vision_section">
+            <div class="col-md-6 mission_card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Misión</h5>
+                        <p class="card-text">Impulsar la innovación tecnológica para transformar la vida de las personas, ofreciendo soluciones inteligentes y accesibles que simplifiquen y enriquezcan su día a día.</p>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-6 vision_card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Visión</h5>
+                        <p class="card-text">Ser líderes en la creación de tecnología disruptiva que inspire el progreso y promueva un futuro conectado, donde cada individuo tenga el poder de alcanzar su máximo potencial a través de la tecnología.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Calidad2Nosotros.jpg') }}" class="card-img-top" alt="Calidad">
-                <div class="card-body">
-                    <h5 class="card-title">Garantía de Calidad</h5>
-                    <p class="card-text">Nuestros productos pasan rigurosos controles de calidad para tu tranquilidad.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
-        
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color:hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Responsivo.jpg') }}" class="card-img-top" alt="Diseño Web">
-                <div class="card-body">
-                    <h5 class="card-title">Diseño Web Responsivo</h5>
-                    <p class="card-text">Desarrollamos sitios web modernos y adaptables a todos los dispositivos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
-        
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Mantenimientos1.jpg') }}" class="card-img-top" alt="Mantenimiento">
-                <div class="card-body">
-                    <h5 class="card-title">Servicio de Mantenimiento</h5>
-                    <p class="card-text">Ofrecemos mantenimiento preventivo y correctivo para tus sistemas.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
-        </section>
+        <!-- Fin de sección para misión y visión -->
         
     </div>
     
      <!----------------------->
      @include('Clientes.componentes.footer')
   
-     
+</body>
 </html>

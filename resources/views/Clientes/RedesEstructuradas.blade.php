@@ -25,44 +25,39 @@
             </div>
 
         </section>
-    
-        <section class="card_novelty col-12 row d-flex align-items-stretch">
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/asesoramientot1.jpg') }}" class="card-img-top" alt="Asesoramiento">
-                <div class="card-body">
-                    <h5 class="card-title">Asesoramiento Personalizado</h5>
-                    <p class="card-text">Recibe asesoramiento experto para optimizar tus procesos tecnológicos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
+      
+        <h5 class="card-title">Asesoramiento Personalizado</h5>
+        <img src="{{ asset('imagenes/RedesEstructura.jpg') }}" class="imagen" alt="Asesoramiento">
+        <p class="card-text">Sistemas de infraestructura organizados y estandarizados, compuestos por componentes físicos y lógicos, diseñados para facilitar la comunicación eficiente y confiable de datos entre dispositivos dentro de una organización, garantizando flexibilidad, rendimiento óptimo y facilidad de mantenimiento y expansión.</p>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Calidad2Nosotros.jpg') }}" class="card-img-top" alt="Calidad">
-                <div class="card-body">
-                    <h5 class="card-title">Garantía de Calidad</h5>
-                    <p class="card-text">Nuestros productos pasan rigurosos controles de calidad para tu tranquilidad.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color:hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('ima genes/Responsivo.jpg') }}" class="card-img-top" alt="Diseño Web">
-                <div class="card-body">
-                    <h5 class="card-title">Diseño Web Responsivo</h5>
-                    <p class="card-text">Desarrollamos sitios web modernos y adaptables a todos los dispositivos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
+        <section2>
+            <h3>SERVICIOS QUE OFRECEMOS</h3>
+            <div class="card-deck">
+                <div class="card">
+                    <img src="{{ asset('imagenes/Redplan.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Diseño y planificación de redes</h2>
+                        <p class="card-text">Desarrollo de arquitecturas de red adaptadas a las necesidades específicas de la organización, considerando la distribución de dispositivos y el flujo de datos.</p>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Mantenimientos1.jpg') }}" class="card-img-top" alt="Mantenimiento">
-                <div class="card-body">
-                    <h5 class="card-title">Servicio de Mantenimiento</h5>
-                    <p class="card-text">Ofrecemos mantenimiento preventivo y correctivo para tus sistemas.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
+                <div class="card">
+                    <img src="{{ asset('imagenes/tarjeta2Red.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Instalación y configuración de infraestructura</h2>
+                        <p class="card-text">Implementación física de componentes de red, como cables, switches y routers, junto con la configuración de parámetros de red para asegurar su funcionamiento óptimo.</p>
+                    </div>
                 </div>
+                <div class="card">
+                    <img src="{{ asset('imagenes/tarjeta3Red.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Mantenimiento y soporte técnico</h2>
+                        <p class="card-text">Monitoreo continuo de la red, diagnóstico y resolución de problemas, actualizaciones de software y documentación de la infraestructura para garantizar un rendimiento confiable y seguro.</p>
+                    </div>
+                </div>
+              
             </div>
-        </section>
+        </section2>
         
     </div>
     
