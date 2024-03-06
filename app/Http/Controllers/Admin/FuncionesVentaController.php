@@ -82,6 +82,10 @@ class FuncionesVentaController extends Controller
             $producto = Producto::where('codigo', $codigoProductos[$i])->firstOrFail();
             $productos[] = $producto;
 
+            $producto->update([
+                'stock' => $producto->stock - $cantidadProductos[$i]
+            ]);
+
             $venta->detalle_venta()->attach($producto, [
                 'cantidad' => $cantidadProductos[$i],
                 'subtotal' => $subtotales[$i],

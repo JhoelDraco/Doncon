@@ -67,7 +67,7 @@ Route::controller(VendedorCajaController::class)->group(function(){
 Route::controller(VentasController::class)->group(function(){
     //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
     Route::get('/venta/{cliente}/crear', 'crear')->name('venta.crear');
-    Route::get('/venta/factura', 'facturar')->name('venta.facturar');
+    Route::get('/venta/{cliente}/factura/{venta}', 'facturar')->name('venta.facturar');
 
     Route::post('/venta/{cliente}', 'almacenar')->name('venta.almacenar');
     Route::post('/venta/{venta}/facutura', 'almacenar_factura')->name('factura.almacenar');

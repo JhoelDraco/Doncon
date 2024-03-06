@@ -90,6 +90,7 @@
             var cellPrecio = nuevaVenta.insertCell(2);
             var cellCantidad = nuevaVenta.insertCell(3);
             var cellSubtotal = nuevaVenta.insertCell(4);
+            var cellEliminar = nuevaVenta.insertCell(5);
 
             var subtotal = parseFloat(cantidadProducto.value) * parseFloat(precioProducto.value);
 
@@ -107,7 +108,10 @@
             cellSubtotal.innerHTML = '<label>' + subtotal + '</label>' +
                             '<input type="text" name="subtotal' + "[" + conteoVenta + "]" + '" value="'+ subtotal +'" hidden="true">';
 
+            cellEliminar.innerHTML = "<button type='button' onclick='eliminarFila(this)'>Eliminar</button>";
+
             totalVenta.value = parseFloat(subtotal) + parseFloat(totalVenta.value);
+
 
             for(let i = 0; i < cantidad_m; i++){
                 var moneda = document.getElementById('moneda' + i);
@@ -118,6 +122,11 @@
             }
 
             conteoVenta++;
+        }
+
+        function eliminarFila(boton){
+            var fila = boton.parentNode.parentNode;
+            fila.parentNode.removeChild(fila);
         }
 
     </script>

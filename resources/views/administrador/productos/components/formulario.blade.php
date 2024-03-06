@@ -1,6 +1,9 @@
 <div>
     <label for="codigoProducto">Codigo:</label>
     <input name="codigo" type="text" value="{{ old('codigo') }}">
+    @error('codigo')
+        <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 </div>
 
 <!-- Agrega selectores para tipo y marca -->
@@ -10,7 +13,7 @@
         @foreach ($tiposProductos as $tipo)
             <option value="{{ $tipo->id }}">{{ $tipo->tipo }}</option>
         @endforeach
-    </select>   
+    </select>
 </div>
 
 <div>
@@ -25,6 +28,9 @@
 <div>
     <label for="nombreProducto">Nombre:</label>
     <input name="nombre" type="text" value="{{ old('nombre') }}">
+    @error('nombre')
+        <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 </div>
 
 <div>
@@ -35,11 +41,17 @@
 <div>
     <label for="precioProducto">Precio del producto:</label>
     <input name="precio" type="number" value="{{ old('precio') }}">
+    @error('precio')
+        <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 </div>
 
 <div>
     <label for="stockProducto">Stock del producto:</label>
     <input name="stock" type="number" value="{{ old('stock') }}">
+    @error('stock')
+        <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 </div>
 
 <div class="col-lg-4 form_image_admin">

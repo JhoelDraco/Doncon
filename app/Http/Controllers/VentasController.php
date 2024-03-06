@@ -27,15 +27,34 @@ class VentasController extends Controller
         return view("administrador.ventas.crear", compact('cliente', 'monedas'));
     }
 
-    public function facturar(){
+    public function facturar(Cliente $cliente, Venta $venta){
+
+        $encontrarCliente = new FuncionesClienteController();
+        $cliente = $encontrarCliente->informacionCliente($cliente->id);
+
+        $funciones_venta = new FuncionesVentaController();
+        $productos = $funciones_venta->encontrarProductoFacturacion($venta->id);
         
-        return view("administrador.ventas.facturacion");
+        return view("administrador.ventas.facturacion" , compact('venta', 'cliente', 'productos'));
     }
 
     public function almacenar(Cliente $cliente, Request $request){
 
-        $encontrarCliente = new FuncionesClienteController();
-        $cliente = $encontrarCliente->informacionCliente($cliente->id);
+        //Campos obligatorios
+        $request->validate([
+            'total' => 'required|numeric',
+            'recibido' => 'required|numeric',
+            'cambio' => 'required|numeric',
+
+            'codigoProducto' => 'required|array',
+            'cantidadProducto' => 'required|array',
+            'subtotal' => 'required|array',
+
+            'codigoProducto.*' => 'required|numeric',
+            'cantidadProducto.*' => 'required|numeric',
+            'subtotal.*' => 'required|numeric',
+        ]);
+
 
         $funciones_venta = new FuncionesVentaController();
         $caja_dia = $funciones_venta->cajaDiaUsuario();
@@ -48,7 +67,7 @@ class VentasController extends Controller
         $venta->fecha_hora = $fecha_actual;
         $venta->total = $request->total;
         $venta->descripcion = $request->descripcion;
-        $venta->id_clientes = $cliente->cliente_id;
+        $venta->id_clientes = $cliente->id;
         $venta->id_cajadia = $caja_dia->id;
 
         $venta->save();
@@ -61,12 +80,18 @@ class VentasController extends Controller
         $funciones_venta->almacenarVentas($venta, $codigoProductos,
                         $cantidadProductos, $subtotales);
 
-        $productos = $funciones_venta->encontrarProductoFacturacion($venta->id);
-
-        return view('administrador.ventas.facturacion', compact('productos', 'venta', 'cliente'));
+        return redirect()->route('venta.facturar', ['cliente' => $cliente->id, 'venta' => $venta->id])
+        ->with('cliente', $cliente)
+        ->with('venta', $venta);
     }
 
     public function almacenar_factura(Venta $venta, Request $request){
+
+        $request->validate([
+            'numero_factura' => 'required',
+            'codigo_autorizacion' => 'required',
+            'nit' => 'required'
+        ]);
 
         $factura = new Factura();
 

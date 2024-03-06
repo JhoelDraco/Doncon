@@ -73,23 +73,55 @@ class ClienteController extends Controller
     
     //Funciones que de actualización y almacenamiento
     public function almacenar(Request $request){
-
-        $cliente = new Cliente();
-        $cliente->ci = $request->input('ci');
-        $cliente->correo = $request->input('correo');
-        $cliente->celular = $request->input('celular');
-        $cliente->tipo = $request->input('tipo_cliente');
-        $cliente->ubicacion = $request->input('ubicacion');
-        $cliente->contacto = $request->input('contacto');
-        $cliente->save();
-
+        
         if($request->tipo_cliente == 'E'){
+            $request->validate([
+                'ci' => 'required',
+                'correo' => 'required',
+                'celular' => 'required',
+                'tipo' => 'required',
+                'cirs' => 'required',
+            ],[
+                'required' => 'El campo: debe ser llenado'
+            ]);
+
+            $cliente = new Cliente();
+            $cliente->ci = $request->input('ci');
+            $cliente->correo = $request->input('correo');
+            $cliente->celular = $request->input('celular');
+            $cliente->tipo = $request->input('tipo_cliente');
+            $cliente->ubicacion = $request->input('ubicacion');
+            $cliente->contacto = $request->input('contacto');
+            $cliente->save();
+
             $empresa = new Empresa();
             $empresa->cirs = $request->input('cirs');
             $empresa->id_clientes = $cliente->id;
             $empresa->save();
 
         } else {
+            $request->validate([
+                'ci' => 'required',
+                'correo' => 'required',
+                'celular' => 'required',
+                'tipo' => 'required',
+                'nombre1' => 'required',
+                'nombre2' => 'required',
+                'apellido1' => 'required',
+                'apellido2' => 'required',
+            ],[
+                'required' => 'El campo: debe ser llenado'
+            ]);
+
+            $cliente = new Cliente();
+            $cliente->ci = $request->input('ci');
+            $cliente->correo = $request->input('correo');
+            $cliente->celular = $request->input('celular');
+            $cliente->tipo = $request->input('tipo_cliente');
+            $cliente->ubicacion = $request->input('ubicacion');
+            $cliente->contacto = $request->input('contacto');
+            $cliente->save();
+
             $persona = new Persona();
             $persona->nombre1 = $request->input('nombre1');
             $persona->nombre2 = $request->input('nombre2');
