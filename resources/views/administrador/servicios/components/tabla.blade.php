@@ -3,6 +3,7 @@
     <table>
         <thead>
             <tr>
+                <th>Nombre</th>
                 <th>Tipo</th>
                 <th>Descripcion</th>
             </tr>
@@ -11,6 +12,7 @@
         <tbody>
             @foreach ($servicios as $servicio)
                 <tr>
+                    <td>{{$servicio->nombre}}</td>
                     <td>{{$servicio->tipo}}</td>
                     <td>{{$servicio->descripcion}}</td>
                     

@@ -37,10 +37,14 @@ class ServicioController extends Controller
     public function almacenar(Request $request){
 
         $request->validate([
+            'nombre' => 'required',
             'tipo' => 'required',
+        ], [
+            'required' => 'El campo debe de ser llenado'
         ]);
 
         Servicio::create([
+            'nombre' => $request->nombre,
             'tipo' => $request->tipo,
             'descripcion' => $request->descripcion
         ]);
@@ -48,10 +52,15 @@ class ServicioController extends Controller
     }
 
     public function actualizar(Servicio $servicio, Request $request){
-
-        
+        $request->validate([
+            'nombre' => 'required',
+            'tipo' => 'required',
+        ], [
+            'required' => 'El campo debe de ser llenado'
+        ]);
 
         $servicio->update([
+            'nombre' => $request->nombre,
             'tipo' => $request->tipo,
             'descripcion' => $request->descripcion
         ]);

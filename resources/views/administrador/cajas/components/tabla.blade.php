@@ -12,7 +12,7 @@
             @foreach ($cajas as $caja)
                 <tr>
                     <td>{{$caja->id}}</td>
-                    <td>{{$caja->estado}}</td>
+                    <td>@if($caja->estado == 0) Apagado @else Encendido @endif</td>
 
                     <td>
                         @if ($caja->estado == true)
