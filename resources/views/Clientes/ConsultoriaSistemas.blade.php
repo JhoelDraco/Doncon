@@ -27,10 +27,37 @@
         </section>
         
         <h5 class="card-title">Asesoramiento Personalizado</h5>
-        <img src="{{ asset('imagenes/asesoramientot1.jpg') }}" class="imagen" alt="Asesoramiento">
+        <img src="{{ asset('imagenes/asesoramiento.jpg') }}" class="imagen" alt="Asesoramiento">
         <p class="card-text">Nuestros Servicios de Consultoría le permiten encontrar soluciones duraderas y adaptables en tecnología de la información con el fin de alcanzar sus objetivos de negocio y crecimiento sostenible. Trabajamos junto con usted para encontrar soluciones a problemas técnicos en las más diversas áreas.</p>
         
-            
+        
+        <section2>
+            <h3>SERVICIOS QUE OFRECEMOS</h3>
+            <div class="card-deck">
+                <div class="card">
+                    <img src="{{ asset('imagenes/servidor.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Gestionar y Mantener los Servidores</h2>
+                        <p class="card-text">Supervisión y mantenimiento de servidores para garantizar su funcionamiento óptimo y seguridad.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{{ asset('imagenes/tarjeta2.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Monitorear y Gestionar las Redes</h2>
+                        <p class="card-text">Supervisión y administración de redes para asegurar su eficiencia y seguridad.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{{ asset('imagenes/tarjeta3.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Dar Soporte al Usuario</h2>
+                        <p class="card-text">Atender y resolver las necesidades de los usuarios para garantizar un uso efectivo de los sistemas y servicios.</p>
+                    </div>
+                </div>
+              
+            </div>
+        </section2>
         
         
     </div>

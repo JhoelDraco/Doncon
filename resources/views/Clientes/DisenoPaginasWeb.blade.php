@@ -25,44 +25,39 @@
             </div>
 
         </section>
-    
-        <section class="card_novelty col-12 row d-flex align-items-stretch">
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/asesoramientot1.jpg') }}" class="card-img-top" alt="Asesoramiento">
-                <div class="card-body">
-                    <h5 class="card-title">Asesoramiento Personalizado</h5>
-                    <p class="card-text">Recibe asesoramiento experto para optimizar tus procesos tecnológicos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
+        <h5 class="card-title">Asesoramiento Personalizado</h5>
+        <img src="{{ asset('imagenes/disenio.jpg') }}" class="imagen" alt="Asesoramiento">
+        <p class="card-text">Nuestro servicio de diseño web se enfoca en construir una presencia en línea impactante para su negocio. Con una combinación de creatividad y experiencia técnica, creamos sitios web atractivos y funcionales que cautivan a su audiencia y promueven su marca. Confíe en nosotros para diseñar una experiencia digital única que refleje la esencia de su negocio y lo destaque en el mundo en línea..</p>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Calidad2Nosotros.jpg') }}" class="card-img-top" alt="Calidad">
-                <div class="card-body">
-                    <h5 class="card-title">Garantía de Calidad</h5>
-                    <p class="card-text">Nuestros productos pasan rigurosos controles de calidad para tu tranquilidad.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color:hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('ima genes/Responsivo.jpg') }}" class="card-img-top" alt="Diseño Web">
-                <div class="card-body">
-                    <h5 class="card-title">Diseño Web Responsivo</h5>
-                    <p class="card-text">Desarrollamos sitios web modernos y adaptables a todos los dispositivos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
+        <section2>
+            <h3>SERVICIOS QUE OFRECEMOS</h3>
+            <div class="card-deck">
+                <div class="card">
+                    <img src="{{ asset('imagenes/tarjetadisenio.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Diseño de sitios web</h2>
+                        <p class="card-text">: Creación de diseños visualmente atractivos y funcionales que consideren la estética, la usabilidad y la experiencia del usuario.</p>
+                    </div>
                 </div>
+                <div class="card">
+                    <img src="{{ asset('imagenes/usuarios.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Desarrollo de la experiencia del usuario (UX)</h2>
+                        <p class="card-text">Creación de una experiencia de usuario óptima, garantizando que el sitio web sea intuitivo y fácil de usar.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{{ asset('imagenes/busqueda.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Optimización para motores de búsqueda (SEO)</h2>
+                        <p class="card-text">Implementación de prácticas de diseño y desarrollo que mejoren la visibilidad del sitio web en los resultados de búsqueda de los motores de búsqueda, como Google.</p>
+                    </div>
+                </div>
+              
             </div>
+        </section2>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Mantenimientos1.jpg') }}" class="card-img-top" alt="Mantenimiento">
-                <div class="card-body">
-                    <h5 class="card-title">Servicio de Mantenimiento</h5>
-                    <p class="card-text">Ofrecemos mantenimiento preventivo y correctivo para tus sistemas.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
-        </section>
         
     </div>
     

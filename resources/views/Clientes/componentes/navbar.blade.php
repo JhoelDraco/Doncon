@@ -22,7 +22,6 @@
                             <a class="dropdown-item" href="{{ route('MantenimientoCorrectivoyPreventivo.MantenimientoCorrectivoyPreventivo') }}">Mantenimiento Correctivo y Preventivo</a>
                             <a class="dropdown-item" href="{{ route('DisenoPaginasWeb.DisenoPaginasWeb') }}">Diseno de Pagina Web</a>
                             <a class="dropdown-item" href="{{ route('RedesEstructuradas.RedesEstructuradas') }}">Redes Estructuradas</a>
-                            <a class="dropdown-item" href="{{ route('GestionyCalidad.GestionyCalidad') }}">Consultoria de Gestion de Calidad</a>
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" id="CONTACTANOS" href="{{ route('contactanos.contactanos') }}">CONTACTANOS</a></li>

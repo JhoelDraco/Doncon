@@ -13,15 +13,15 @@
 
 
 <div class="container">
-    <div class="custom-card1">
-        <div class="product-info1">
+    <div class="custom-card">
+        <div class="product-info">
             <label>CI o Razon Social:</label>
             <p>{{$proveedor->cirs}}</p>
         </div>
     </div>
 
-    <div class="custom-card2">
-        <div class="product-info2">
+    <div class="custom-card">
+        <div class="product-info">
             <label>Celular:</label>
             <p>{{$proveedor->celular}}</p>
         </div>

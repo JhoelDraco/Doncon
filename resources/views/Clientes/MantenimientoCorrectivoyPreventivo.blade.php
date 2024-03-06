@@ -25,44 +25,47 @@
             </div>
 
         </section>
-    
-        <section class="card_novelty col-12 row d-flex align-items-stretch">
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/asesoramientot1.jpg') }}" class="card-img-top" alt="Asesoramiento">
-                <div class="card-body">
-                    <h5 class="card-title">Asesoramiento Personalizado</h5>
-                    <p class="card-text">Recibe asesoramiento experto para optimizar tus procesos tecnológicos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
-                </div>
-            </div>
+        <h5 class="card-title">Asesoramiento Personalizado</h5>
+        <img src="{{ asset('imagenes/mantenimiento1.jpg') }}" class="imagen" alt="Asesoramiento">
+        <p class="card-text">Mantenimiento de Equipos: Garantizando su Rendimiento Óptimo
+
+            En nuestra empresa, nos tomamos en serio el cuidado de nuestros equipos. Nuestro enfoque se divide en dos aspectos clave:
+            
+            Corrección Eficiente:
+            Cuando surge un problema, actuamos con prontitud para solucionarlo. Nuestro equipo de expertos identifica y resuelve cualquier fallo o avería de manera rápida y eficaz, asegurando que sus operaciones continúen sin interrupciones significativas.
+            
+            Prevención Proactiva:
+            Adoptamos un enfoque preventivo para evitar problemas antes de que ocurran. A través de inspecciones regulares, mantenimiento planificado y medidas proactivas, prolongamos la vida útil de los equipos y minimizamos los tiempos de inactividad no planificados.
+            
+            En resumen, nuestro compromiso con el mantenimiento de equipos garantiza su fiabilidad, disponibilidad y rendimiento óptimo, lo que se traduce en operaciones más eficientes y clientes satisfechos. Confíe en nosotros para mantener sus equipos en condiciones óptimas para el éxito continuo de su negocio.</p>
         
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Calidad2Nosotros.jpg') }}" class="card-img-top" alt="Calidad">
-                <div class="card-body">
-                    <h5 class="card-title">Garantía de Calidad</h5>
-                    <p class="card-text">Nuestros productos pasan rigurosos controles de calidad para tu tranquilidad.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
+        <section2>
+            <h3>SERVICIOS QUE OFRECEMOS</h3>
+            <div class="card-deck">
+                <div class="card">
+                    <img src="{{ asset('imagenes/tarjetamantenimiento.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Eliminacion de Virus y Malware</h2>
+                        <p class="card-text">Nuestro servicio de eliminación de virus y malware está diseñado para proteger su sistema contra amenazas cibernéticas. Utilizando herramientas especializadas y experiencia técnica, identificamos y eliminamos cualquier software malicioso que pueda comprometer la seguridad de su equipo. Confíe en nosotros para mantener su sistema libre de virus y proteger sus datos críticos contra cualquier intrusión no deseada</p>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color:hsl(0, 0%, 100%); border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('ima genes/Responsivo.jpg') }}" class="card-img-top" alt="Diseño Web">
-                <div class="card-body">
-                    <h5 class="card-title">Diseño Web Responsivo</h5>
-                    <p class="card-text">Desarrollamos sitios web modernos y adaptables a todos los dispositivos.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
+                <div class="card">
+                    <img src="{{ asset('imagenes/tarjetaoperativo.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Restauracion de Sistema Operativo</h2>
+                        <p class="card-text">Nuestro servicio de restauración del sistema operativo está diseñado para devolverle la funcionalidad a su equipo. Utilizando técnicas avanzadas y experiencia en sistemas, restauramos su sistema operativo a un estado funcional óptimo. Confíe en nosotros para recuperar la estabilidad y el rendimiento de su sistema, asegurando así la continuidad de sus operaciones.</p>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 5px;">
-                <img src="{{ asset('imagenes/Mantenimientos1.jpg') }}" class="card-img-top" alt="Mantenimiento">
-                <div class="card-body">
-                    <h5 class="card-title">Servicio de Mantenimiento</h5>
-                    <p class="card-text">Ofrecemos mantenimiento preventivo y correctivo para tus sistemas.</p>
-                    <a href="#" class="btn btn-outline-dark">Más información</a>
+                <div class="card">
+                    <img src="{{ asset('imagenes/tarjetarecuperacion.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">Recuperacion de Datos</h2>
+                        <p class="card-text">Nuestro servicio de recuperación de datos está dedicado a restaurar la información valiosa que pueda haberse perdido. Utilizando herramientas especializadas y conocimientos técnicos, trabajamos para recuperar sus datos de manera rápida y efectiva. Confíe en nosotros para recuperar sus archivos importantes y mantener la integridad de su información crítica.</p>
+                    </div>
                 </div>
+              
             </div>
-        </section>
+        </section2>
         
     </div>
     
