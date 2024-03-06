@@ -35,6 +35,13 @@ class VendedorCajaController extends Controller
 
     //Funciones que no se muestran
     public function almacenar(Request $request){
+        $request->validate([
+            'monto_inicial' => 'required|numeric',
+            'id_caja' => 'required'
+        ], [
+            'required' => 'El campo debe de ser llenado',
+            'numeric' => 'El campo debe de ser numerico'
+        ]);
         
         $usuario = Auth::user();
 

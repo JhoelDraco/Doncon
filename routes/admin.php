@@ -10,8 +10,10 @@ use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\MonedaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\CajaController;
+use App\Http\Controllers\RegistroVentaController;
 use App\Http\Controllers\VendedorCajaController;
 use App\Http\Controllers\VentasController;
+use App\Http\Controllers\ComprasController;
 use App\Http\Controllers\ProveedorController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,13 +63,34 @@ Route::controller(VendedorCajaController::class)->group(function(){
     //Route::delete('/caja/activacion/{caja}', 'eliminar')->name('caja.eliminar');
 });
 
+//Grupo diseñado para realizar ventas y facturación
 Route::controller(VentasController::class)->group(function(){
     //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
     Route::get('/venta/{cliente}/crear', 'crear')->name('venta.crear');
-    Route::get('/venta/factura', 'facturar')->name('venta.facturar');
+    Route::get('/venta/{cliente}/factura/{venta}', 'facturar')->name('venta.facturar');
 
     Route::post('/venta/{cliente}', 'almacenar')->name('venta.almacenar');
     Route::post('/venta/{venta}/facutura', 'almacenar_factura')->name('factura.almacenar');
+});
+
+//Grupo diseñado para registros de ventas
+Route::controller(RegistroVentaController::class)->group(function(){
+    //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
+    Route::get('/registro/ventas', 'index')->name('registro_venta.index');
+    Route::get('/registro/ventas/{venta}', 'mostrar')->name('registro_venta.mostrar');
+});
+
+
+//Grupo diseñado para el crud del compras
+Route::controller(ComprasController::class)->group(function(){
+    Route::get('/compras', 'index')->name('compras.index');
+    Route::get('/compras/crear', 'crear')->name('compras.crear');
+    Route::get('/compras/{compras}/mostrar', 'mostrar')->name('compras.mostrar');
+    Route::get('/compras/{compras}/editar', 'editar')->name('compras.editar');
+
+    Route::post('/compras', 'almacenar')->name('compras.almacenar');
+    Route::put('/compras/{compras}', 'actualizar')->name('compras.actualizar');
+    Route::delete('/compras/{compras}', 'eliminar')->name('compras.eliminar');
 });
 
 //Grupo diseñado para el crud del producto

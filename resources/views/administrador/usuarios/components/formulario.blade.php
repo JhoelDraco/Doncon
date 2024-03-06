@@ -1,19 +1,25 @@
 <div>
     <label for="nombreUsuario">Nombre:</label>
     <input name="name" type="text" value="@isset($usuario){{$usuario->name}}@else{{old('name')}}@endisset">   
+    @error('name')
+        <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 </div>
 
 <div>
     <label for="emailUsuario">Email:</label>
     <input name="email" type="text" value="@isset($usuario){{$usuario->email}}@else{{old('email')}}@endisset">
+    @error('email')
+        <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 </div>
 
 @isset($usuario)
     <div>
-        <input type="radio" id="radio_con_password" name="cambio_password" value="generar" onclick="generarPassword('con_password')">
+        <input type="radio" id="radio_con_password" name="cambio_password" value="generar" onclick="generarPassword('con_password')" checked>
         <label for="">Generar nueva contraseña</label>
 
-        <input type="radio" id="radio_sin_password" name="cambio_password" value="no_generar" onclick="generarPassword('sin_password')" checked>
+        <input type="radio" id="radio_sin_password" name="cambio_password" value="no_generar" onclick="generarPassword('sin_password')">
         <label for="">Mantener la contraseña</label>
     </div>
 
@@ -22,6 +28,9 @@
 <div id="campo_password">
     <label for="passwordUsuario">Contraseña:</label>
     <input name="password" type="password" >
+    @error('password')
+        <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 </div>
 
 <div>
@@ -60,8 +69,6 @@
 
 <script>
     var campo_password = document.getElementById('campo_password');
-
-    campo_password.style.display = 'none';
 
     function generarPassword(generar) {
 

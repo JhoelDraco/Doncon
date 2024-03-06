@@ -32,7 +32,7 @@ class ProveedorController extends Controller
     
     public function almacenar(Request $request){
         
-        
+
         Proveedor::create([
             'cirs' => $request->cirs,
             'celular' => $request->celular,   

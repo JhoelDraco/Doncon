@@ -73,23 +73,59 @@ class ClienteController extends Controller
     
     //Funciones que de actualización y almacenamiento
     public function almacenar(Request $request){
-
-        $cliente = new Cliente();
-        $cliente->ci = $request->input('ci');
-        $cliente->correo = $request->input('correo');
-        $cliente->celular = $request->input('celular');
-        $cliente->tipo = $request->input('tipo_cliente');
-        $cliente->ubicacion = $request->input('ubicacion');
-        $cliente->contacto = $request->input('contacto');
-        $cliente->save();
-
+        
         if($request->tipo_cliente == 'E'){
+            $request->validate([
+                'ci' => 'required',
+                'correo' => 'required|email',
+                'celular' => 'required|numeric',
+                'tipo' => 'required',
+                'cirs' => 'required',
+            ],[
+                'required' => 'El campo debe ser llenado',
+                'numeric' => 'El campo debe de ser de tipo',
+                'email' => 'El campo debe de ser un correo'
+            ]);
+
+            $cliente = new Cliente();
+            $cliente->ci = $request->input('ci');
+            $cliente->correo = $request->input('correo');
+            $cliente->celular = $request->input('celular');
+            $cliente->tipo = $request->input('tipo_cliente');
+            $cliente->ubicacion = $request->input('ubicacion');
+            $cliente->contacto = $request->input('contacto');
+            $cliente->save();
+
             $empresa = new Empresa();
             $empresa->cirs = $request->input('cirs');
             $empresa->id_clientes = $cliente->id;
             $empresa->save();
 
         } else {
+            $request->validate([
+                'ci' => 'required',
+                'correo' => 'required|email',
+                'celular' => 'required|numeric',
+                'tipo' => 'required',
+                'nombre1' => 'required',
+                'nombre2' => 'required',
+                'apellido1' => 'required',
+                'apellido2' => 'required',
+            ],[
+                'required' => 'El campo debe ser llenado',
+                'numeric' => 'El campo debe de ser de tipo numerico',
+                'email' => 'El campo debe de ser un correo'
+            ]);
+
+            $cliente = new Cliente();
+            $cliente->ci = $request->input('ci');
+            $cliente->correo = $request->input('correo');
+            $cliente->celular = $request->input('celular');
+            $cliente->tipo = $request->input('tipo_cliente');
+            $cliente->ubicacion = $request->input('ubicacion');
+            $cliente->contacto = $request->input('contacto');
+            $cliente->save();
+
             $persona = new Persona();
             $persona->nombre1 = $request->input('nombre1');
             $persona->nombre2 = $request->input('nombre2');
@@ -106,20 +142,55 @@ class ClienteController extends Controller
 
         $empresa = $cliente->empresa()->first();
         $persona = $cliente->persona()->first();
-        
-        $cliente->update([
-            'ci' => $request->ci,
-            'correo' => $request->correo,
-            'celular' => $request->celular,
-            'ubicacion' => $request->ubicacion,
-            'contacto' => $request->contacto
-        ]);
 
         if($cliente->tipo == "E"){
+            $request->validate([
+                'ci' => 'required',
+                'correo' => 'required|email',
+                'celular' => 'required|numeric',
+                'tipo' => 'required',
+                'cirs' => 'required',
+            ],[
+                'required' => 'El campo debe ser llenado',
+                'numeric' => 'El campo debe de ser de tipo numerico',
+                'email' => 'El campo debe de ser un correo'
+            ]);
+
+            $cliente->update([
+                'ci' => $request->ci,
+                'correo' => $request->correo,
+                'celular' => $request->celular,
+                'ubicacion' => $request->ubicacion,
+                'contacto' => $request->contacto
+            ]);
+
             $empresa->update([
                 'cirs' => $request->cirs
             ]);
         }else{
+            $request->validate([
+                'ci' => 'required',
+                'correo' => 'required|email',
+                'celular' => 'required|numeric',
+                'tipo' => 'required',
+                'nombre1' => 'required',
+                'nombre2' => 'required',
+                'apellido1' => 'required',
+                'apellido2' => 'required',
+            ],[
+                'required' => 'El campo debe ser llenado',
+                'numeric' => 'El campo debe de ser de tipo numerico',
+                'email' => 'El campo debe de ser un correo'
+            ]);
+
+            $cliente->update([
+                'ci' => $request->ci,
+                'correo' => $request->correo,
+                'celular' => $request->celular,
+                'ubicacion' => $request->ubicacion,
+                'contacto' => $request->contacto
+            ]);
+
             $persona->update([
                 'nombre1' => $request->nombre1,
                 'nombre2' => $request->nombre2,

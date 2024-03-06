@@ -1,6 +1,9 @@
 <div>
     <label for="monto_inicial">Monto Inicial:</label>
     <input type="number" name="monto_inicial" step="any">
+    @error('monto_inicial')
+        <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 </div>
 
 <select name="id_caja">

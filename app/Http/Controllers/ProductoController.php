@@ -38,6 +38,16 @@ class ProductoController extends Controller
     
     
     public function almacenar(Request $request){
+
+        $request->validate([
+            'codigo' => 'required',
+            'nombre' => 'required',
+            'precio' => 'required|numeric',
+            'stock' => 'required|numeric',
+        ],[
+            'required' => 'El campo debe de ser llenado',
+            'numeric' => 'El campo debe de ser de tipo numerico'
+        ]);
         
         if($request->hasFile('imagen')){
             $file = $request->file('imagen');
@@ -55,8 +65,7 @@ class ProductoController extends Controller
             'detalle' =>$request->detalle,           
             'precio' => $request->precio,
             'stock' => $request->stock,
-            'imagen' => $destination. $filename
-            
+            'imagen' => $destination. $filename 
         ]);
 
 
@@ -73,6 +82,17 @@ class ProductoController extends Controller
     }
 
     public function actualizar(Producto $producto, Request $request){
+
+        $request->validate([
+            'codigo' => 'required',
+            'nombre' => 'required',
+            'nombre' => 'required',
+            'precio' => 'required|numeric',
+            'stock' => 'required|numeric',
+        ],[
+            'required' => 'El campo debe de ser llenado',
+            'numeric' => 'El campo debe de ser de tipo numerico'
+        ]);
 
         $producto->update([
             'codigo' => $request->codigo,

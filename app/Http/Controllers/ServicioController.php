@@ -35,6 +35,11 @@ class ServicioController extends Controller
     //Funciones para los procesos del sistemas
     
     public function almacenar(Request $request){
+
+        $request->validate([
+            'tipo' => 'required',
+        ]);
+
         Servicio::create([
             'tipo' => $request->tipo,
             'descripcion' => $request->descripcion
@@ -43,6 +48,8 @@ class ServicioController extends Controller
     }
 
     public function actualizar(Servicio $servicio, Request $request){
+
+        
 
         $servicio->update([
             'tipo' => $request->tipo,

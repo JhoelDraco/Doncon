@@ -32,6 +32,7 @@
                         <button type="submit">Eliminar</button>
                     </form>
                 </td>
+                <td><a href="{{route('compras.crear')}}">Comprar</a> </td>
             </tr>
         @endforeach
         
