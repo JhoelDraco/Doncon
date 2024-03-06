@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Caja;
 use App\Models\Producto;
 use App\Models\Venta;
+use App\Models\Compras;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 

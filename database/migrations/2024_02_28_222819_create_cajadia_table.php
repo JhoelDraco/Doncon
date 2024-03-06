@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cajadia', function (Blueprint $table) {
             $table->id();
             $table->dateTime('fecha_hora');
-            $table->decimal('monto_inicial');
+            $table->decimal('monto_inicial', 8, 2);
             $table->decimal('monto_final', 8, 2)->nullable();
             $table->boolean('estado');
             $table->timestamps();

@@ -12,11 +12,11 @@
 @section('content')
 
     <section>
-        <h3>FORMULARIO PARA CREAR SERVICIOS</h3>
-        <form method="POST" action="{{route('servicio.almacenar')}}" >
+        <h3>COMPRAS</h3>
+        <form method="POST" action="{{route('compras.almacenar')}}">
             @csrf
-
-            @include('administrador.servicios.components.formulario')
+            
+            @include('administrador.compras.components.formulario_compras')
         </form>
     </section>
 

@@ -64,7 +64,7 @@ class ProductoController extends Controller
             'detalle' =>$request->detalle,           
             'precio' => $request->precio,
             'stock' => $request->stock,
-            'imagen' => $destination. $filename
+            'imagen' => $destination. $filename 
         ]);
 
 
