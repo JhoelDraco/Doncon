@@ -13,9 +13,10 @@
 
 @section('content')
 
+    @can('admin.proveedor.crear')
         <a href="{{route('proveedor.crear')}}">Crear Proveedor</a> 
-    
-    
+    @endcan
+        
     @livewire('admin.proveedor-index')
 
 @stop

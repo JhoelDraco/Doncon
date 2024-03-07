@@ -14,15 +14,23 @@
                 <td>{{$proveedors->cirs}}</td>
                 <td>{{$proveedors->celular}}</td>
 
-                <td><a href="{{route('proveedor.mostrar', $proveedors->id)}}">Mostrar</a></td>
-                <td><a href="{{route('proveedor.editar', $proveedors->id)}}">Editar</a></td>
-                <td>
-                    <form method="POST" action="{{route('proveedor.eliminar', $proveedors->id)}}">
-                        @csrf
-                        @method('delete')
-                        <button type="submit">Eliminar</button>
-                    </form>
-                </td>
+                @can('admin.proveedor.mostrar')
+                    <td><a href="{{route('proveedor.mostrar', $proveedors->id)}}">Mostrar</a></td>
+                @endcan
+
+                @can('admin.proveedor.editar')
+                    <td><a href="{{route('proveedor.editar', $proveedors->id)}}">Editar</a></td>
+                @endcan
+
+                @can('admin.proveedor.eliminar')
+                    <td>
+                        <form method="POST" action="{{route('proveedor.eliminar', $proveedors->id)}}">
+                            @csrf
+                            @method('delete')
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                @endcan
             </tr>
         @endforeach
         

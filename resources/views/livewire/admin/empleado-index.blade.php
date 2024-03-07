@@ -17,16 +17,24 @@
                     <td>{{$empleado->apellido1}} {{$empleado->apellido2}}</td>
                     <td>{{$empleado->area}}</td>
                  
-                    <td><a href="{{route('empleado.mostrar', $empleado->id)}}">Mostrar</a></td>
-                    <td><a href="{{route('empleado.editar', $empleado->id)}}">Editar</a></td>
-                    <td>
-                        <form method="POST" action="{{route('empleado.eliminar', $empleado->id)}}">
-                            @csrf
+                    @can('admin.empleado.mostrar')
+                        <td><a href="{{route('empleado.mostrar', $empleado->id)}}">Mostrar</a></td>
+                    @endcan
 
-                            @method('delete')
-                            <button type="submit">Eliminar</button>
-                        </form>
-                    </td>
+                    @can('admin.empleado.editar')
+                        <td><a href="{{route('empleado.editar', $empleado->id)}}">Editar</a></td>
+                    @endcan
+                    
+                    @can('admin.empleado.eliminar')
+                        <td>
+                            <form method="POST" action="{{route('empleado.eliminar', $empleado->id)}}">
+                                @csrf
+
+                                @method('delete')
+                                <button type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    @endcan
                 </tr>
             @endforeach
         </tbody>

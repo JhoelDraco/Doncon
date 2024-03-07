@@ -32,10 +32,11 @@
                         <button type="submit">Eliminar</button>
                     </form>
                 </td>
-                <td><a href="{{route('compras.crear')}}">Comprar</a> </td>
+                @can('admin.compras.crear')
+                    <td><a href="{{route('compras.crear')}}">Comprar</a> </td>
+                @endcan
             </tr>
         @endforeach
-        
         </tbody>
     </table>
 

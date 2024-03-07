@@ -79,7 +79,6 @@ class ClienteController extends Controller
                 'ci' => 'required',
                 'correo' => 'required|email',
                 'celular' => 'required|numeric',
-                'tipo' => 'required',
                 'cirs' => 'required',
             ],[
                 'required' => 'El campo debe ser llenado',
@@ -106,7 +105,6 @@ class ClienteController extends Controller
                 'ci' => 'required',
                 'correo' => 'required|email',
                 'celular' => 'required|numeric',
-                'tipo' => 'required',
                 'nombre1' => 'required',
                 'nombre2' => 'required',
                 'apellido1' => 'required',

@@ -13,8 +13,9 @@
 
 @section('content')
 
+    @can('admin.moneda.crear')
         <a href="{{route('moneda.crear')}}">crear moneda</a> 
-    
+    @endcan
     
     @livewire('admin.moneda-index')
 

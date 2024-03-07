@@ -27,7 +27,10 @@
                     <td>{{$registroVenta->nro_factura}}</td>
                     <td>{{$registroVenta->fecha_hora}}</td>
                     <td>{{$registroVenta->total}}</td>
-                    <td><a href="{{route('registro_venta.mostrar', $registroVenta->venta_id)}}">Mostrar</a></td>
+                    @can('admin.registro_venta.mostrar')
+                        <td><a href="{{route('registro_venta.mostrar', $registroVenta->venta_id)}}">Mostrar</a></td>
+                    @endcan
+                    
                 </tr>
             @endforeach
         </tbody>

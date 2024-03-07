@@ -45,20 +45,20 @@ Route::controller(RoleController::class)->group(function(){
 
 //GRUPO PARA EL CRUD DE CAJAS
 Route::controller(CajaController::class)->group(function(){
-    Route::get('/caja', 'index')->name('caja.index');
+    Route::get('/caja', 'index')->middleware('can:admin.caja.index')->name('caja.index');
 
-    Route::post('/caja', 'almacenar')->name('caja.almacenar');
-    Route::put('/caja/{caja}/activar', 'activar')->name('caja.activar');
-    Route::put('/caja/{caja}/desactivar', 'desactivar')->name('caja.desactivar');
-    Route::delete('/caja/{caja}', 'eliminar')->name('caja.eliminar');
+    Route::post('/caja', 'almacenar')->middleware('can:admin.caja.almacenar')->name('caja.almacenar');
+    Route::put('/caja/{caja}/activar', 'activar')->middleware('can:admin.caja.activar')->name('caja.activar');
+    Route::put('/caja/{caja}/desactivar', 'desactivar')->middleware('can:admin.caja.activar')->name('caja.desactivar');
+    Route::delete('/caja/{caja}', 'eliminar')->middleware('can:admin.caja.eliminar')->name('caja.eliminar');
 });
 
 //GRUPO PARA LA ACTIVACIÓN DE CAJAS
 Route::controller(VendedorCajaController::class)->group(function(){
-    Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
-    Route::get('/vendedor_cajas/crear', 'crear')->name('vendedor_cajas.crear');
+    Route::get('/vendedor_cajas', 'index')->middleware('can:admin.vendedor_cajas.index')->name('vendedor_cajas.index');
+    Route::get('/vendedor_cajas/crear', 'crear')->middleware('can:admin.vendedor_cajas.crear')->name('vendedor_cajas.crear');
 
-    Route::post('/vendedor_cajas', 'almacenar')->name('vendedor_cajas.almacenar');
+    Route::post('/vendedor_cajas', 'almacenar')->middleware('can:admin.vendedor_cajas.almacenar')->name('vendedor_cajas.almacenar');
     //Route::put('/caja/activacion/{caja}/actualizar', 'activar')->name('caja.activacion.actualizar');
     //Route::delete('/caja/activacion/{caja}', 'eliminar')->name('caja.eliminar');
 });
@@ -66,29 +66,30 @@ Route::controller(VendedorCajaController::class)->group(function(){
 //Grupo diseñado para realizar ventas y facturación
 Route::controller(VentasController::class)->group(function(){
     //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
-    Route::get('/venta/{cliente}/crear', 'crear')->name('venta.crear');
-    Route::get('/venta/{cliente}/factura/{venta}', 'facturar')->name('venta.facturar');
+    Route::get('/venta/{cliente}/crear', 'crear')->middleware('can:admin.venta.crear')->name('venta.crear');
+    Route::get('/venta/{cliente}/factura/{venta}', 'facturar')->middleware('can:admin.venta.facturar')->name('venta.facturar');
 
-    Route::post('/venta/{cliente}', 'almacenar')->name('venta.almacenar');
-    Route::post('/venta/{venta}/facutura', 'almacenar_factura')->name('factura.almacenar');
+    Route::post('/venta/{cliente}', 'almacenar')->middleware('can:admin.venta.crear')->name('venta.almacenar');
+    Route::post('/venta/{venta}/facutura', 'almacenar_factura')->middleware('can:admin.venta.facturar')->name('factura.almacenar');
 });
 
 //Grupo diseñado para registros de ventas
 Route::controller(RegistroVentaController::class)->group(function(){
     //Route::get('/vendedor_cajas', 'index')->name('vendedor_cajas.index');
-    Route::get('/registro/ventas', 'index')->name('registro_venta.index');
-    Route::get('/registro/ventas/{venta}', 'mostrar')->name('registro_venta.mostrar');
+    Route::get('/registro/ventas', 'index')->middleware('can:admin.registro_venta.index')->name('registro_venta.index');
+    Route::get('/registro/ventas/{venta}', 'mostrar')->middleware('can:admin.registro_venta.mostrar')->name('registro_venta.mostrar');
 });
 
 
 //Grupo diseñado para el crud del compras
 Route::controller(ComprasController::class)->group(function(){
+    
     Route::get('/compras', 'index')->name('compras.index');
-    Route::get('/compras/crear', 'crear')->name('compras.crear');
+    Route::get('/compras/crear', 'crear')->middleware('can:admin.compras.crear')->name('compras.crear');
     Route::get('/compras/{compras}/mostrar', 'mostrar')->name('compras.mostrar');
     Route::get('/compras/{compras}/editar', 'editar')->name('compras.editar');
 
-    Route::post('/compras', 'almacenar')->name('compras.almacenar');
+    Route::post('/compras', 'almacenar')->middleware('can:admin.compras.crear')->name('compras.almacenar');
     Route::put('/compras/{compras}', 'actualizar')->name('compras.actualizar');
     Route::delete('/compras/{compras}', 'eliminar')->name('compras.eliminar');
 });
@@ -131,57 +132,60 @@ Route::controller(ServicioController::class)->group(function(){
 
 //GRUPO PARA EL CRUD DE PRODUCTOS TIPO
 Route::controller(TipoController::class)->group(function(){
-    Route::get('/tipo', 'index')->name('tipo.index');
-    Route::get('/tipo/crear', 'crear')->name('tipo.crear');
-    Route::get('/tipo/{tipo}/mostrar', 'mostrar')->name('tipo.mostrar');
-    Route::get('/tipo/{tipo}/editar', 'editar')->name('tipo.editar');
+    Route::get('/tipo', 'index')->middleware('can:admin.tipo.index')->name('tipo.index');
+    Route::get('/tipo/crear', 'crear')->middleware('can:admin.tipo.crear')->name('tipo.crear');
+    Route::get('/tipo/{tipo}/mostrar', 'mostrar')->middleware('can:admin.tipo.mostrar')->name('tipo.mostrar');
+    Route::get('/tipo/{tipo}/editar', 'editar')->middleware('can:admin.tipo.editar')->name('tipo.editar');
 
-    Route::post('/tipo', 'almacenar')->name('tipo.almacenar');
-    Route::put('/tipo/{tipo}', 'actualizar')->name('tipo.actualizar');
-    Route::delete('/tipo/{tipo}', 'eliminar')->name('tipo.eliminar');
+    Route::post('/tipo', 'almacenar')->middleware('can:admin.tipo.crear')->name('tipo.almacenar');
+    Route::put('/tipo/{tipo}', 'actualizar')->middleware('can:admin.tipo.editar')->name('tipo.actualizar');
+    Route::delete('/tipo/{tipo}', 'eliminar')->middleware('can:admin.tipo.eliminar')->name('tipo.eliminar');
 });
 
 //GRUPO PARA EL CRUD DE PRODUCTOS MARCA
 Route::controller(MarcaController::class)->group(function(){
-    Route::get('/marca', 'index')->name('marca.index');
-    Route::get('/marca/crear', 'crear')->name('marca.crear');
-    Route::get('/marca/{marca}/mostrar', 'mostrar')->name('marca.mostrar');
-    Route::get('/marca/{marca}/editar', 'editar')->name('marca.editar');
+    Route::get('/marca', 'index')->middleware('can:admin.marca.index')->name('marca.index');
+    Route::get('/marca/crear', 'crear')->middleware('can:admin.marca.crear')->name('marca.crear');
+    Route::get('/marca/{marca}/mostrar', 'mostrar')->middleware('can:admin.marca.mostrar')->name('marca.mostrar');
+    Route::get('/marca/{marca}/editar', 'editar')->middleware('can:admin.marca.editar')->name('marca.editar');
 
-    Route::post('/marca', 'almacenar')->name('marca.almacenar');
-    Route::put('/marca/{marca}', 'actualizar')->name('marca.actualizar');
-    Route::delete('/marca/{marca}', 'eliminar')->name('marca.eliminar');
+    Route::post('/marca', 'almacenar')->middleware('can:admin.marca.crear')->name('marca.almacenar');
+    Route::put('/marca/{marca}', 'actualizar')->middleware('can:admin.marca.editar')->name('marca.actualizar');
+    Route::delete('/marca/{marca}', 'eliminar')->middleware('can:admin.marca.eliminar')->name('marca.eliminar');
 });
 
-//GRUPO PARA EL CRUD DE PRODUCTOS EMPLEADO
+//GRUPO PARA EL CRUD DE EMPLEADO
 Route::controller(EmpleadoController::class)->group(function(){
-    Route::get('/empleado', 'index')->name('empleado.index');
-    Route::get('/empleado/crear', 'crear')->name('empleado.crear');
-    Route::get('/empleado/{empleado}/mostrar', 'mostrar')->name('empleado.mostrar');
-    Route::get('/empleado/{empleado}/editar', 'editar')->name('empleado.editar');
+    Route::get('/empleado', 'index')->middleware('can:admin.empleado.index')->name('empleado.index');
+    Route::get('/empleado/crear', 'crear')->middleware('can:admin.empleado.crear')->name('empleado.crear');
+    Route::get('/empleado/{empleado}/mostrar', 'mostrar')->middleware('can:admin.empleado.mostrar')->name('empleado.mostrar');
+    Route::get('/empleado/{empleado}/editar', 'editar')->middleware('can:admin.empleado.editar')->name('empleado.editar');
 
-    Route::post('/empleado', 'almacenar')->name('empleado.almacenar');
-    Route::put('/empleado/{empleado}', 'actualizar')->name('empleado.actualizar');
-    Route::delete('/empleado/{empleado}', 'eliminar')->name('empleado.eliminar');
+    Route::post('/empleado', 'almacenar')->middleware('can:admin.empleado.crear')->name('empleado.almacenar');
+    Route::put('/empleado/{empleado}', 'actualizar')->middleware('can:admin.empleado.editar')->name('empleado.actualizar');
+    Route::delete('/empleado/{empleado}', 'eliminar')->middleware('can:admin.empleado.eliminar')->name('empleado.eliminar');
 });
+
+//CRUD PARA LAS MONDEDAS
 Route::controller(MonedaController::class)->group(function(){
-    Route::get('/moneda', 'index')->name('moneda.index');
-    Route::get('/moneda/crear', 'crear')->name('moneda.crear');
-    Route::get('/moneda/{moneda}/mostrar', 'mostrar')->name('moneda.mostrar');
-    Route::get('/moneda/{moneda}/editar', 'editar')->name('moneda.editar');
+    Route::get('/moneda', 'index')->middleware('can:admin.moneda.index')->name('moneda.index');
+    Route::get('/moneda/crear', 'crear')->middleware('can:admin.moneda.crear')->name('moneda.crear');
+    Route::get('/moneda/{moneda}/mostrar', 'mostrar')->middleware('can:admin.moneda.mostrar')->name('moneda.mostrar');
+    Route::get('/moneda/{moneda}/editar', 'editar')->middleware('can:admin.moneda.editar')->name('moneda.editar');
 
-    Route::post('/moneda', 'almacenar')->name('moneda.almacenar');
-    Route::put('/moneda/{moneda}', 'actualizar')->name('moneda.actualizar');
-    Route::delete('/moneda/{moneda}', 'eliminar')->name('moneda.eliminar');
+    Route::post('/moneda', 'almacenar')->middleware('can:admin.moneda.crear')->name('moneda.almacenar');
+    Route::put('/moneda/{moneda}', 'actualizar')->middleware('can:admin.moneda.editar')->name('moneda.actualizar');
+    Route::delete('/moneda/{moneda}', 'eliminar')->middleware('can:admin.moneda.eliminar')->name('moneda.eliminar');
 });
+
 //CRUD PARA LOS PROVEEDORES
 Route::controller(ProveedorController::class)->group(function(){
-    Route::get('/proveedor', 'index')->name('proveedor.index');
-    Route::get('/proveedor/crear', 'crear')->name('proveedor.crear');
-    Route::get('/proveedor/{proveedor}/mostrar', 'mostrar')->name('proveedor.mostrar');
-    Route::get('/proveedor/{proveedor}/editar', 'editar')->name('proveedor.editar');
+    Route::get('/proveedor', 'index')->middleware('can:admin.proveedor.index')->name('proveedor.index');
+    Route::get('/proveedor/crear', 'crear')->middleware('can:admin.proveedor.crear')->name('proveedor.crear');
+    Route::get('/proveedor/{proveedor}/mostrar', 'mostrar')->middleware('can:admin.proveedor.mostrar')->name('proveedor.mostrar');
+    Route::get('/proveedor/{proveedor}/editar', 'editar')->middleware('can:admin.proveedor.editar')->name('proveedor.editar');
 
-    Route::post('/proveedor', 'almacenar')->name('proveedor.almacenar');
-    Route::put('/proveedor/{proveedor}', 'actualizar')->name('proveedor.actualizar');
-    Route::delete('/proveedor/{proveedor}', 'eliminar')->name('proveedor.eliminar');
+    Route::post('/proveedor', 'almacenar')->middleware('can:admin.proveedor.crear')->name('proveedor.almacenar');
+    Route::put('/proveedor/{proveedor}', 'actualizar')->middleware('can:admin.proveedor.editar')->name('proveedor.actualizar');
+    Route::delete('/proveedor/{proveedor}', 'eliminar')->middleware('can:admin.proveedor.eliminar')->name('proveedor.eliminar');
 });
