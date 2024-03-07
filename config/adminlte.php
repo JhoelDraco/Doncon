@@ -331,24 +331,28 @@ return [
         */
         ['header' => 'CONFIGURACION DE CUENTA'],
         [
-            'text' => 'Información de cuenta',
+            'text' => 'Administración de cuenta',
             'route'  => 'profile.show',
             'icon' => 'fas fa-fw fa-user',
+            'can'  => 'admin.cuenta.index',
         ],
         [
             'text' => 'Cajas',
             'url' => '/caja',
-            'icon' => 'fas fa-box'
+            'icon' => 'fas fa-box',
+            'can'  => 'admin.caja.index',
         ],
         [
             'text' => 'Activar Caja',
             'url' => '/vendedor_cajas',
-            'icon' => 'fas fa-shopping-cart'
+            'icon' => 'fas fa-shopping-cart',
+            'can'  => 'admin.vendedor_cajas.index',
         ],
         [
             'text' => 'Registro de Ventas',
             'url' => '/registro/ventas',
-            'icon' => 'fas fa-shopping-cart'
+            'icon' => 'fas fa-shopping-cart',
+            'can'  => 'admin.registro_venta.index',
         ],
         /*
         [
@@ -367,6 +371,7 @@ return [
             'text' => 'Roles',
             'url'  => '/rol',
             'icon' => 'fas fa-users-cog fa-lock',
+            'can'  => 'admin.rol.index',
         ],
 
         [
@@ -391,22 +396,27 @@ return [
                 [
                     'text' => 'Proveedores',
                     'url'  => '/proveedor',
+                    'can'  => 'admin.proveedor.index'
                 ],
                 [
                     'text' => 'Tipo',
                     'url'  => '/tipo',
+                    'can'  => 'admin.tipo.index'
                 ],
                 [
                     'text' => 'Marca',
                     'url'  => '/marca',
+                    'can'  => 'admin.marca.index'
                 ],
                 [
                     'text' => 'Empleado',
                     'url'  => '/empleado',
+                    'can'  => 'admin.empleado.index'
                 ],
                 [
                     'text' => 'Moneda',
                     'url'  => '/moneda',
+                    'can'  => 'admin.moneda.index'
                 ],
             ],
         ],

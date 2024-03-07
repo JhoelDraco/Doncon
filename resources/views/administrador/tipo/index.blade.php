@@ -14,8 +14,10 @@
 @section('content')
 
    
+    @can('admin.tipo.crear')
+        <a href="{{route('tipo.crear')}}">crear tipo</a> 
+    @endcan
     
-    <a href="{{route('tipo.crear')}}">crear tipo</a> 
     
     @livewire('admin.tipo-index')
 

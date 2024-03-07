@@ -12,12 +12,14 @@
 
 @section('content')
 
-    <form method="POST" action="{{route('caja.almacenar')}}">
-        @csrf
+    @can('admin.caja.almacenar')
+        <form method="POST" action="{{route('caja.almacenar')}}">
+            @csrf
 
-        <button type="submit">Agregar Caja</button>
-        <a href="{{ route('caja.index') }}">Volver</a>
-    </form>
+            <button type="submit">Agregar Caja</button>
+            <a href="{{ route('caja.index') }}">Volver</a>
+        </form> 
+    @endcan
     
     @include('administrador.cajas.components.tabla')
 

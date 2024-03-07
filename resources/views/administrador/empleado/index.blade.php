@@ -13,8 +13,9 @@
 
 @section('content')
 
+    @can('admin.empleado.crear')
         <a href="{{route('empleado.crear')}}">Anadir Empleado</a> 
-    
+    @endcan
     
     @livewire('admin.empleado-index')
 

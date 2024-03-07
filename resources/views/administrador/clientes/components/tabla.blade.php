@@ -51,10 +51,13 @@
                             </form>
                         </td>
                     @endcan
-
-                    @empty(!$caja)
-                        <td><a href="{{route('venta.crear', $cliente->cliente_id)}}">Venta</a></td>
-                    @endempty
+                    
+                    @can('admin.venta.crear')
+                        @empty(!$caja)
+                            <td><a href="{{route('venta.crear', $cliente->cliente_id)}}">Venta</a></td>
+                        @endempty
+                    @endcan
+                    
                     
                 </tr>
             @endforeach

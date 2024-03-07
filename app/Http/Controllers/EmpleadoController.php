@@ -46,7 +46,7 @@ class EmpleadoController extends Controller
             $uploadSuccess = $request->file('imagen')->move($destination, $filename);
         }else{
             $destination = '';
-            $file = '';
+            $filename = '';
         }
         
         Empleado::create([

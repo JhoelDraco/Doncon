@@ -14,6 +14,8 @@
     @endforeach
 </select>
 
-<div>
-    <button type="submit">Aceptar</button>
-</div>
+@can('admin.vendedor_cajas.almacenar')
+    <div>
+        <button type="submit">Aceptar</button>
+    </div>
+@endcan

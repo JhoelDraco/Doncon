@@ -12,11 +12,13 @@
 
     <section>
         <h3>VENTAS</h3>
-        <form method="POST" action="{{route('venta.almacenar', $cliente->cliente_id)}}" >
-            @csrf
+        @can('admin.venta.crear')
+            <form method="POST" action="{{route('venta.almacenar', $cliente->cliente_id)}}" >
+                @csrf
 
-            @include('administrador.ventas.components.formulario_ventas')
-        </form>
+                @include('administrador.ventas.components.formulario_ventas')
+            </form>
+        @endcan
     </section>
 
 @endsection

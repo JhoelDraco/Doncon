@@ -17,10 +17,12 @@
 @section('content')
 
     <section>
-        <form method="POST" action="{{route('factura.almacenar', $venta->id)}}" >
-            @csrf
+        @can('admin.venta.facturar')
+            <form method="POST" action="{{route('factura.almacenar', $venta->id)}}" >
+                @csrf
 
-            @include('administrador.ventas.components.formulario_facturacion')
-        </form>
+                @include('administrador.ventas.components.formulario_facturacion')
+            </form>
+        @endcan
     </section>
 @stop
