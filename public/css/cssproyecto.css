@@ -1,20 +1,23 @@
 header {
     /*position: fixed;*/
-    height: 100%;
+    height:100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    z-index: 1000; /* Ajusta el valor según sea necesario para asegurarte de que esté por encima del contenido */
+    z-index: 100; /* Ajusta el valor según sea necesario para asegurarte de que esté por encima del contenido */
 }
 
 nav {
-    background: url('/imagenes/Fondoav.jpg');
-    /*background: linear-gradient(to right, #0059ff, #000000, #2a009e, #27ec00);*/
+    background: url('/imagenes/wave.png');
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor sin distorsionarla */
+    background-repeat: no-repeat;
     padding: 0;
-    width: 100%; /* Ocupa todo el ancho disponible */
-    height: 100px; /* Altura deseada */
-    border-radius: 20px; /* Radio de las esquinas */
+    width: 100%;
+    height: 120px;
+
+    /*background: linear-gradient(to right, #0059ff, #000000, #2a009e, #27ec00);*/
 }
+
 
 
 nav ul {
@@ -23,13 +26,17 @@ nav ul {
 }
 
 nav li {
+    color: #ffffff;
     display: inline;
     margin-right: 10px;
 }
 
 nav a {
-    color: rgb(0, 0, 0);
+    color:#ffffff;
     text-decoration: none;
+}
+a{
+    color: #0648ff;
 }
 
 .navbar-nav li img {
@@ -296,8 +303,9 @@ aside{
     background-image: url('/imagenes/Fondoseccion.jpg');
 }
 
+
 footer{
-    margin-top: 5px;
+    margin-top: 15px;
 
     background-color: #0c0b0b;
     height: auto;
@@ -307,5 +315,5 @@ p { color: #ddd9d9;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif; /* Tipo de letra */
 }
 li{
-    color: #ddd9d9;
+    color: #ffffff;
 }

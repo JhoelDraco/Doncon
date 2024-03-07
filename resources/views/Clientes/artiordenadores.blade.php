@@ -21,21 +21,21 @@
     <section class="row sections_cards">
 
         <div class="col-12" >
-            <h4 class="m-4">Catalogo de Ordenadores</h4>
+            <h4 class="m-4">Catalogo de Articulos</h4>
         </div>
-            <input wire:model.live='productobuscar' placeholder="Buscar Producto" whire:model.live='productocodigo'> 
+           
         <section class="card_novelty col-12 row">
-            @foreach ($productos as $producto)
+                @foreach ($productos as $producto)
 
-                <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff;" >
-                    <img src="{{asset($producto->imagen)}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h2 class="card-title">{{$producto->nombre}}</h2>
-                    <h5 class="card-text">{{$producto->detalle}}</h5>
+                    <div class="card col-lg-3 col-sm-5 my-2 card_space" style="background-color: #ffffff;" >
+                        <img src="{{asset($producto->imagen)}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h2 class="card-title">{{$producto->nombre}}</h2>
+                        <h5 class="card-text">{{$producto->detalle}}</h5>
+                        </div>
                     </div>
-                </div>
 
-            @endforeach
+                @endforeach
 
 
          

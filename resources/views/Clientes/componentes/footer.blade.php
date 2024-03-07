@@ -5,7 +5,7 @@
         <p>Información de Contacto</p>
         <p>Puedes contactarnos a través de:</p>
         <ul class="list-unstyled">
-          <li><i class="fas fa-map-marker-alt"></i> Dirección: 54 calle tarija, La Paz, Bolivia</li>
+          <li><i class="fas fa-map-marker-alt"></i> Dirección: 1208 calle murillo, La Paz, Bolivia</li>
           <li><i class="fas fa-phone"></i> Teléfono: +591 69933781</li>
           <li><i class="fas fa-envelope"></i> Correo Electrónico: osilvestreh@hotmail.com.</li>
         </ul>
@@ -13,9 +13,9 @@
       <div class="col-md-6">
         <p>Enlaces Útiles</p>
         <ul class="list-unstyled">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Acerca de Nosotros</a></li>
-          <li><a href="#">Contactanos</a></li>
+          <li><a href="{{ route('inicio.inicio') }}">Inicio</a></li>
+          <li><a href="{{ route('nosotros.nosotros') }}">Acerca de Nosotros</a></li>
+          <li><a href="{{ route('contactanos.contactanos') }}">Contactanos</a></li>
         </ul>
       </div>
     </div>
@@ -23,7 +23,7 @@
       <div class="col-md-12">
         <div class="social-icons text-center">
           <a href="https://www.facebook.com/people/Tic-Centec/61556663262862/"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=+59169933781&text=Hola%20,%20TicCentec%20Necesito%20informacion%20gracias "><i class="fab fa-whatsapp"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
