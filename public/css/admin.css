@@ -3,7 +3,7 @@ form {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #ff0000;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -32,7 +32,7 @@ textarea {
 /* Estilo para el botón de submit */
 button {
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #929ba1;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -41,7 +41,7 @@ button {
 
 /* Cambia el color del botón al pasar el ratón sobre él */
 button:hover {
-    background-color: #2980b9;
+    background-color: #a7acb0;
 }
 
 section {
@@ -64,7 +64,7 @@ th, td {
 
 /* Estilo para las celdas del encabezado de la tabla */
 th {
-    background-color: #3498db;
+    background-color: #d245a5;
     color: #fff;
 }
 
@@ -73,8 +73,8 @@ td a {
     display: inline-block;
     padding: 5px 10px;
     text-decoration: none;
-    color: #3498db;
-    border: 1px solid #3498db;
+    color: #199bf2;
+    border: 1px solid #c700e1;
     border-radius: 3px;
 }
 

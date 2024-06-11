@@ -15,7 +15,7 @@ return [
     */
 
     'title' => '',
-    'title_prefix' => 'Tic & Centec |',
+    'title_prefix' => 'Doncon',
     'title_postfix' => '',
 
     /*
@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Tic</b><b>&</b>Centec',
-    'logo_img' => 'vendor/adminlte/dist/img/TICFin.jpg',
+    'logo' => '<b>Don</b><b></b>con',
+    'logo_img' => 'vendor/adminlte/dist/img/logoperro.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/TICFin.jpg',
+            'path' => 'vendor/adminlte/dist/img/logoperro.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/TICFin.jpg',
+            'path' => 'vendor/adminlte/dist/img/logoperro.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -388,16 +388,16 @@ return [
                     'url'  => '/producto',
                     'can'  => 'admin.producto.index'
                 ],
-                [
+               /* [
                     'text' => 'Servicios',
                     'url'  => '/servicio',
                     'can'  => 'admin.servicio.index'
-                ],
+               ],
                 [
                     'text' => 'Proveedores',
                     'url'  => '/proveedor',
                     'can'  => 'admin.proveedor.index'
-                ],
+                ],*/
                 [
                     'text' => 'Tipo',
                     'url'  => '/tipo',
@@ -413,11 +413,13 @@ return [
                     'url'  => '/empleado',
                     'can'  => 'admin.empleado.index'
                 ],
+                
                 [
                     'text' => 'Moneda',
                     'url'  => '/moneda',
                     'can'  => 'admin.moneda.index'
                 ],
+                
             ],
         ],
 

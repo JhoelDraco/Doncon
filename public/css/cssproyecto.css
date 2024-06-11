@@ -26,13 +26,13 @@ nav ul {
 }
 
 nav li {
-    color: #ffffff;
+    color: #8970e1;
     display: inline;
     margin-right: 10px;
 }
 
 nav a {
-    color:#ffffff;
+    color:#fdfdff;
     text-decoration: none;
 }
 a{
@@ -265,7 +265,7 @@ section h1 {
     animation-delay: -10s;
    }
 section {
-    background: url('/imagenes/Fondoseccion.jpg');
+    background-color: #7bd3fcc7;
     color: #000000;
     text-align: center;
     font-family:'Times New Roman', Times, serif;

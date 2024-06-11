@@ -22,7 +22,7 @@
                         <button id="btn__iniciar-sesion">Iniciar Sesión</button>
                     </div>
                     <div class="caja__trasera-register">
-                        <h3>Tic & Centec</h3>
+                        <h1>DonCon</h1>
                         <p>Olvidaste Tu contrasena?</p>
                         <button id="btn__registrarse">Olvide mi contrasenia</button>
                     </div>

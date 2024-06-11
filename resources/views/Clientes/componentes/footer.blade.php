@@ -7,7 +7,7 @@
         <ul class="list-unstyled">
           <li><i class="fas fa-map-marker-alt"></i> Dirección: 1208 calle murillo, La Paz, Bolivia</li>
           <li><i class="fas fa-phone"></i> Teléfono: +591 69933781</li>
-          <li><i class="fas fa-envelope"></i> Correo Electrónico: osilvestreh@hotmail.com.</li>
+          <li><i class="fas fa-envelope"></i> Correo Electrónico: Doncon@hotmail.com.</li>
         </ul>
       </div>
       <div class="col-md-6">
@@ -23,7 +23,7 @@
       <div class="col-md-12">
         <div class="social-icons text-center">
           <a href="https://www.facebook.com/people/Tic-Centec/61556663262862/"><i class="fab fa-facebook"></i></a>
-          <a href="https://api.whatsapp.com/send?phone=+59169933781&text=Hola%20,%20TicCentec%20Necesito%20informacion%20gracias "><i class="fab fa-whatsapp"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=+59169933781&text=Hola%20Doncon%20Necesito%20informacion%de%sus%articulos%20gracias "><i class="fab fa-whatsapp"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
@@ -32,7 +32,7 @@
     <hr>
     <div class="row">
       <div class="col-md-12">
-        <p class="text-center">&copy; 2024 Tic&Centec. Todos los derechos reservados.</p>
+        <p class="text-center">&copy; 2024 Doncon. Todos los derechos reservados.</p>
       </div>
     </div>
   </div>

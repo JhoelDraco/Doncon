@@ -1,0 +1,49 @@
+/* custom.css */
+body {
+    background-color: #ECF0F1; /* un gris claro, suave para el fondo que es menos intenso que el blanco */
+}
+
+.sidebar-dark-primary {
+    background-color: #34495E; /* un azul marino oscuro, más suave y profesional */
+    color: #ECF0F1; /* usando un contraste claro con el fondo oscuro del sidebar */
+}
+
+.btn-custom {
+    background-color: #db34c5; /* un azul vibrante que es energético y amigable */
+    color: rgb(190, 5, 5);
+    border: none; /* elimina el borde para un look más moderno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* una sombra ligera para dar profundidad */
+    transition: background-color 0.3s; /* transición suave para el efecto hover */
+}
+
+.btn-custom:hover {
+    background-color: #2980B9; /* un azul ligeramente más oscuro para el hover */
+}
+
+/* Añadiendo estilos adicionales para otros elementos para un look cohesivo */
+
+.navbar {
+    background-color: #2C3E50; /* un tono de azul más oscuro para la barra de navegación */
+    color: #ECF0F1;
+}
+
+.navbar a {
+    color: #ECF0F1; /* asegurando que los enlaces sean claros y visibles */
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #3498DB; /* un azul claro para hover en los enlaces */
+}
+
+/* Mejora para los inputs del formulario */
+
+input, textarea {
+    border: 2px solid #BDC3C7; /* un borde más suave */
+    padding: 10px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #f51bdf; /* un borde azul vibrante al enfocar */
+}
